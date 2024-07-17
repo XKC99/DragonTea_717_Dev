@@ -29,7 +29,6 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown("space") && isGrounded)
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
-            Debug.Log("Jump");
         }
     }
 
@@ -61,6 +60,15 @@ public class PlayerController : MonoBehaviour
                 if(teleport!=null)
                 {
                     teleport.TeleportToScene();
+                }
+                break;
+            case "Speak":
+            Debug.Log("speaking");
+                var speak=collision.gameObject.GetComponent<DialogueSpeaker>();
+                if(speak!=null)
+                {
+                    
+                    speak.Play();
                 }
                 break;
         }

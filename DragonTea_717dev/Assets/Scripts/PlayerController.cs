@@ -19,9 +19,23 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    private void FixedUpdate()
+     private void FixedUpdate()
     {
-        float moveX = Input.GetAxis("Horizontal");
+        MovePlayer();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown("space") && isGrounded)
+        {
+            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            Debug.Log("Jump");
+        }
+    }
+
+    private void MovePlayer()
+    {
+         float moveX = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(moveX * moveSpeed, rb.velocity.y);
 
         if (moveX > 0 && !facingRight)
@@ -35,30 +49,39 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Speed",Mathf.Abs(moveX));
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown("space") && isGrounded)
-        {
-            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
-            Debug.Log("Jump");
-        }
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        switch(collision.gameObject.tag)
         {
-            isGrounded = true;
+            case "Ground":
+                isGrounded = true;
+                break;
+            case "Teleport":
+                var teleport =collision.gameObject.GetComponent<Teleport>();
+                if(teleport!=null)
+                {
+                    teleport.TeleportToScene();
+                }
+                break;
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        /*if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = false;
         }
+        */
+        switch(collision.gameObject.tag)
+        {
+            case "Ground":
+                isGrounded = false;
+                break;
+        }
     }
+
+   
 
     private void Flip()
     {
@@ -67,4 +90,6 @@ public class PlayerController : MonoBehaviour
         scale.x *= -1;
         transform.localScale = scale;
     }
+
+    
 }

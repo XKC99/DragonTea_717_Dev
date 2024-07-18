@@ -158,8 +158,8 @@
     <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Tasks\Actions\Blackboard\SetEnumFlag.cs" />
     <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Tasks\Actions\ScriptControl\SetField.cs" />
     <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Tasks\Actions\ScriptControl\ImplementedAction_Multiplatform.cs" />
-    <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Modules\DialogueTrees\DialogueEventArguments.cs" />
     <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Modules\BehaviourTrees\Nodes\Leafs\NestedFSM.cs" />
+    <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Modules\DialogueTrees\DialogueEventArguments.cs" />
     <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Tasks\Actions\GameObject\DestroyGameObject.cs" />
     <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Tasks\Conditions\Movement\PathExists.cs" />
     <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Tasks\Actions\Movement\Direct\RotateAway.cs" />
@@ -214,8 +214,8 @@
     <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Tasks\Actions\Utility\DebugLogVariable.cs" />
     <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Tasks\Actions\Blackboard\SetOtherBlackboardVariable.cs" />
     <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Modules\BehaviourTrees\Nodes\BTComposite.cs" />
-    <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Tasks\Actions\Application\LoadScene.cs" />
     <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Tasks\Actions\Blackboard\SetIntRandom.cs" />
+    <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Tasks\Actions\Application\LoadScene.cs" />
     <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Tasks\Conditions\Blackboard\OnVariableChange.cs" />
     <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Tasks\Actions\Animator\MecanimSetBool.cs" />
     <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Tasks\Actions\Utility\SendEvent.cs" />
@@ -254,8 +254,8 @@
     <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Tasks\Actions\GameObject\LookAt.cs" />
     <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Modules\BehaviourTrees\Nodes\Leafs\ConditionNode.cs" />
     <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Tasks\Actions\GameObject\GetDistance.cs" />
-    <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Tasks\Actions\Blackboard\NormalizeVector.cs" />
     <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Editor\Drawers\StatementDrawer.cs" />
+    <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Tasks\Actions\Blackboard\NormalizeVector.cs" />
     <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Modules\DialogueTrees\Nodes\Jumper.cs" />
     <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Tasks\Conditions\GameObject\IsInFront2D.cs" />
     <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Tasks\Conditions\Animator\MecanimCheckBool.cs" />
@@ -263,8 +263,8 @@
     <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Modules\DialogueTrees\DialogueTree.cs" />
     <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Tasks\Actions\GameObject\FindChildByName.cs" />
     <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Modules\DialogueTrees\Nodes\SubDialogueTree.cs" />
-    <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Tasks\Conditions\Blackboard\CheckString.cs" />
     <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Modules\DialogueTrees\Nodes\ProbabilitySelector.cs" />
+    <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Tasks\Conditions\Blackboard\CheckString.cs" />
     <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Tasks\Conditions\UGUI\InterceptEvent.cs" />
     <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Tasks\Conditions\Animator\MecanimCheckFloat.cs" />
     <Compile Include="Assets\Plugs\ParadoxNotion\NodeCanvas\Tasks\Actions\Blackboard\Dictionary Specific\AddElementToDictionary.cs" />

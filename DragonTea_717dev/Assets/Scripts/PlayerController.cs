@@ -1,3 +1,4 @@
+using NodeCanvas.DialogueTrees;
 using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.UIElements;
@@ -12,6 +13,7 @@ public class PlayerController : MonoBehaviour
 
     private bool isGrounded = false;
     private bool facingRight = true;
+   
 
     private void Start()
     {
@@ -19,9 +21,9 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-     private void FixedUpdate()
+    private void FixedUpdate()
     {
-        MovePlayer();
+       MovePlayer();  
     }
 
     private void Update()
@@ -34,7 +36,7 @@ public class PlayerController : MonoBehaviour
 
     private void MovePlayer()
     {
-         float moveX = Input.GetAxis("Horizontal");
+        float moveX = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(moveX * moveSpeed, rb.velocity.y);
 
         if (moveX > 0 && !facingRight)
@@ -48,7 +50,8 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Speed",Mathf.Abs(moveX));
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    //碰撞检测↓
+    private void OnCollisionEnter2D(Collision2D collision)  
     {
         switch(collision.gameObject.tag)
         {
@@ -63,11 +66,9 @@ public class PlayerController : MonoBehaviour
                 }
                 break;
             case "Speak":
-            Debug.Log("speaking");
                 var speak=collision.gameObject.GetComponent<DialogueSpeaker>();
                 if(speak!=null)
                 {
-                    
                     speak.Play();
                 }
                 break;
@@ -89,7 +90,37 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-   
+   //触发器检测↓
+   private void OnTriggerEnter2D(Collider2D other)
+   {
+    if(other.gameObject.CompareTag("NPC")) //为什么这里按下F没办法操作
+    {
+        var npc=other.gameObject.GetComponentInChildren<DialogueTreeController>();
+            if(npc!=null)
+            {
+                npc.StartDialogue();
+            }
+        
+    }
+    
+    /*
+       switch(other.gameObject.tag)
+       {
+           case "NPC":
+            var npc=other.gameObject.GetComponentInChildren<DialogueTreeController>();
+            if(Input.GetKeyDown(KeyCode.F))
+            {
+                if(npc!=null)
+                {
+                    npc.StartDialogue();
+                }
+
+            }
+            break;
+                
+       }*/
+   }
+
 
     private void Flip()
     {

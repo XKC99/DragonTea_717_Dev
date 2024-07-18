@@ -1,6 +1,7 @@
 using NodeCanvas.DialogueTrees;
 using UnityEngine;
 using UnityEngine.Animations;
+using UnityEngine.Playables;
 using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
@@ -13,7 +14,12 @@ public class PlayerController : MonoBehaviour
 
     private bool isGrounded = false;
     private bool facingRight = true;
-   
+    
+    private bool cantMove => triggerNpc != null && triggerNpc.isRunning;  //判断是否能移动
+    private DialogueTreeController triggerNpc;//存储triggerNPC记录
+    private GameObject triggertimelineObject;//存储triggertimeline的物体记录
+    private DialogueSpeaker triggerspeak;//存储triggerspeak记录
+
 
     private void Start()
     {
@@ -23,15 +29,34 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-       MovePlayer();  
+        if (cantMove) {  //不能移动就动不了
+            return;
+        }
+
+        MovePlayer();  
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown("space") && isGrounded)
+        if (Input.GetKeyDown("space") && isGrounded && !cantMove)  //按下空格，且在地面，且不能移动时才可添加力
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
+
+        if (Input.GetKeyDown("f") && triggerNpc!= null) {   //开启对话
+            triggerNpc.StartDialogue();
+        }
+
+        //播放完一次timeline后，将挂载timeline的空物体置为false↓
+        if(triggertimelineObject!=null&&triggertimelineObject.GetComponent<PlayableDirector>().state != PlayState.Playing) 
+        {
+            triggertimelineObject.SetActive(false);
+        }
+        if(triggerspeak!=null&&triggerspeak.isFinished==true)
+        {
+            triggerspeak.gameObject.SetActive(false); //为什么这里没起作用
+        }
+
     }
 
     private void MovePlayer()
@@ -93,32 +118,39 @@ public class PlayerController : MonoBehaviour
    //触发器检测↓
    private void OnTriggerEnter2D(Collider2D other)
    {
-    if(other.gameObject.CompareTag("NPC")) //为什么这里按下F没办法操作
+    if(other.gameObject.CompareTag("NPC")) //为什么这里按下F没办法操作：因为进入碰撞和按F几乎不可能同时发生
     {
-        var npc=other.gameObject.GetComponentInChildren<DialogueTreeController>();
-            if(npc!=null)
-            {
-                npc.StartDialogue();
-            }
+        triggerNpc=other.gameObject.GetComponentInChildren<DialogueTreeController>();
         
     }
-    
-    /*
-       switch(other.gameObject.tag)
-       {
-           case "NPC":
-            var npc=other.gameObject.GetComponentInChildren<DialogueTreeController>();
-            if(Input.GetKeyDown(KeyCode.F))
+    if(other.gameObject.CompareTag("Timeline"))
+    {
+        triggertimelineObject = other.gameObject;
+        triggertimelineObject.GetComponent<PlayableDirector>().Play();
+    }
+    if(other.gameObject.CompareTag("Speak"))
+    {
+        var speak=other.gameObject.GetComponent<DialogueSpeaker>();
+         if(speak!=null)
             {
-                if(npc!=null)
-                {
-                    npc.StartDialogue();
-                }
-
+              speak.Play();
             }
-            break;
-                
-       }*/
+
+    }
+
+
+   }
+
+   private void OnTriggerExit2D(Collider2D other) 
+   {
+        if(other.gameObject.CompareTag("NPC"))
+        {
+            var npc=other.gameObject.GetComponentInChildren<DialogueTreeController>();
+            if(triggerNpc == npc)
+            {
+                triggerNpc = null;
+            }
+        }
    }
 
 

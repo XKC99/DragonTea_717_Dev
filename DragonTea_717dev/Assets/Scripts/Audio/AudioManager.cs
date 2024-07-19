@@ -1,18 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("音乐数据库")]
+    public SoundDetailList_SO soundDetailData;
+    public SceneSoundList_SO sceneSoundData;
+    
+    [Header("Audio Source")]
+    public AudioSource bgmSource;
+    public AudioSource ambientSource; 
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
+   
 }

@@ -17,8 +17,8 @@ public class PlayerController : MonoBehaviour
     
     private bool cantMove => triggerNpc != null && triggerNpc.isRunning;  //判断是否能移动
     private DialogueTreeController triggerNpc;//存储triggerNPC记录
+    private Item triggerItem;//存储triggerItem记录
     private GameObject triggertimelineObject;//存储triggertimeline的物体记录
-    private DialogueSpeaker triggerspeak;//存储triggerspeak记录
     private GameObject triggerspeakObject;//存储triggerspeak的物体记录
 
 
@@ -46,6 +46,10 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown("f") && triggerNpc!= null) {   //开启对话
             triggerNpc.StartDialogue();
+        }
+
+        if(Input.GetKeyDown("f") && triggerItem!=null) {   //收集物品
+            triggerItem.ItemGet();
         }
 
         //播放完一次timeline后，将挂载timeline的空物体置为false↓
@@ -77,6 +81,16 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Speed",Mathf.Abs(moveX));
     }
 
+     private void Flip()
+    {
+        facingRight = !facingRight;
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
+    }
+
+
+
     //碰撞检测↓
     private void OnCollisionEnter2D(Collision2D collision)  
     {
@@ -99,22 +113,24 @@ public class PlayerController : MonoBehaviour
                     speak.Play();
                 }
                 break;
+            case"Box":
+                isGrounded = true;
+                break;
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        /*if (collision.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = false;
-        }
-        */
         switch(collision.gameObject.tag)
         {
             case "Ground":
                 isGrounded = false;
                 break;
+            case "Box":
+                isGrounded = false;
+                break;
         }
+        
     }
 
    //触发器检测↓
@@ -125,6 +141,10 @@ public class PlayerController : MonoBehaviour
         triggerNpc=other.gameObject.GetComponentInChildren<DialogueTreeController>();
         
     }
+     if(other.gameObject.CompareTag("Item"))
+    {
+        triggerItem=other.gameObject.GetComponent<Item>();
+    }
     if(other.gameObject.CompareTag("Timeline"))
     {
         triggertimelineObject = other.gameObject;
@@ -134,14 +154,8 @@ public class PlayerController : MonoBehaviour
     {
         triggerspeakObject = other.gameObject;
         triggerspeakObject.GetComponent<DialogueSpeaker>().Play();
-        /*var speak=other.gameObject.GetComponent<DialogueSpeaker>();
-         if(speak!=null)
-            {
-              speak.Play();
-            }*/
     }
-
-
+   
    }
 
    private void OnTriggerExit2D(Collider2D other) 
@@ -154,16 +168,18 @@ public class PlayerController : MonoBehaviour
                 triggerNpc = null;
             }
         }
+        if(other.gameObject.CompareTag("Item"))
+        {
+            var item=other.gameObject.GetComponent<Item>();
+            if(triggerItem == item)
+            {
+                triggerItem = null;
+            }
+        }
    }
 
 
-    private void Flip()
-    {
-        facingRight = !facingRight;
-        Vector3 scale = transform.localScale;
-        scale.x *= -1;
-        transform.localScale = scale;
-    }
+    
 
     
 }

@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     private DialogueTreeController triggerNpc;//存储triggerNPC记录
     private GameObject triggertimelineObject;//存储triggertimeline的物体记录
     private DialogueSpeaker triggerspeak;//存储triggerspeak记录
+    private GameObject triggerspeakObject;//存储triggerspeak的物体记录
 
 
     private void Start()
@@ -52,9 +53,10 @@ public class PlayerController : MonoBehaviour
         {
             triggertimelineObject.SetActive(false);
         }
-        if(triggerspeak!=null&&triggerspeak.isFinished==true)
+        //播放完一次speak后，将挂载speak的空物体置为false↓
+        if(triggerspeakObject!=null&&triggerspeakObject.GetComponent<DialogueSpeaker>().isFinished==true)
         {
-            triggerspeak.gameObject.SetActive(false); //为什么这里没起作用
+            triggerspeakObject.SetActive(false); 
         }
 
     }
@@ -130,12 +132,13 @@ public class PlayerController : MonoBehaviour
     }
     if(other.gameObject.CompareTag("Speak"))
     {
-        var speak=other.gameObject.GetComponent<DialogueSpeaker>();
+        triggerspeakObject = other.gameObject;
+        triggerspeakObject.GetComponent<DialogueSpeaker>().Play();
+        /*var speak=other.gameObject.GetComponent<DialogueSpeaker>();
          if(speak!=null)
             {
               speak.Play();
-            }
-
+            }*/
     }
 
 

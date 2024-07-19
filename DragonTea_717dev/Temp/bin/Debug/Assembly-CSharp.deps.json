@@ -1,0 +1,51 @@
+{
+  "runtimeTarget": {
+    "name": ".NETStandard,Version=v2.1/",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETStandard,Version=v2.1": {},
+    ".NETStandard,Version=v2.1/": {
+      "Assembly-CSharp/1.0.0": {
+        "dependencies": {
+          "NodeCanvas": "1.0.0",
+          "ParadoxNotion": "1.0.0"
+        },
+        "runtime": {
+          "Assembly-CSharp.dll": {}
+        }
+      },
+      "NodeCanvas/1.0.0": {
+        "dependencies": {
+          "ParadoxNotion": "1.0.0"
+        },
+        "runtime": {
+          "NodeCanvas.dll": {}
+        }
+      },
+      "ParadoxNotion/1.0.0": {
+        "runtime": {
+          "ParadoxNotion.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Assembly-CSharp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NodeCanvas/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ParadoxNotion/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

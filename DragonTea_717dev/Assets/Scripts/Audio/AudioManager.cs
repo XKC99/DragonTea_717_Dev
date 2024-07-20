@@ -12,7 +12,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;  //设置为单例模式
     public AudioType[] AudioTypes;
 
-    
+   
     private void Awake()
     {
         if(instance==null)
@@ -83,6 +83,19 @@ public class AudioManager : MonoBehaviour
             if(type.Name==name)
             {
                 type.Source.Stop();
+                return;
+            }
+        }
+        Debug.Log("没有找到这个音频");
+    }
+
+    public void PlayOneShot(string name)
+    {
+        foreach(AudioType type in AudioTypes)
+        {
+            if(type.Name==name)
+            {
+                type.Source.PlayOneShot(type.Clip);
                 return;
             }
         }

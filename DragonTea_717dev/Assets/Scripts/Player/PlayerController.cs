@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     private DialogueTreeController triggerNpc;//存储triggerNPC记录
     private Item triggerItem;//存储triggerItem记录
 
+    public GameObject FNote; //按F交互的提示
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -42,6 +44,8 @@ public class PlayerController : MonoBehaviour
         }
 
         if (Input.GetKeyDown("f") && triggerNpc!= null) {   //开启对话
+            Debug.Log("F显示取消"); 
+            FNote.SetActive(false); //这里添加取消显示的逻辑
             triggerNpc.StartDialogue();
         }
 
@@ -114,7 +118,10 @@ public class PlayerController : MonoBehaviour
    {
     if(other.gameObject.CompareTag("NPC")) //为什么这里按下F没办法操作：因为进入碰撞和按F几乎不可能同时发生
     {
-        triggerNpc=other.gameObject.GetComponentInChildren<DialogueTreeController>();
+        //Debug.Log("按下F显示");
+        FNote=other.transform.Find("Canvas").gameObject;
+         FNote.SetActive(true);  
+       triggerNpc=other.gameObject.GetComponentInChildren<DialogueTreeController>();
         
     }
    
@@ -129,8 +136,12 @@ public class PlayerController : MonoBehaviour
             {
                 triggerNpc = null;
             }
+            FNote.SetActive(false);
+
         }
    }
+
+   
 
 
 

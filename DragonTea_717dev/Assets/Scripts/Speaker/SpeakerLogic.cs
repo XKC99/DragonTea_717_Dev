@@ -22,6 +22,7 @@ public class SpeakerLogic : MonoBehaviour
 
     private void OnMeetPlayer()
     {
+        Debug.Log("SpeakerLogic");
         this.GetComponent<DialogueSpeaker>().Play();
         OnDisable();
     }

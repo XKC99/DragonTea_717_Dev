@@ -15,7 +15,9 @@ public class AudioType
    [Range(0f, 1.0f)]
    public float Volume=1.0f;
   [Range(0.1f, 5f)]
-  public float Pitch;
+  public float Pitch=1.0f;
    public bool Loop;
+   public bool PlayOnAwake;
+
 
 }

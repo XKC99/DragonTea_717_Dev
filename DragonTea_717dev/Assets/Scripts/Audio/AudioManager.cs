@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -33,12 +34,13 @@ public class AudioManager : MonoBehaviour
     {
        foreach (AudioType audioType in AudioTypes)
         {
-            audioType.Source = gameObject.AddComponent<AudioSource>();
+            //audioType.Source = gameObject.AddComponent<AudioSource>();
             audioType.Source.clip = audioType.Clip;
             audioType.Source.name= audioType.Name;
             audioType.Source.loop = audioType.Loop;
             audioType.Source.pitch = audioType.Pitch;
             audioType.Source.volume = audioType.Volume;
+            audioType.Source.playOnAwake = audioType.PlayOnAwake;
             if(audioType.MixerGroup!=null)
             {
                 audioType.Source.outputAudioMixerGroup = audioType.MixerGroup;

@@ -64,24 +64,26 @@
     <Analyzer Include="C:\unity\2022.3.34f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Audio\Data_SO\PlayAudio_SO.cs" />
     <Compile Include="Assets\Plugs\Dialogue Speaker\Scripts\DialogueSpeaker.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Inventory\Logic\Item.cs" />
     <Compile Include="Assets\Scripts\Utilities\EventHandler.cs" />
+    <Compile Include="Assets\Scripts\Items\BoxOnCollision.cs" />
     <Compile Include="Assets\Scripts\Transition\TransitionManager.cs" />
     <Compile Include="Assets\Plugs\Dialogue Speaker\Demo\Scripts\DialogueControls.cs" />
+    <Compile Include="Assets\Scripts\Audio\AudioType.cs" />
     <Compile Include="Assets\Scripts\Utilities\DataCollections.cs" />
     <Compile Include="Assets\Scripts\Audio\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Cursor\CursorManager.cs" />
     <Compile Include="Assets\Plugs\Dialogue Speaker\Scripts\Dialogues.cs" />
     <Compile Include="Assets\Scripts\Inventory\Logic\InventoryManager.cs" />
     <Compile Include="Assets\Scripts\Inventory\Data_SO\ItemDataList_SO.cs" />
-    <Compile Include="Assets\Scripts\Audio\Data_SO\SoundDetailList_SO.cs" />
     <Compile Include="Assets\Plugs\Dialogue Speaker\Demo\Scripts\QuitApp.cs" />
     <Compile Include="Assets\Arts\CharacterPack\Sample\Sample.cs" />
     <Compile Include="Assets\Scripts\Utilities\Enums.cs" />
-    <Compile Include="Assets\Scripts\Audio\Data_SO\SceneSoundList_SO.cs" />
     <Compile Include="Assets\Plugs\Dialogue Speaker\Demo\Scripts\EndMethod.cs" />
+    <Compile Include="Assets\Scripts\Speaker\JustTest.cs" />
     <Compile Include="Assets\Scripts\Transition\Teleport.cs" />
   </ItemGroup>
   <ItemGroup>

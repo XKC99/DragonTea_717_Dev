@@ -18,9 +18,6 @@ public class PlayerController : MonoBehaviour
     private bool cantMove => triggerNpc != null && triggerNpc.isRunning;  //判断是否能移动
     private DialogueTreeController triggerNpc;//存储triggerNPC记录
     private Item triggerItem;//存储triggerItem记录
-    private GameObject triggertimelineObject;//存储triggertimeline的物体记录
-    private GameObject triggerspeakObject;//存储triggerspeak的物体记录
-
 
     private void Start()
     {
@@ -48,20 +45,6 @@ public class PlayerController : MonoBehaviour
             triggerNpc.StartDialogue();
         }
 
-        if(Input.GetKeyDown("f") && triggerItem!=null) {   //收集物品
-            triggerItem.ItemGet();
-        }
-
-        //播放完一次timeline后，将挂载timeline的空物体置为false↓
-        if(triggertimelineObject!=null&&triggertimelineObject.GetComponent<PlayableDirector>().state != PlayState.Playing) 
-        {
-            triggertimelineObject.SetActive(false);
-        }
-        //播放完一次speak后，将挂载speak的空物体置为false↓
-        if(triggerspeakObject!=null&&triggerspeakObject.GetComponent<DialogueSpeaker>().isFinished==true)
-        {
-            triggerspeakObject.SetActive(false); 
-        }
 
     }
 
@@ -106,13 +89,6 @@ public class PlayerController : MonoBehaviour
                     teleport.TeleportToScene();
                 }
                 break;
-            case "Speak":
-                var speak=collision.gameObject.GetComponent<DialogueSpeaker>();
-                if(speak!=null)
-                {
-                    speak.Play();
-                }
-                break;
             case"Box":
                 isGrounded = true;
                 break;
@@ -141,20 +117,6 @@ public class PlayerController : MonoBehaviour
         triggerNpc=other.gameObject.GetComponentInChildren<DialogueTreeController>();
         
     }
-     if(other.gameObject.CompareTag("Item"))
-    {
-        triggerItem=other.gameObject.GetComponent<Item>();
-    }
-    if(other.gameObject.CompareTag("Timeline"))
-    {
-        triggertimelineObject = other.gameObject;
-        triggertimelineObject.GetComponent<PlayableDirector>().Play();
-    }
-    if(other.gameObject.CompareTag("Speak"))
-    {
-        triggerspeakObject = other.gameObject;
-        triggerspeakObject.GetComponent<DialogueSpeaker>().Play();
-    }
    
    }
 
@@ -168,18 +130,8 @@ public class PlayerController : MonoBehaviour
                 triggerNpc = null;
             }
         }
-        if(other.gameObject.CompareTag("Item"))
-        {
-            var item=other.gameObject.GetComponent<Item>();
-            if(triggerItem == item)
-            {
-                triggerItem = null;
-            }
-        }
    }
 
 
-    
 
-    
 }

@@ -72,7 +72,9 @@
     <Compile Include="Assets\Scripts\Items\BoxOnCollision.cs" />
     <Compile Include="Assets\Scripts\Transition\TransitionManager.cs" />
     <Compile Include="Assets\Plugs\Dialogue Speaker\Demo\Scripts\DialogueControls.cs" />
+    <Compile Include="Assets\Scripts\Timelines\TimelineLogic.cs" />
     <Compile Include="Assets\Scripts\Audio\AudioType.cs" />
+    <Compile Include="Assets\Scripts\Speaker\SpeakerLogic.cs" />
     <Compile Include="Assets\Scripts\Utilities\DataCollections.cs" />
     <Compile Include="Assets\Scripts\Audio\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Cursor\CursorManager.cs" />
@@ -83,8 +85,8 @@
     <Compile Include="Assets\Arts\CharacterPack\Sample\Sample.cs" />
     <Compile Include="Assets\Scripts\Utilities\Enums.cs" />
     <Compile Include="Assets\Plugs\Dialogue Speaker\Demo\Scripts\EndMethod.cs" />
-    <Compile Include="Assets\Scripts\Speaker\JustTest.cs" />
     <Compile Include="Assets\Scripts\Transition\Teleport.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerCollision.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

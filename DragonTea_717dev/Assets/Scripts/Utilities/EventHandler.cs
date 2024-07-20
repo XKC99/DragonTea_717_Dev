@@ -12,6 +12,24 @@ public static class EventHandler  //事件控制中心
       BoxCollision?.Invoke();
    }
 
+   public static event Action TimelineCollision;
+   public static void CallTimelineOnCollision()
+   {
+      TimelineCollision?.Invoke();
+   }
+
+   public static event Action SpeakerCollision;
+   public static void CallSpeakerCollision()
+   {
+      SpeakerCollision?.Invoke();
+   }
+
+   public static event Action TransToAnotherSecne;
+   public static void CallTransToAnotherSecne()
+   {
+      TransToAnotherSecne?.Invoke();
+   }
+
   
 
 

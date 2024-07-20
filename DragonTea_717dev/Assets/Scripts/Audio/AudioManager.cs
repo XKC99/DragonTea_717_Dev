@@ -23,7 +23,15 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-         foreach (AudioType audioType in AudioTypes)
+         
+         
+        DontDestroyOnLoad(gameObject);
+    }
+
+
+    private void Start()
+    {
+       foreach (AudioType audioType in AudioTypes)
         {
             audioType.Source = gameObject.AddComponent<AudioSource>();
             audioType.Source.clip = audioType.Clip;
@@ -36,15 +44,6 @@ public class AudioManager : MonoBehaviour
                 audioType.Source.outputAudioMixerGroup = audioType.MixerGroup;
             }
         }
-         
-        DontDestroyOnLoad(gameObject);
-    }
-
-
-    private void Start()
-    {
-       
-        
     }
     
 

@@ -69,25 +69,29 @@
     <Compile Include="Assets\Plugs\Dialogue Speaker\Scripts\DialogueSpeaker.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Inventory\Logic\Item.cs" />
-    <Compile Include="Assets\Scripts\Utilities\EventHandler.cs" />
-    <Compile Include="Assets\Scripts\Items\BoxOnCollision.cs" />
+    <Compile Include="Assets\Scripts\Utilities\Event\BaseEvent.cs" />
     <Compile Include="Assets\Scripts\Transition\TransitionManager.cs" />
     <Compile Include="Assets\Plugs\Dialogue Speaker\Demo\Scripts\DialogueControls.cs" />
-    <Compile Include="Assets\Scripts\Timelines\TimelineLogic.cs" />
+    <Compile Include="Assets\Scripts\Items\BoxLogic.cs" />
     <Compile Include="Assets\Scripts\Audio\AudioType.cs" />
-    <Compile Include="Assets\Scripts\Speaker\SpeakerLogic.cs" />
+    <Compile Include="Assets\Scripts\Utilities\归档\EventHandler.cs" />
     <Compile Include="Assets\Scripts\Utilities\DataCollections.cs" />
     <Compile Include="Assets\Scripts\Audio\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Cursor\CursorManager.cs" />
     <Compile Include="Assets\Plugs\Dialogue Speaker\Scripts\Dialogues.cs" />
     <Compile Include="Assets\Scripts\Inventory\Logic\InventoryManager.cs" />
+    <Compile Include="Assets\Scripts\Audio\AudioPlayConroller.cs" />
     <Compile Include="Assets\Scripts\Inventory\Data_SO\ItemDataList_SO.cs" />
+    <Compile Include="Assets\Scripts\Utilities\Event\ColliderEvent.cs" />
     <Compile Include="Assets\Plugs\Dialogue Speaker\Demo\Scripts\QuitApp.cs" />
     <Compile Include="Assets\Arts\CharacterPack\Sample\Sample.cs" />
     <Compile Include="Assets\Scripts\Utilities\Enums.cs" />
     <Compile Include="Assets\Plugs\Dialogue Speaker\Demo\Scripts\EndMethod.cs" />
+    <Compile Include="Assets\Scripts\Utilities\Event\TriggerEvent.cs" />
     <Compile Include="Assets\Scripts\Transition\Teleport.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerCollision.cs" />
+    <Compile Include="Assets\Scripts\Items\ItemLogic.cs" />
+    <Compile Include="Assets\Scripts\UI\UIFollowObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

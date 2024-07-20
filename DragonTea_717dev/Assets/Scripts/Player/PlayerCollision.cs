@@ -7,19 +7,19 @@ public class PlayerCollision : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
    {
    
-    if(other.gameObject.CompareTag("Timeline"))
+    /*if(other.gameObject.CompareTag("Timeline"))
     {
         EventHandler.CallTimelineOnCollision();
     }
     if(other.gameObject.CompareTag("Speak"))
     {
-        EventHandler.CallSpeakerCollision();
+        EventHandler.CallSpeakerCollision(other.gameObject);
     }
     if(other.gameObject.CompareTag("Teleport"))
     {
         Debug.Log("daole");
         EventHandler.CallTransToAnotherSecne();
-    }
+    }*/
    
    }
 

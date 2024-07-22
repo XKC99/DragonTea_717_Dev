@@ -3,15 +3,20 @@ using UnityEngine.Events;
 
 public class BaseEvent : MonoBehaviour
 {
-    public UnityEvent triggerUnityEvent;
+    public UnityEvent triggerPlayerUnityEvent;  //玩家进入trigger区时触发的事件
+  
     //public UnityEvent colliderUnityEvent;
 
 
-    protected virtual void OnTrigger()
+    protected virtual void OnTriggerPlayer()
     {
         Debug.Log($"Trigger触发:{gameObject.name}");
-        triggerUnityEvent?.Invoke();
+        triggerPlayerUnityEvent?.Invoke();
     }
+
+   
+
+
 
     /*protected virtual void OnCollider()
     {

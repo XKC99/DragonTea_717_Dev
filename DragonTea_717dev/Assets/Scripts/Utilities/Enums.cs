@@ -13,3 +13,8 @@ public enum ItemName
     None,Key,
     Star,Moon,Sun
 }
+
+public enum CardType
+{
+    Fire,Heal,Fly,Fall
+}

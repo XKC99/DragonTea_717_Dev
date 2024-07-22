@@ -66,12 +66,20 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Audio\Data_SO\PlayAudio_SO.cs" />
     <Compile Include="Assets\Scripts\Audio\AudioSourceTest.cs" />
+    <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_ShurikenThreadFix.cs" />
+    <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_AutodestructWhenNoChildren.cs" />
+    <Compile Include="Assets\Scripts\Items\IFireHitandHeal.cs" />
+    <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
+    <Compile Include="Assets\Scripts\Items\CardAndSkill\FireSkill.cs" />
+    <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RandomDir.cs" />
     <Compile Include="Assets\Plugs\Dialogue Speaker\Scripts\DialogueSpeaker.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Inventory\Logic\Item.cs" />
+    <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
     <Compile Include="Assets\Scripts\Utilities\Event\BaseEvent.cs" />
     <Compile Include="Assets\Scripts\Transition\TransitionManager.cs" />
     <Compile Include="Assets\Plugs\Dialogue Speaker\Demo\Scripts\DialogueControls.cs" />
+    <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Spawn System\CFX_SpawnSystem.cs" />
     <Compile Include="Assets\Scripts\Items\BoxLogic.cs" />
     <Compile Include="Assets\Scripts\Audio\AudioType.cs" />
     <Compile Include="Assets\Scripts\Speaker\SpeakerLogic.cs" />
@@ -80,16 +88,25 @@
     <Compile Include="Assets\Scripts\Audio\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Cursor\CursorManager.cs" />
     <Compile Include="Assets\Scripts\Character\BaseCharacter.cs" />
+    <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_New.cs" />
+    <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_AutoRotate.cs" />
+    <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_AutoDestructShuriken.cs" />
+    <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo.cs" />
     <Compile Include="Assets\Plugs\Dialogue Speaker\Scripts\Dialogues.cs" />
     <Compile Include="Assets\Scripts\Inventory\Logic\InventoryManager.cs" />
+    <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_InspectorHelp.cs" />
     <Compile Include="Assets\Scripts\Audio\AudioPlayConroller.cs" />
+    <Compile Include="Assets\Scripts\Items\CardAndSkill\FireBall.cs" />
     <Compile Include="Assets\Scripts\Inventory\Data_SO\ItemDataList_SO.cs" />
+    <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RotateCamera.cs" />
     <Compile Include="Assets\Scripts\Utilities\Event\ColliderEvent.cs" />
     <Compile Include="Assets\Plugs\Dialogue Speaker\Demo\Scripts\QuitApp.cs" />
     <Compile Include="Assets\Arts\CharacterPack\Sample\Sample.cs" />
     <Compile Include="Assets\Scripts\Utilities\Enums.cs" />
     <Compile Include="Assets\Plugs\Dialogue Speaker\Demo\Scripts\EndMethod.cs" />
+    <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_LightIntensityFade.cs" />
     <Compile Include="Assets\Scripts\Utilities\Event\TriggerEvent.cs" />
+    <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_Translate.cs" />
     <Compile Include="Assets\Scripts\Transition\Teleport.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerCollision.cs" />
     <Compile Include="Assets\Scripts\Items\ItemLogic.cs" />
@@ -98,11 +115,17 @@
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\Arts\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR Particle Glow.shader" />
+    <None Include="Assets\Arts\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR Particle Ubershader.shader" />
+    <None Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Shaders\CFXM_MobileParticleAB_Alpha8.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\Arts\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\Arts\JMO Assets\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\Plugs\Dialogue Speaker\Readme.txt" />
+    <None Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\CartoonFX Readme.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -111,12 +134,17 @@
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\Arts\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Texts\_Make your own text effect.txt" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\M Studio\Plugins\MTool.dll" />
+    <None Include="Assets\Arts\JMO Assets\Cartoon FX Remaster\Readme Cartoon FX Remaster.txt" />
+    <None Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Shaders\CFXM_MobileParticleAdd_Alpha8.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\Arts\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR Particle Procedural Ring.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_WaterWiggle.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
@@ -1184,7 +1212,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="NodeCanvas.csproj" />
+    <ProjectReference Include="CFXRDemo.csproj" />
+    <ProjectReference Include="CFXRDemoEditor.csproj" />
+    <ProjectReference Include="CFXRRuntime.csproj" />
     <ProjectReference Include="ParadoxNotion.csproj" />
+    <ProjectReference Include="CFXREditor.csproj" />
   </ItemGroup>
   <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
   <ItemGroup>

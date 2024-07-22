@@ -65,8 +65,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Plugs\Dialogue Speaker\Scripts\Editor\DialogueSpeakerCustomInspector.cs" />
+    <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Editor\CFX_InspectorHelpEditor.cs" />
     <Compile Include="Assets\M Studio\Colourful Hierarchy Category GameObject\Editor\ColorPalette.cs" />
     <Compile Include="Assets\M Studio\Colourful Hierarchy Category GameObject\Editor\StyleHierarchy.cs" />
+    <Compile Include="Assets\Arts\JMO Assets\Cartoon FX Easy Editor\Editor\CFXEasyEditor.cs" />
+    <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Editor\CFX_SpawnSystemEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -1197,7 +1200,11 @@
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj" />
     <ProjectReference Include="NodeCanvas.csproj" />
+    <ProjectReference Include="CFXRDemo.csproj" />
+    <ProjectReference Include="CFXRDemoEditor.csproj" />
+    <ProjectReference Include="CFXRRuntime.csproj" />
     <ProjectReference Include="ParadoxNotion.csproj" />
+    <ProjectReference Include="CFXREditor.csproj" />
   </ItemGroup>
   <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
   <ItemGroup>

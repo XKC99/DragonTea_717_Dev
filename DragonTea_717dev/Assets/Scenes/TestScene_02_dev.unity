@@ -2879,7 +2879,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1253267942}
   m_Layer: 0
-  m_Name: Timelines
+  m_Name: '@Timelines'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5893,33 +5893,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 262bad0881759f54dbf10adef75bd772, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerUnityEvent:
+  triggerPlayerUnityEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3740120462454195321}
-        m_TargetAssemblyTypeName: DialogueSpeaker, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7014063674752595220}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  triggerBoxUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  triggerFireUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1005410071022006183
 Transform:
   m_ObjectHideFlags: 0
@@ -7193,7 +7175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 262bad0881759f54dbf10adef75bd772, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerUnityEvent:
+  triggerPlayerUnityEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6464287252243825550}
@@ -7220,6 +7202,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  triggerBoxUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  triggerFireUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &2843344356321696207
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10556,10 +10544,11 @@ SceneRoots:
   m_Roots:
   - {fileID: 619394802}
   - {fileID: 1499243848}
+  - {fileID: 1253267942}
   - {fileID: 3040199677672050620}
+  - {fileID: 1967811597667008489}
   - {fileID: 1040890630}
   - {fileID: 1165981960}
-  - {fileID: 1967811597667008489}
   - {fileID: 1996645102}
   - {fileID: 1916240173}
   - {fileID: 1995569976}
@@ -10568,5 +10557,4 @@ SceneRoots:
   - {fileID: 1240485514}
   - {fileID: 4433542799884337995}
   - {fileID: 6180282440018416650}
-  - {fileID: 1253267942}
   - {fileID: 8478763235183547901}

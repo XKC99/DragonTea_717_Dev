@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class TriggerEvent:BaseEvent
 {
     public UnityEvent triggerBoxUnityEvent; 
-    public UnityEvent triggerFireUnityEvent;
+ 
     
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -18,6 +18,7 @@ public class TriggerEvent:BaseEvent
         {
             OnTriggerBox();
         }
+        
     }
 
     private void OnTriggerBox()
@@ -26,10 +27,7 @@ public class TriggerEvent:BaseEvent
         triggerBoxUnityEvent?.Invoke();
     }
 
-    private void OnTriggerFire()
-    {
 
-    }
     
 
     

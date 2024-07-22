@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -11,7 +12,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;  //设置为单例模式
     public AudioType[] AudioTypes;
 
-    
+   
     private void Awake()
     {
         if(instance==null)
@@ -33,12 +34,13 @@ public class AudioManager : MonoBehaviour
     {
        foreach (AudioType audioType in AudioTypes)
         {
-            audioType.Source = gameObject.AddComponent<AudioSource>();
+            //audioType.Source = gameObject.AddComponent<AudioSource>();
             audioType.Source.clip = audioType.Clip;
             audioType.Source.name= audioType.Name;
             audioType.Source.loop = audioType.Loop;
             audioType.Source.pitch = audioType.Pitch;
             audioType.Source.volume = audioType.Volume;
+            audioType.Source.playOnAwake = audioType.PlayOnAwake;
             if(audioType.MixerGroup!=null)
             {
                 audioType.Source.outputAudioMixerGroup = audioType.MixerGroup;
@@ -81,6 +83,19 @@ public class AudioManager : MonoBehaviour
             if(type.Name==name)
             {
                 type.Source.Stop();
+                return;
+            }
+        }
+        Debug.Log("没有找到这个音频");
+    }
+
+    public void PlayOneShot(string name)
+    {
+        foreach(AudioType type in AudioTypes)
+        {
+            if(type.Name==name)
+            {
+                type.Source.PlayOneShot(type.Clip);
                 return;
             }
         }

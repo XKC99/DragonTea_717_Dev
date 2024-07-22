@@ -7,7 +7,6 @@ public class BaseEvent : MonoBehaviour
   
     //public UnityEvent colliderUnityEvent;
 
-
     protected virtual void OnTriggerPlayer()
     {
         Debug.Log($"Trigger触发:{gameObject.name}");
@@ -15,13 +14,4 @@ public class BaseEvent : MonoBehaviour
     }
 
    
-
-
-
-    /*protected virtual void OnCollider()
-    {
-        Debug.Log($"Collider触发:{gameObject.name}");
-        colliderUnityEvent?.Invoke();
-    }*/
-
 }

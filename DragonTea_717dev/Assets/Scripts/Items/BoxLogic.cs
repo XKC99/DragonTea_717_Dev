@@ -6,6 +6,7 @@ using UnityEngine;
 public class BoxLogic : ItemLogic
 {
     public string AudioName;
+    
     private void OnCollisionEnter2D(Collision2D other)
     {
         if(other.gameObject.tag == "Player")
@@ -13,6 +14,7 @@ public class BoxLogic : ItemLogic
             OnCollider(AudioName);
            // OnBoxCollision();
         }
+        
        
     }
     private void OnCollisionExit2D(Collision2D other)
@@ -21,7 +23,10 @@ public class BoxLogic : ItemLogic
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        
+      if(other.gameObject.tag == "Fire")
+      {
+          OnFire();
+      }
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -34,7 +39,5 @@ public class BoxLogic : ItemLogic
     }
 
 
-
-   
    
 }

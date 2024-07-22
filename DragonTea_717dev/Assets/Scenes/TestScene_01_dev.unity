@@ -289,6 +289,11 @@ SpriteShapeRenderer:
     m_Center: {x: 1.2700615, y: 2.0775952, z: 0}
     m_Extent: {x: 4.0700617, y: 5.9775968, z: 0}
   m_SpriteSortPoint: 0
+--- !u!4 &79679460 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5969428533530150507, guid: c8abfe76758b1e14483ae06676d3ca62, type: 3}
+  m_PrefabInstance: {fileID: 7599356270400555563}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &116874752
 GameObject:
   m_ObjectHideFlags: 0
@@ -1295,6 +1300,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1165981960}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &429761220 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1182814733295495747, guid: c8abfe76758b1e14483ae06676d3ca62, type: 3}
+  m_PrefabInstance: {fileID: 7599356270400555563}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &467373835
 GameObject:
   m_ObjectHideFlags: 0
@@ -4537,9 +4547,6 @@ MonoBehaviour:
   triggerBoxUnityEvent:
     m_PersistentCalls:
       m_Calls: []
-  triggerFireUnityEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!61 &1401007037
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4632,11 +4639,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerPlayerUnityEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5149843048625233257}
+        m_TargetAssemblyTypeName: Teleport, Assembly-CSharp
+        m_MethodName: TeleportToScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1441462388}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   triggerBoxUnityEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  triggerFireUnityEvent:
     m_PersistentCalls:
       m_Calls: []
 --- !u!61 &1441462391
@@ -4964,11 +4992,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerPlayerUnityEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 142565477}
+        m_TargetAssemblyTypeName: UnityEngine.Playables.PlayableDirector, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1569437944}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   triggerBoxUnityEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  triggerFireUnityEvent:
     m_PersistentCalls:
       m_Calls: []
 --- !u!61 &1569437947
@@ -5247,9 +5296,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   triggerBoxUnityEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  triggerFireUnityEvent:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &1692907340
@@ -5646,7 +5692,7 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: 20.196335, y: 2.8942537, z: 0}
+    - position: {x: 20.288239, y: 2.8942537, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -5654,7 +5700,7 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: 20.305481, y: 1.0126247, z: 0}
+    - position: {x: 20.948837, y: 0.89008045, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -5748,9 +5794,9 @@ MonoBehaviour:
   - {x: 6.897236, y: 2.4541545}
   - {x: 11.260841, y: 2.8912163}
   - {x: 16.126297, y: 2.9903011}
-  - {x: 20.19629, y: 2.892374}
-  - {x: 20.305458, y: 1.0107449}
-  - {x: 22.320503, y: 0.98683345}
+  - {x: 20.288193, y: 2.892374}
+  - {x: 20.948973, y: 0.8882053}
+  - {x: 22.31911, y: 0.9891474}
   - {x: 21.819435, y: -0.6421006}
   - {x: 19.621986, y: -0.67728245}
   - {x: 17.6016, y: 0.8126267}
@@ -5878,9 +5924,9 @@ EdgeCollider2D:
   - {x: 6.897236, y: 2.4541545}
   - {x: 11.260841, y: 2.8912163}
   - {x: 16.126297, y: 2.9903011}
-  - {x: 20.19629, y: 2.892374}
-  - {x: 20.305458, y: 1.0107449}
-  - {x: 22.320503, y: 0.98683345}
+  - {x: 20.288193, y: 2.892374}
+  - {x: 20.948973, y: 0.8882053}
+  - {x: 22.31911, y: 0.9891474}
   - {x: 21.819435, y: -0.6421006}
   - {x: 19.621986, y: -0.67728245}
   - {x: 17.6016, y: 0.8126267}
@@ -9390,9 +9436,6 @@ MonoBehaviour:
   triggerBoxUnityEvent:
     m_PersistentCalls:
       m_Calls: []
-  triggerFireUnityEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!222 &5597160135266402320
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9525,6 +9568,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8553098666910659716, guid: c8abfe76758b1e14483ae06676d3ca62, type: 3}
   m_PrefabInstance: {fileID: 7599356270400555563}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7060354935116398418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429761220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d6d07f67e28a5a41951b6010a764c2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireBallPrefab: {fileID: 292846501996241652, guid: 0f3355cd4da447644bbb3ee4f629de7d, type: 3}
+  fromPos: {fileID: 79679460}
+  mousePos: {x: 0, y: 0}
+  direction: {x: 0, y: 0}
 --- !u!1 &7280346982057181282
 GameObject:
   m_ObjectHideFlags: 0
@@ -9621,7 +9680,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1182814733295495747, guid: c8abfe76758b1e14483ae06676d3ca62, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7060354935116398418}
   m_SourcePrefab: {fileID: 100100000, guid: c8abfe76758b1e14483ae06676d3ca62, type: 3}
 --- !u!114 &7609949443134271090
 MonoBehaviour:
@@ -9665,9 +9727,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  triggerFireUnityEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &8215973234680969707
 MonoBehaviour:
   m_ObjectHideFlags: 0

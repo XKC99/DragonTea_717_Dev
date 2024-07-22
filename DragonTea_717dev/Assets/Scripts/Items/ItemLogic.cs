@@ -6,7 +6,9 @@ public class ItemLogic : MonoBehaviour
 {
     protected virtual void OnCollider(string AudioName)
     {
-        AudioManager.instance.Play(AudioName);
+        
     }
+
+    
    
 }

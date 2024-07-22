@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 262bad0881759f54dbf10adef75bd772, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerUnityEvent:
+  triggerPlayerUnityEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 605547467}
@@ -244,6 +244,12 @@ MonoBehaviour:
           m_StringArgument: 1001
           m_BoolArgument: 0
         m_CallState: 2
+  triggerBoxUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  triggerFireUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &570278824
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -15,6 +15,18 @@ public class BoxLogic : ItemLogic
         }
        
     }
+    private void OnCollisionExit2D(Collision2D other)
+    {
+      
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+    }
     override protected void OnCollider(string AudioName)
     {
         //AudioName=this.AudioName;
@@ -22,13 +34,7 @@ public class BoxLogic : ItemLogic
     }
 
 
-    /*
-    private void OnBoxCollision()
-    {
-        //AudioManager.PlayOneShot("澤野弘之 - snow");
-        AudioManager.instance.Play("123");    
-        Debug.Log("BoxCollision");
-    }
-    */
+
+   
    
 }

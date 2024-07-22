@@ -9227,6 +9227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a15f05f9d01327d48812cd70009a2834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcDialogueTreeController: {fileID: 0}
 --- !u!4 &5338051053931024529
 Transform:
   m_ObjectHideFlags: 0
@@ -10370,7 +10371,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   jumpForce: 5
-  FNote: {fileID: 0}
 --- !u!224 &8777863502344909853
 RectTransform:
   m_ObjectHideFlags: 0

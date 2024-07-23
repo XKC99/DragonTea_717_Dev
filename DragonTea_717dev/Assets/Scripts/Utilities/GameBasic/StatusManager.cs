@@ -5,4 +5,5 @@ using UnityEngine;
 public class StatusManager:MonoBehaviour
 {
     public bool isFirstGetMagic;
+    public bool isGetWheelofFate;
 }

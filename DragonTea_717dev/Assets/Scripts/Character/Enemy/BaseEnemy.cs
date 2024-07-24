@@ -14,10 +14,16 @@ public class BaseEnemy : CharacterStatus
     public float chaseSpeed;
 
     public float currentSpeed;
-    public Vector3 faceDirct;
+    private Vector3 faceDirct;  //面朝方向
+
+    [Header("计时器")]
+    public float waitTime;
+    public float waitTimeCounter;
+    public bool wait;
  
     protected void Awake()
     {
+        waitTimeCounter=waitTime;
         rb=GetComponent<Rigidbody2D>();
         anim=GetComponent<Animator>();
         physicsCheck=GetComponent<PhysicsCheck>();
@@ -32,10 +38,12 @@ public class BaseEnemy : CharacterStatus
     private void Update()
     {
         faceDirct=new Vector3(-transform.localScale.x,0,0); //控制形象方向
-        if(physicsCheck.touchLeftWall||physicsCheck.touchRightWall)
+        if((physicsCheck.touchLeftWall&&faceDirct.x<0)||(physicsCheck.touchRightWall&&faceDirct.x>0))
         {
-            transform.localScale=new Vector3(faceDirct.x,1,1);
+            wait=true;
+            anim.SetBool("Walk",false);
         }
+        TimeCounter();
 
     }
 
@@ -49,6 +57,26 @@ public class BaseEnemy : CharacterStatus
     {
         rb.velocity=new Vector2(faceDirct.x*currentSpeed*Time.deltaTime,rb.velocity.y);
         anim.SetBool("Walk",true);
+    }
+
+    public void TimeCounter()
+    {
+        if(wait)
+        {
+            waitTimeCounter-=Time.deltaTime;
+            if(waitTimeCounter<=0)
+            {
+                wait=false;
+                waitTimeCounter=waitTime;
+                Flip();
+            }
+
+        }
+    }
+
+    public void Flip()
+    {
+        transform.localScale=new Vector3(faceDirct.x,2,-1);  //后面2个值是因为本身素材大小的问题，一般是1，1
     }
 
 

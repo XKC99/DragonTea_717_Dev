@@ -24,7 +24,7 @@ public class PhysicsCheck : MonoBehaviour
         collider=GetComponent<CapsuleCollider2D>();
         if(!manual)
         {
-            rightOff=new Vector2((collider.bounds.size.x+collider.offset.x)/2,collider.bounds.size.y/2);
+            rightOff=new Vector2(collider.bounds.size.x/2+collider.offset.x,collider.bounds.size.y/2);
             leftOff=new Vector2(-rightOff.x,rightOff.y);
         }
     }

@@ -1387,7 +1387,7 @@ Transform:
   m_GameObject: {fileID: 225911710}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -97.936584, y: 5.325168, z: -3.6815126}
+  m_LocalPosition: {x: -91.41658, y: 2.1851678, z: -3.6815126}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2772,7 +2772,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -97.936584, y: 5.325168, z: -3.6815126}
+  m_LocalPosition: {x: -91.41658, y: 2.1851678, z: -3.6815126}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13600,7 +13600,7 @@ Transform:
   m_GameObject: {fileID: 960510240773841015}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -99.7, y: -1.3, z: -0.3}
+  m_LocalPosition: {x: -93.55, y: -4.44, z: -0.3}
   m_LocalScale: {x: 2, y: 2, z: -1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13744,7 +13744,9 @@ MonoBehaviour:
   normalSpeed: 30
   chaseSpeed: 50
   currentSpeed: 0
-  faceDirct: {x: 0, y: 0, z: 0}
+  waitTime: 2
+  waitTimeCounter: 0
+  wait: 0
 --- !u!70 &960510240781221820
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -13792,14 +13794,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3c75df53946ff549a1cc05125bb8612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manual: 0
+  manual: 1
   bottomOffset: {x: 0, y: 0}
-  leftOff: {x: 0, y: 0}
-  rightOff: {x: 0, y: 0}
+  leftOff: {x: -0.5, y: 0.6}
+  rightOff: {x: 0.5, y: 0.6}
   checkRadius: 0.1
   groundLayer:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 256
   isGround: 0
   touchLeftWall: 0
   touchRightWall: 0
@@ -17251,7 +17253,7 @@ Transform:
   m_GameObject: {fileID: 3793542772082298773}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -98.16, y: -1.2, z: -0.68}
+  m_LocalPosition: {x: -91.64, y: -4.34, z: -0.68}
   m_LocalScale: {x: -2, y: 2, z: -1}
   m_ConstrainProportionsScale: 0
   m_Children:

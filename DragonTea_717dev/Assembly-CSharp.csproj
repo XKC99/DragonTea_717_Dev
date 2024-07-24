@@ -64,6 +64,7 @@
     <Analyzer Include="C:\unity\2022.3.34f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Character\PhysicsCheck.cs" />
     <Compile Include="Assets\Scripts\Audio\Data_SO\PlayAudio_SO.cs" />
     <Compile Include="Assets\Scripts\Audio\AudioSourceTest.cs" />
     <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_ShurikenThreadFix.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="Assets\Scripts\Utilities\PoolTool.cs" />
     <Compile Include="Assets\Scripts\Cursor\CursorManager.cs" />
     <Compile Include="Assets\Scripts\Items\Card\FireSkill.cs" />
+    <Compile Include="Assets\Scripts\Character\Enemy\ZombieEnemy.cs" />
     <Compile Include="Assets\Scripts\Character\BaseCharacter.cs" />
     <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_New.cs" />
     <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_AutoRotate.cs" />
@@ -106,9 +108,11 @@
     <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RotateCamera.cs" />
     <Compile Include="Assets\Scripts\Utilities\Event\ColliderEvent.cs" />
     <Compile Include="Assets\Plugs\Dialogue Speaker\Demo\Scripts\QuitApp.cs" />
+    <Compile Include="Assets\Scripts\Character\Enemy\BaseEnemy.cs" />
     <Compile Include="Assets\Arts\CharacterPack\Sample\Sample.cs" />
     <Compile Include="Assets\Scripts\Utilities\Enums.cs" />
     <Compile Include="Assets\Scripts\Items\Card\ScriptObject\CardDataSO.cs" />
+    <Compile Include="Assets\Scripts\Character\CharacterStatus.cs" />
     <Compile Include="Assets\Plugs\Dialogue Speaker\Demo\Scripts\EndMethod.cs" />
     <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_LightIntensityFade.cs" />
     <Compile Include="Assets\Scripts\Utilities\Event\TriggerEvent.cs" />

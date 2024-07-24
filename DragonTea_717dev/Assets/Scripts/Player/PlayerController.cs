@@ -14,22 +14,21 @@ public class PlayerController : MonoBehaviour
 
     private bool isGrounded = false;
     private bool facingRight = true;
+
+    private PhysicsCheck physicsCheck;
     
     
-    //private DialogueTreeController triggerNpc;//存储triggerNPC记录
     private PlayerCollision playerCollision;
-
-    //private bool cantMove => triggerNpc != null && triggerNpc.isRunning;  //判断是否能移动
-
     private bool cantMove => playerCollision.npcDialogueTreeController != null && playerCollision.npcDialogueTreeController.isRunning;
 
-    //public GameObject FNote; //按F交互的提示
 
     private void Start()
     {
         playerCollision=GetComponent<PlayerCollision>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        physicsCheck=GetComponent<PhysicsCheck>();
     }
 
     private void FixedUpdate()
@@ -44,18 +43,11 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown("space") && isGrounded && !cantMove)  //按下空格，且在地面，且不能移动时才可添加力
+        if (Input.GetKeyDown("space") && physicsCheck.isGround && !cantMove)  //按下空格，且在地面，且不能移动时才可添加力
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
 
-        
-        /*
-        if (Input.GetKeyDown("f") && triggerNpc!= null) {   //开启对话
-            Debug.Log("F显示取消"); 
-            FNote.SetActive(false); //这里添加取消显示的逻辑
-            triggerNpc.StartDialogue();
-        }*/
         
        if(Input.GetKeyDown("f") && playerCollision.npcDialogueTreeController!= null)
         {
@@ -125,35 +117,6 @@ public class PlayerController : MonoBehaviour
         }
         
     }
-
-   //触发器检测↓ 
-   /*private void OnTriggerEnter2D(Collider2D other)
-   {
-    if(other.gameObject.CompareTag("NPC")) //为什么这里按下F没办法操作：因为进入碰撞和按F几乎不可能同时发生
-    {
-        //Debug.Log("按下F显示");
-        FNote=other.transform.Find("Canvas").gameObject;
-         FNote.SetActive(true);  
-       triggerNpc=other.gameObject.GetComponentInChildren<DialogueTreeController>();
-        
-    }
-   
-   }
-
-   private void OnTriggerExit2D(Collider2D other) 
-   {
-        if(other.gameObject.CompareTag("NPC"))
-        {
-            var npc=other.gameObject.GetComponentInChildren<DialogueTreeController>();
-            if(triggerNpc == npc)
-            {
-                triggerNpc = null;
-            }
-            FNote.SetActive(false);
-
-        }
-   }*/
-
    
 
 

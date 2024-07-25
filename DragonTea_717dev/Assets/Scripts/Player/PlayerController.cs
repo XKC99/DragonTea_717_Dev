@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
 
     private bool isGrounded = false;
     private bool facingRight = true;
+    private bool isDead= false;
+    private bool isAttack = false;
 
     private PhysicsCheck physicsCheck;
     
@@ -33,8 +35,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
-        if (cantMove) {  //不能移动就动不了
+        if (cantMove||isDead) {  //不能移动就动不了
             return;
         }
 
@@ -43,6 +44,10 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if(Input.GetMouseButton(0))
+        {
+            PlayerIsAttack();
+        }
         if (Input.GetKeyDown("space") && physicsCheck.isGround && !cantMove)  //按下空格，且在地面，且不能移动时才可添加力
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
@@ -116,6 +121,19 @@ public class PlayerController : MonoBehaviour
                 break;
         }
         
+    }
+    public void PlayerIsDead()  //这里是玩家死后执行的东西。可以添加很多具体内容。
+    {
+        isDead = true;
+        animator.SetBool("Dead",true);
+        
+    }
+
+    public void PlayerIsAttack()
+    {
+        isAttack = true;
+        Debug.Log("攻击");
+        animator.SetTrigger("Attack");
     }
    
 

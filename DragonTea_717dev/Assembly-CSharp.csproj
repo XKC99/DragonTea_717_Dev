@@ -109,7 +109,9 @@
     <Compile Include="Assets\Scripts\Utilities\Event\ColliderEvent.cs" />
     <Compile Include="Assets\Plugs\Dialogue Speaker\Demo\Scripts\QuitApp.cs" />
     <Compile Include="Assets\Scripts\Character\Enemy\BaseEnemy.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerStatus.cs" />
     <Compile Include="Assets\Arts\CharacterPack\Sample\Sample.cs" />
+    <Compile Include="Assets\Scripts\Character\Enemy\BaseState.cs" />
     <Compile Include="Assets\Scripts\Utilities\Enums.cs" />
     <Compile Include="Assets\Scripts\Items\Card\ScriptObject\CardDataSO.cs" />
     <Compile Include="Assets\Scripts\Character\CharacterStatus.cs" />
@@ -118,6 +120,7 @@
     <Compile Include="Assets\Scripts\Utilities\Event\TriggerEvent.cs" />
     <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_Translate.cs" />
     <Compile Include="Assets\Scripts\Transition\Teleport.cs" />
+    <Compile Include="Assets\Scripts\Character\Enemy\ZombiePatrolState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerCollision.cs" />
     <Compile Include="Assets\Scripts\Items\ItemLogic.cs" />
     <Compile Include="Assets\Scripts\UI\UIFollowObject.cs" />

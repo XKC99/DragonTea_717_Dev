@@ -13,7 +13,14 @@ public class PlayerStatus : CharacterStatus
 
     void Start()
     {
-        
+        if(currentHp <= 0)
+        {
+            OnCharacterIsDead();
+        }
+        if(currentHp ==maxHP)
+        {
+            OnCharacterIsHealthy();
+        }
     }
 
     // Update is called once per frame

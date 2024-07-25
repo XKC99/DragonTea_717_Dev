@@ -1314,7 +1314,7 @@ Transform:
   m_GameObject: {fileID: 225911710}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.676578, y: -13.074833, z: -3.6815126}
+  m_LocalPosition: {x: -81.17658, y: 0.5651679, z: -3.6815126}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2867,7 +2867,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.676578, y: -13.074833, z: -3.6815126}
+  m_LocalPosition: {x: -81.17658, y: 0.5651679, z: -3.6815126}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11437,6 +11437,37 @@ SpriteShapeRenderer:
     m_Center: {x: 4.5528827, y: 1.0446894, z: 0}
     m_Extent: {x: 8.104765, y: 3.3768325, z: 0}
   m_SpriteSortPoint: 0
+--- !u!1 &1815976920
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1815976921}
+  m_Layer: 0
+  m_Name: PointB
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1815976921
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815976920}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 960510240774050967}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1866125780
 GameObject:
   m_ObjectHideFlags: 0
@@ -12839,6 +12870,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFirstGetMagic: 0
   isGetWheelofFate: 0
+--- !u!1 &2111715357
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2111715358}
+  m_Layer: 0
+  m_Name: PointA
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2111715358
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111715357}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.01, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 960510240774050967}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2118812475
 GameObject:
   m_ObjectHideFlags: 0
@@ -14356,7 +14418,7 @@ GameObject:
   - component: {fileID: 960510240781221820}
   - component: {fileID: 960510240781221822}
   m_Layer: 0
-  m_Name: Zombie
+  m_Name: "\u50F5\u5C38"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14961,12 +15023,14 @@ Transform:
   m_GameObject: {fileID: 960510240773841015}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -93.55, y: -4.44, z: -0.3}
+  m_LocalPosition: {x: -91.67, y: -4.44, z: -0.3}
   m_LocalScale: {x: 2, y: 2, z: -1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 960510240774050895}
   - {fileID: 960510240774050861}
+  - {fileID: 2111715358}
+  - {fileID: 1815976921}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &960510240777020791
@@ -15155,17 +15219,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 960510240773841015}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b253afdc047acd4096b2c1355458c25, type: 3}
+  m_Script: {fileID: 11500000, guid: 40547a573ba88cf41b7c03925e8604f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 3
   currentHp: 2
+  anim: {fileID: 0}
   DeadEvent:
     m_PersistentCalls:
       m_Calls: []
+  physicsCheck: {fileID: 0}
   normalSpeed: 30
   chaseSpeed: 50
   currentSpeed: 0
+  faceDirct: {x: 0, y: 0, z: 0}
   waitTime: 3
   waitTimeCounter: 0
   wait: 0
@@ -18669,7 +18736,7 @@ Transform:
   m_GameObject: {fileID: 3793542772082298773}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.9, y: -19.6, z: -0.68}
+  m_LocalPosition: {x: -81.4, y: -5.96, z: -0.68}
   m_LocalScale: {x: -2, y: 2, z: -1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -28471,9 +28538,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 3
   currentHp: 2
+  anim: {fileID: 0}
   DeadEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8750134883065015787}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: PlayerIsDead
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8763021096246448979
 GameObject:
   m_ObjectHideFlags: 0

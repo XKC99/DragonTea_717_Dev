@@ -11,7 +11,7 @@ public class CharacterStatus : MonoBehaviour
     public int maxHP;
     public int currentHp;
 
-    protected Animator anim;
+    [HideInInspector]public Animator anim;
     public UnityEvent DeadEvent;
 
    

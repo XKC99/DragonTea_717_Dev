@@ -9,20 +9,21 @@ public class BaseEnemy : CharacterStatus
     //protected Animator anim;  父类已有
     [Header("基本参数")]
     // Start is called before the first frame update
-    PhysicsCheck physicsCheck;
+    [HideInInspector]public PhysicsCheck physicsCheck;
     public float normalSpeed;
     public float chaseSpeed;
     public float currentSpeed;
-    private Vector3 faceDirct;  //面朝方向
+    [HideInInspector]public Vector3 faceDirct;  //面朝方向
 
     protected bool isDead;
+    protected bool isAttack;
 
     [Header("计时器")]
     public float waitTime;
     public float waitTimeCounter;
     public bool wait;
  
-    protected void Awake()
+    protected virtual void Awake()
     {
         waitTimeCounter=waitTime;
         rb=GetComponent<Rigidbody2D>();
@@ -31,6 +32,12 @@ public class BaseEnemy : CharacterStatus
         currentSpeed=normalSpeed;
     }
     void Start()
+    {
+        
+    }
+
+
+    private void OnEnable()
     {
         
     }
@@ -48,12 +55,18 @@ public class BaseEnemy : CharacterStatus
         }
 
         faceDirct=new Vector3(-transform.localScale.x,0,0); //控制形象方向
+        
         if((physicsCheck.touchLeftWall&&faceDirct.x<0)||(physicsCheck.touchRightWall&&faceDirct.x>0))
         {
             wait=true;
             anim.SetBool("Walk",false);
         }
+        
+
+      
         TimeCounter();
+        
+
 
     }
 
@@ -64,11 +77,18 @@ public class BaseEnemy : CharacterStatus
         {
              EneymyMove();
         }
+        //currentState.PhysicsUpdate();  //执行不同条件下状态的切换(物理相关)
         
     }
 
-    public void EneymyMove()
+  
+    private void OnDisable()
     {
+       // currentState.Exit();
+    }
+
+    public virtual void EneymyMove()
+    {   
         rb.velocity=new Vector2(faceDirct.x*currentSpeed*Time.deltaTime,rb.velocity.y);
         anim.SetBool("Walk",true);
     }
@@ -100,7 +120,6 @@ public class BaseEnemy : CharacterStatus
 
     public void EnemyDie()
     {
-        Debug.Log("僵尸死亡");
         anim.SetBool("Dead",true);
         isDead=true;
     }

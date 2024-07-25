@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
 
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
+
+    public float jumpDeadSpeed=-10f;   //落地时死亡速度
     private Rigidbody2D rb;
     private Animator animator;
 
@@ -31,6 +33,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
 
         physicsCheck=GetComponent<PhysicsCheck>();
+        physicsCheck.onGroundChange += OnGroundChange;
     }
 
     private void FixedUpdate()
@@ -44,7 +47,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetMouseButton(0))
+        if(Input.GetMouseButtonDown(0))
         {
             PlayerIsAttack();
         }
@@ -122,6 +125,16 @@ public class PlayerController : MonoBehaviour
         }
         
     }
+
+    private void OnGroundChange(bool isGround) 
+    {
+        if (isGround) {
+            if (physicsCheck.LastVelocity.y < jumpDeadSpeed) {
+                PlayerIsDead();
+            }
+        }
+    }
+
     public void PlayerIsDead()  //这里是玩家死后执行的东西。可以添加很多具体内容。
     {
         isDead = true;

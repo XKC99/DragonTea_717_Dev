@@ -18,3 +18,8 @@ public enum CardType
 {
     Fire,Heal,Fly,Fall
 }
+
+public enum EnemyState
+{
+  Patrol,Chase,Attack
+}

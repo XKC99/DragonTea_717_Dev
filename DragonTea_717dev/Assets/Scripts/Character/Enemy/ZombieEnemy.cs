@@ -8,6 +8,7 @@ public class ZombieEnemy : BaseEnemy
     {
         base.Awake();
         patrolState = new ZombiePatrolState();//里氏替换原则
+        chaseState = new ZombieChaseState();
     }
 
 }

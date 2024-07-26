@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using ParadoxNotion;
 using UnityEngine;
 using UnityEngine.ResourceManagement.ResourceProviders.Simulation;
 
@@ -20,12 +21,22 @@ public class BaseEnemy : CharacterStatus
     protected bool isAttack;
     protected BaseState patrolState;
     protected BaseState currentState;
-    protected BaseState ChaseState;
+    protected BaseState chaseState;
+
+    [Header("检测")]
+    public Vector2 centerOffset;
+    public Vector2 checkSize;
+    public float checkDistance;
+    public LayerMask attackLayer;
+
 
     [Header("计时器")]
     public float waitTime;
     public float waitTimeCounter;
     public bool wait;
+
+    public float losePlayerTime;
+    public float losePlayerTimeCounter;
  
     protected virtual void Awake()
     {
@@ -107,9 +118,18 @@ public class BaseEnemy : CharacterStatus
                 waitTimeCounter=waitTime;
                 Flip();
             }
+        }
 
+        if(!FindPlayer()&&losePlayerTimeCounter>0)
+        {
+            losePlayerTimeCounter-=Time.deltaTime;
+        }
+        else
+        {
+            losePlayerTimeCounter=losePlayerTime;
         }
     }
+
 
     public void Flip()
     {
@@ -126,6 +146,25 @@ public class BaseEnemy : CharacterStatus
         anim.SetBool("Dead",true);
         isDead=true;
     }
+
+    public bool FindPlayer()
+    {
+       return Physics2D.BoxCast(transform.position+(Vector3)centerOffset,checkSize,0,faceDirct,checkDistance,attackLayer);
+    }
+
+    public void SwitchState(EnemyState enemyState)
+    {
+        var newState=enemyState switch
+        {
+            EnemyState.Patrol => patrolState,
+            EnemyState.Chase => chaseState,
+            _ => null
+        };
+        currentState.Exit();
+        currentState=newState;
+        currentState.Enter(this);
+        
+    }
  
     
     public void DestroyAfterDeadAnimPlayed()
@@ -133,6 +172,14 @@ public class BaseEnemy : CharacterStatus
         Debug.Log("销毁僵尸");
         Destroy(gameObject);
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position+(Vector3)centerOffset+new Vector3(checkDistance*-transform.localScale.x,0,0),0.2f);
+    }
+
+    
+    
 
 
 }

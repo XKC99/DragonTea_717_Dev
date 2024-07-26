@@ -9,22 +9,23 @@ public class ZombiePatrolState : BaseState
         currentEnemy=enemy;
     }
 
-    public override void Exit()
-    {
-        
-    }
-
     public override void LogicUpdate()
     {   
         //判断是否浮空或撞墙，若是，退出移动状态
-        if(!currentEnemy.physicsCheck.isGround||(currentEnemy.physicsCheck.touchLeftWall&&currentEnemy.faceDirct.x<0)||(currentEnemy.physicsCheck.touchRightWall&&currentEnemy.faceDirct.x>0))
+        if((currentEnemy.physicsCheck.touchLeftWall&&currentEnemy.faceDirct.x<0)||(currentEnemy.physicsCheck.touchRightWall&&currentEnemy.faceDirct.x>0))
         {
             currentEnemy.wait=true;
             currentEnemy.anim.SetBool("Walk",false);
         }
+        //!currentEnemy.physicsCheck.isGround||
     }
 
     public override void PhysicsUpdate()
+    {
+        
+    }
+
+    public override void Exit()
     {
         
     }

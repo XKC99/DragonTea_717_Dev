@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class ZombieEnemy : BaseEnemy
 {
-    /// <summary>
-    /// Awake is called when the script instance is being loaded.
-    /// </summary>
- 
+    protected override void Awake()
+    {
+        base.Awake();
+        patrolState = new ZombiePatrolState();//里氏替换原则
+    }
+
 }

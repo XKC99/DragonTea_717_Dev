@@ -15,8 +15,12 @@ public class BaseEnemy : CharacterStatus
     public float currentSpeed;
     [HideInInspector]public Vector3 faceDirct;  //面朝方向
 
+    [Header("状态")]
     protected bool isDead;
     protected bool isAttack;
+    protected BaseState patrolState;
+    protected BaseState currentState;
+    protected BaseState ChaseState;
 
     [Header("计时器")]
     public float waitTime;
@@ -31,18 +35,19 @@ public class BaseEnemy : CharacterStatus
         physicsCheck=GetComponent<PhysicsCheck>();
         currentSpeed=normalSpeed;
     }
+
     void Start()
     {
         
     }
 
-
     private void OnEnable()
     {
-        
+        currentState=patrolState;
+        currentState.Enter(this);
     }
 
-    // Update is called once per frame
+    
    void Update()
     {
         if(currentHp <= 0)
@@ -56,17 +61,15 @@ public class BaseEnemy : CharacterStatus
 
         faceDirct=new Vector3(-transform.localScale.x,0,0); //控制形象方向
         
+        /*
         if((physicsCheck.touchLeftWall&&faceDirct.x<0)||(physicsCheck.touchRightWall&&faceDirct.x>0))
         {
             wait=true;
             anim.SetBool("Walk",false);
-        }
+        }*/
         
-
-      
+        currentState.LogicUpdate();  //执行不同条件下状态的切换(逻辑相关)
         TimeCounter();
-        
-
 
     }
 
@@ -77,14 +80,14 @@ public class BaseEnemy : CharacterStatus
         {
              EneymyMove();
         }
-        //currentState.PhysicsUpdate();  //执行不同条件下状态的切换(物理相关)
+        currentState.PhysicsUpdate();  //执行不同条件下状态的切换(物理相关)
         
     }
 
   
     private void OnDisable()
     {
-       // currentState.Exit();
+        currentState.Exit();
     }
 
     public virtual void EneymyMove()

@@ -6,7 +6,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Collider2D))]
 public class ColliderEvent : BaseEvent
 {
-     public UnityEvent ColliderEventPlayer; 
+     public UnityEvent ColliderPlayerEvent; 
     private void OnCollisionEnter2D(Collision2D other)
     {
 
@@ -22,6 +22,6 @@ public class ColliderEvent : BaseEvent
     public void OnColliderPlayer()
     {
         Debug.Log($"Collider触发:{gameObject.name}");
-        ColliderEventPlayer?.Invoke();
+        ColliderPlayerEvent?.Invoke();
     }
 }

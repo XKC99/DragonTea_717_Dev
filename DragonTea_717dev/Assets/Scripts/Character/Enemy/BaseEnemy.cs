@@ -135,6 +135,12 @@ public class BaseEnemy : CharacterStatus
     {
         transform.localScale=new Vector3(faceDirct.x,2,-1);  //后面2个值是因为本身素材大小的问题，一般是1，1
     }
+    public void HurtPlayer()
+    {
+        anim.SetTrigger("Attack");
+    }
+
+    
 
     public void GetDamage()
     {

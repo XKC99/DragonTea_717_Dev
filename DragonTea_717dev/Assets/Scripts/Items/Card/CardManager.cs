@@ -12,10 +12,10 @@ public class CardManager : MonoBehaviour
 
    private void InitCardList()
    {
-      //Addressables.LoadAssetAsync<CardDataSO>("CardData").Completed += OnCardDataLoaded;
+      Addressables.LoadAssetsAsync<CardDataSO>("CardData",null).Completed += OnCardDataLoaded;
    }
 
-    private void OnCardDataLoaded(AsyncOperationHandle<List<CardDataSO>> handle)
+    private void OnCardDataLoaded(AsyncOperationHandle<IList<CardDataSO>> handle)
     {
       if(handle.Status == AsyncOperationStatus.Succeeded)
       {

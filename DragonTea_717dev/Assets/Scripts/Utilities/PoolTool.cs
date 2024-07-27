@@ -20,7 +20,7 @@ public class PoolTool : MonoBehaviour
             defaultCapacity: 10,
             maxSize: 10
         );
-        PreFillPool(3);
+        PreFillPool(5);
     }
 
     private void PreFillPool(int count)  //预先生成一些
@@ -38,4 +38,15 @@ public class PoolTool : MonoBehaviour
         }
 
     }
+
+    public GameObject GetObjectFromPool()
+    {
+        return pool.Get();
+    }
+
+    public void ReleaseObjectToPool(GameObject obj)
+    {
+        pool.Release(obj);
+    }
+
 }

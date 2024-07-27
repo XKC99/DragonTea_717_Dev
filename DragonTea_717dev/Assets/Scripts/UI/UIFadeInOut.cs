@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class UIFadeInOut : MonoBehaviour
 {
-    private CanvasGroup canvasGroup;
+    [HideInInspector]public CanvasGroup canvasGroup;
     public float fadeSpeed = 5f;
-    private bool isFade=false;
-
     void Start()
     {
         canvasGroup = GetComponent<CanvasGroup>();
@@ -23,7 +21,9 @@ public class UIFadeInOut : MonoBehaviour
 {
     if (canvasGroup.alpha < 1)
     {
-        canvasGroup.alpha = Mathf.Min(canvasGroup.alpha + fadeSpeed * Time.deltaTime, 1);
+        //Debug.Log("haohaohao");
+        canvasGroup.alpha +=fadeSpeed*Time.deltaTime;
+        Debug.Log("haohaohao");//这个输出了，但是没有显示出来，奇怪
         canvasGroup.interactable = true;
         canvasGroup.blocksRaycasts = true;
     }
@@ -33,7 +33,7 @@ public class UIFadeInOut : MonoBehaviour
 {
     if (canvasGroup.alpha > 0)
     {
-        canvasGroup.alpha = Mathf.Max(canvasGroup.alpha - fadeSpeed * Time.deltaTime, 0);
+        canvasGroup.alpha-=fadeSpeed*Time.deltaTime;
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
     }

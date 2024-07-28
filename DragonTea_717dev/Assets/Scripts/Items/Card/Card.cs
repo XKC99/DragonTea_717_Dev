@@ -21,12 +21,20 @@ public class Card : MonoBehaviour
 
     public bool isAnimating;
     public CardDataSO cardData;
+    public CardType initCardType;
+    public List<CardDataSO> cardConfigList;
 
     internal Vector3 localOffset;
 
     private void Start()
     {
+        //InitCard(cardData);
         InitCard(cardData);
+    }
+
+    private void OnDestroy() 
+    {
+        CardDeck.Instance.RemoveHandCard(this);
     }
 
     public void InitCard(CardDataSO data)
@@ -36,11 +44,44 @@ public class Card : MonoBehaviour
         cardSprite.sprite = data.cardImage;
         //cardDescription.text = data.description;
         cardValue = data.cardValue;
-        
+    }
+
+    public void ChangeCardType(CardType type) 
+    {
+        foreach (var data in cardConfigList)
+        {
+            if (data.cardType != type) continue;
+            cardData = data;
+            cardType = data.cardType;
+            cardSprite.sprite = data.cardImage;
+            //cardDescription.text = data.description;
+            cardValue = data.cardValue;
+        }
     }
     
     public void RefreshOffset()
     {
         localOffset = transform.localPosition;
+    }
+
+    public void ChangeCard()
+    {
+        Debug.Log("卡牌转换");
+        switch (cardType)
+        {
+            case CardType.Fire:
+            ChangeCardType(CardType.Heal);
+            break;
+            case CardType.Heal:
+            ChangeCardType(CardType.Fire);
+            break;
+            case CardType.Fly:
+            ChangeCardType(CardType.Fall);
+            break;
+            case CardType.Fall:
+            ChangeCardType(CardType.Fly);
+            break;
+        }
+
     }
 }

@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
+
 
 public class CardDeck : Singleton<CardDeck>
 
@@ -13,7 +16,6 @@ public class CardDeck : Singleton<CardDeck>
     private List<CardDataSO> discardDeck=new(); //弃牌堆
 
     [SerializeField]private List<Card> handCardObjects=new(); //当前手牌
-
 
 
     public void InitCardDeck()
@@ -40,7 +42,11 @@ public class CardDeck : Singleton<CardDeck>
         }
     }
 
-    
+    public void RemoveHandCard(Card card) 
+    {
+        handCardObjects.Remove(card);
+        SetCardLayOut();
+    }
 
 
 

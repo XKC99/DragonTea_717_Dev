@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Pool;
 
-public class PoolTool : MonoBehaviour
+public class PoolTool : Singleton<PoolTool>
 {
     public GameObject objectPrefa;
     private ObjectPool<GameObject> pool;

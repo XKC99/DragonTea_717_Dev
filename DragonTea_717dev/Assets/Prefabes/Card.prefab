@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2528049749259253642}
   - component: {fileID: 6031882275747117984}
   - component: {fileID: 4324152017871862260}
+  - component: {fileID: 7774453595179570568}
   m_Layer: 7
   m_Name: Card
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 7426285525361135264}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -150.63, y: -5.03, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -63,10 +64,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.009475708, y: -0.0022825003}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -93,7 +94,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardSprite: {fileID: 5011829151859684758}
   cardDescription: {fileID: 0}
+  cardValue: 0
+  cardType: 0
+  originalPosition: {x: 0, y: 0, z: 0}
+  originalRotation: {x: 0, y: 0, z: 0, w: 0}
+  originalLayerOrder: 0
+  isAnimating: 0
   cardData: {fileID: 11400000, guid: bddf5ce9f8039dc42a4ca0c32401c297, type: 2}
+--- !u!114 &7774453595179570568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7426285525361135264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fa92f1730a0654f8881a0a2dcc5735, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7721410298961362878
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,8 +215,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2142833739
-  m_SortingLayer: 3
+  m_SortingLayerID: -570645827
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7fc28fd9fff9f534ebb5539f9729f112, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

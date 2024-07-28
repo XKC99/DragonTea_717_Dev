@@ -5,7 +5,13 @@ using UnityEngine;
 
 public class CursorManager : MonoBehaviour
 {
-    private Vector3 mouseWorldPos=>Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,Input.mousePosition.y,0));
+    private Vector3 mouseWorldPos {
+        get {
+            var camera = Camera.main;
+            if (camera == null) return Vector3.zero;
+            return Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,Input.mousePosition.y,0));
+        }
+    }
     private bool canClick;
   
     private void Update()

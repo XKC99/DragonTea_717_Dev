@@ -3,32 +3,39 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class BoxLogic : ItemLogic, ICardAffected
+public class BoxLogic : ItemLogic,ICardAffected 
 {
     public string AudioName;
+    // private GameObject player;
+    // private void Awake()
+    // {
+    //     player=GameObject.FindGameObjectWithTag("Player");
+    // }
 
-    public bool Execute(Card card) 
-    {
-        switch(card.cardType)
-        {
-            case CardType.Fire:
-                Debug.Log("攻击");
-                return true;
-            // case CardType.Heal:
-            //     Debug.Log("治疗");
-            //     return true;
-            case CardType.Fly:
-                Debug.Log("飞行");
-                return true;
-            case CardType.Fall:
-                Debug.Log("坠落");
-                return true;
-        }
+    // public bool Execute(Card card) 
+    // {
+    //     switch(card.cardType)
+    //     {
+    //         case CardType.Fire:
+    //             Debug.Log("攻击");
+    //             player.GetComponent<PlayerController>().PlayerIsAttack();
+    //             return true;
+    //          case CardType.Heal:
+    //              Debug.Log("治疗");
+    //              return true;  //如果不想让这类牌发挥作用，返回false或者直接注释
+    //         case CardType.Fly:
+    //             Debug.Log("飞行");
+    //             return true;
+    //         case CardType.Fall:
+    //             Debug.Log("坠落");
+    //             return true;
+    //     }
 
        
 
-        return false;
-    }
+    //     return false;
+    // }
+
     
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -38,7 +45,6 @@ public class BoxLogic : ItemLogic, ICardAffected
            // OnBoxCollision();
         }
         
-       
     }
    
     private void OnTriggerEnter2D(Collider2D other)
@@ -50,7 +56,7 @@ public class BoxLogic : ItemLogic, ICardAffected
       if(other.gameObject.tag == "Card")
       {
         other.gameObject.GetComponent<CardHandler>().SetExcuteTure(this);
-        //Debug.Log("发现卡牌");
+        //Debug.Log("发现卡牌");--实际功能
       }
 
     }
@@ -60,7 +66,7 @@ public class BoxLogic : ItemLogic, ICardAffected
         if(other.gameObject.tag == "Card")
         {
             other.gameObject.GetComponent<CardHandler>().SetExcuteFalse(this);
-            //Debug.Log("离开卡牌");
+            //Debug.Log("离开卡牌");--实际功能
         }
 
     }

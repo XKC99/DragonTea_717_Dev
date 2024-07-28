@@ -47,10 +47,10 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0))
-        {
-            PlayerIsAttack();
-        }
+        // if(Input.GetMouseButtonDown(0))
+        // {
+        //     PlayerIsAttack();
+        // }
         if (Input.GetKeyDown("space") && physicsCheck.isGround && !cantMove)  //按下空格，且在地面，且不能移动时才可添加力
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);

@@ -86,6 +86,7 @@
     <Compile Include="Assets\Plugs\Dialogue Speaker\Demo\Scripts\DialogueControls.cs" />
     <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Spawn System\CFX_SpawnSystem.cs" />
     <Compile Include="Assets\Scripts\Items\BoxLogic.cs" />
+    <Compile Include="Assets\Scripts\Items\Card\CardHandler.cs" />
     <Compile Include="Assets\Scripts\Audio\AudioType.cs" />
     <Compile Include="Assets\Scripts\Speaker\SpeakerLogic.cs" />
     <Compile Include="Assets\Scripts\Items\Card\CardManager.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="Assets\Plugs\Dialogue Speaker\Scripts\Dialogues.cs" />
     <Compile Include="Assets\Scripts\Items\MoveObject.cs" />
     <Compile Include="Assets\Scripts\Inventory\Logic\InventoryManager.cs" />
+    <Compile Include="Assets\Scripts\Items\Card\CardTrigger.cs" />
     <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_InspectorHelp.cs" />
     <Compile Include="Assets\Scripts\Items\Card\CardTransform.cs" />
     <Compile Include="Assets\Scripts\Audio\AudioPlayConroller.cs" />
@@ -124,6 +126,7 @@
     <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_LightIntensityFade.cs" />
     <Compile Include="Assets\Scripts\Utilities\Event\TriggerEvent.cs" />
     <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_Translate.cs" />
+    <Compile Include="Assets\Scripts\Items\Card\CardDeck.cs" />
     <Compile Include="Assets\Scripts\Transition\Teleport.cs" />
     <Compile Include="Assets\Scripts\Character\Enemy\ZombiePatrolState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerCollision.cs" />

@@ -18,7 +18,9 @@ public class TransitionManager : Singleton<TransitionManager>
 
   private IEnumerator TransitionToScene(string from,string to)
   {
+    //Debug.Log("Fade1");
     yield return Fade(1);
+    //Debug.Log("Unload");
     yield return SceneManager.UnloadSceneAsync(from);
     yield return SceneManager.LoadSceneAsync(to,LoadSceneMode.Additive);
 
@@ -29,14 +31,19 @@ public class TransitionManager : Singleton<TransitionManager>
     yield return Fade(0);
   }
 
-  private IEnumerable Fade(float targetAlpha)
+  private IEnumerator Fade(float targetAlpha)
   {
+    fadeCanvasGroup.alpha = 1 - targetAlpha;
     isFade = true;
     fadeCanvasGroup.blocksRaycasts = true;
     float speed=Mathf.Abs(fadeCanvasGroup.alpha-targetAlpha)/fadeDuration;
+    //Debug.Log($"speed:{speed} canvasAlpha:{fadeCanvasGroup.alpha} targetAlpha:{targetAlpha}");
+
     while(!Mathf.Approximately(fadeCanvasGroup.alpha,targetAlpha))
     {
       fadeCanvasGroup.alpha=Mathf.MoveTowards(fadeCanvasGroup.alpha,targetAlpha,speed*Time.deltaTime);
+      //Debug.Log(fadeCanvasGroup.alpha);
+
       yield return null;
     }
     fadeCanvasGroup.blocksRaycasts = false;

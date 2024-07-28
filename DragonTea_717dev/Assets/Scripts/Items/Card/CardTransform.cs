@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public struct CardTranform 
 {
    public Vector3 pos;
@@ -14,5 +16,5 @@ public struct CardTranform
 
    }
 
-
+   
 }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7774453595179570568}
   m_Layer: 7
   m_Name: Card
-  m_TagString: Untagged
+  m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,6 +101,12 @@ MonoBehaviour:
   originalLayerOrder: 0
   isAnimating: 0
   cardData: {fileID: 11400000, guid: bddf5ce9f8039dc42a4ca0c32401c297, type: 2}
+  initCardType: 0
+  cardConfigList:
+  - {fileID: 11400000, guid: e44879e0c81dd0343a1bb1739717b8ae, type: 2}
+  - {fileID: 11400000, guid: bddf5ce9f8039dc42a4ca0c32401c297, type: 2}
+  - {fileID: 11400000, guid: 1e7bb18eadcff464a8f6e00c2d2557f5, type: 2}
+  - {fileID: 11400000, guid: 698a992b387a545478bf7b007ac37bcd, type: 2}
 --- !u!114 &7774453595179570568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,9 +128,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9026651824027279239}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Entry
-  m_TagString: Untagged
+  m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -155,7 +161,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8823692960820207121}
   - component: {fileID: 5011829151859684758}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: card_background
   m_TagString: Untagged
   m_Icon: {fileID: 0}

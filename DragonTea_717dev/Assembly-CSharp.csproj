@@ -81,8 +81,8 @@
     <Compile Include="Assets\Scripts\Utilities\GameBasic\StatusManager.cs" />
     <Compile Include="Assets\Scripts\Items\Card\Card.cs" />
     <Compile Include="Assets\Scripts\Utilities\TestDataManager.cs" />
-    <Compile Include="Assets\Scripts\Items\ICardAffected.cs" />
     <Compile Include="Assets\Scripts\Items\Card\CardSkill\FireBall.cs" />
+    <Compile Include="Assets\Scripts\Items\ICardAffected.cs" />
     <Compile Include="Assets\Scripts\Inventory\Logic\Item.cs" />
     <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerItemLogic.cs" />
@@ -90,7 +90,9 @@
     <Compile Include="Assets\Scripts\Transition\TransitionManager.cs" />
     <Compile Include="Assets\Plugs\Dialogue Speaker\Demo\Scripts\DialogueControls.cs" />
     <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Spawn System\CFX_SpawnSystem.cs" />
+    <Compile Include="Assets\Scripts\Character\Status\CharacterStatus.cs" />
     <Compile Include="Assets\Scripts\Items\BoxLogic.cs" />
+    <Compile Include="Assets\Scripts\Utilities\DataManager.cs" />
     <Compile Include="Assets\Scripts\Items\Card\CardHandler.cs" />
     <Compile Include="Assets\Scripts\Audio\AudioType.cs" />
     <Compile Include="Assets\Scripts\Speaker\SpeakerLogic.cs" />
@@ -102,6 +104,7 @@
     <Compile Include="Assets\Scripts\Utilities\PoolTool.cs" />
     <Compile Include="Assets\Scripts\Cursor\CursorManager.cs" />
     <Compile Include="Assets\Scripts\Character\Enemy\ZombieEnemy.cs" />
+    <Compile Include="Assets\Scripts\Character\Status\NPCStatus.cs" />
     <Compile Include="Assets\Scripts\Character\BaseCharacter.cs" />
     <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_New.cs" />
     <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_AutoRotate.cs" />
@@ -123,11 +126,13 @@
     <Compile Include="Assets\Arts\CharacterPack\Sample\Sample.cs" />
     <Compile Include="Assets\Scripts\Character\Enemy\BaseState.cs" />
     <Compile Include="Assets\Scripts\Utilities\Enums.cs" />
+    <Compile Include="Assets\Scripts\Character\Status\ZombieStatus.cs" />
     <Compile Include="Assets\Scripts\Items\Card\ScriptObject\CardDataSO.cs" />
-    <Compile Include="Assets\Scripts\Character\CharacterStatus.cs" />
+    <Compile Include="Assets\Scripts\Character\Enemy\ZombieLogic.cs" />
     <Compile Include="Assets\Plugs\Dialogue Speaker\Demo\Scripts\EndMethod.cs" />
     <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_LightIntensityFade.cs" />
     <Compile Include="Assets\Scripts\Utilities\Event\TriggerEvent.cs" />
+    <Compile Include="Assets\Scripts\Character\NPC\NPCLogic.cs" />
     <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_Translate.cs" />
     <Compile Include="Assets\Scripts\Items\Card\CardDeck.cs" />
     <Compile Include="Assets\Scripts\Transition\Teleport.cs" />

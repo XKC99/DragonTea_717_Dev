@@ -148,6 +148,7 @@ public class PlayerController : MonoBehaviour
     {
         isDead = true;
         animator.SetBool("Dead",true);
+        DataManager.Instance.isPlayerDead=true;
         
     }
 

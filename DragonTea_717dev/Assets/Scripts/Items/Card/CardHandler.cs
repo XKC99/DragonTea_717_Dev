@@ -100,7 +100,7 @@ public class CardHandler : MonoBehaviour
                     spriteRenderer.sortingOrder = 1;
                 }
                 // 转换卡牌
-                else if (Input.GetMouseButtonDown(1))
+                else if (Input.GetMouseButtonDown(2)) //中键切换
                 {
                     currentCard.ChangeCard();
                 }

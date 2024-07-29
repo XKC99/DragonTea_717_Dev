@@ -19,6 +19,7 @@ public class ZombieChaseState : BaseState
         {
             currentEnemy.SwitchState(EnemyState.Patrol);
         }
+        
        //判断是否撞墙，若是，退出移动状态
         if((currentEnemy.physicsCheck.touchLeftWall&&currentEnemy.faceDirct.x<0)||(currentEnemy.physicsCheck.touchRightWall&&currentEnemy.faceDirct.x>0))
         {

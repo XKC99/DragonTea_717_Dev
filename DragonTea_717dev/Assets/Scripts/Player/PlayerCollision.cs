@@ -9,85 +9,48 @@ public class PlayerCollision : ItemLogic,ICardAffected
     private GameObject FNote;//靠近NPC显示的提示UI
     public DialogueTreeController npcDialogueTreeController;  //NPC身上的DialogueTreeController组件
 
-    private Rigidbody2D rb;
-
-    override protected void Awake()
-    {
-        base.Awake();
-        rb = GetComponent<Rigidbody2D>();
-    }
-
-
     public override bool Execute(Card card)
     {
         switch(card.cardType)
         {
             case CardType.Fire:
-                Debug.Log("攻击");
-                //player.GetComponent<PlayerController>().PlayerIsAttack();
+                FireCardEffect();
                 return true;
-            case CardType.Heal:
-                Debug.Log("治疗");
-                //player.GetComponent<PlayerController>().PlayerIsHeal();
-                return true;  //如果不想让这类牌发挥作用，返回false或者直接注释
-            case CardType.Fly:
-                Debug.Log("飞行");
-                if(rb!=null)
-                {
-                    //rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse); //给一个向上的力
-                    rb.AddForce(Vector2.up*10f, ForceMode2D.Impulse);
-                }
-                else{
-                    Debug.Log("进行特殊处理"); 
-                }
+            //  case CardType.Heal:
+            //     HealCardEffect();
+            //     return true;  //如果不想让这类牌发挥作用，返回false或者直接注释
+             case CardType.Fly:
+                FlyCardEffect();
                 return true;
             case CardType.Fall:
-                Debug.Log("坠落");
+                FallCardEffect();
                 return true;
         }
         return false;
+
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    protected override void OnTriggerEnter2D(Collider2D other)
     {
-    if(other.gameObject.CompareTag("NPC"))
-    {
-        FNote=other.transform.Find("Canvas").gameObject;
-        npcDialogueTreeController=other.GetComponentInChildren<DialogueTreeController>();
-        Debug.Log("F显示");
-        FNote.SetActive(true);
-    }
-   
-    if(other.gameObject.CompareTag("Timeline"))
-    {
-       
-    }
-    if(other.gameObject.CompareTag("Speak"))
-    {
-       
-    }
-    if(other.gameObject.CompareTag("Teleport"))
-    {
+        switch(other.gameObject.tag)
+        {
+            case "NPC":
+                FNote=other.transform.Find("Canvas").gameObject;
+                npcDialogueTreeController=other.GetComponentInChildren<DialogueTreeController>();
+                Debug.Log("F显示");
+                FNote.SetActive(true);
+                break;
+            case "Card":
+                other.gameObject.GetComponent<CardHandler>().SetExcuteTure(this);
+                //Debug.Log("发现卡牌");--实际功能
+                break;
+        }
+
         
-    }
-    //卡牌功能相关如下
-         if(other.gameObject.CompareTag("Card"))  //当卡牌拖拽到人物身上并释放时
-         {
-             other.gameObject.GetComponent<CardHandler>().SetExcuteTure(this);
-         }
-        if(other.gameObject.tag == "Fire")  //当人物接触到攻击火球时
-        {
-            OnFire();
-            //
-        }
-        if(other.gameObject.tag == "Heal")  //当人物接触到治愈火球时
-        {
-            Debug.Log("我被治愈了");
-        }
    }
 
 
-   private void OnTriggerExit2D(Collider2D other)
+   protected override void OnTriggerExit2D(Collider2D other)
    {
         if(other.gameObject.CompareTag("NPC"))
         {
@@ -106,15 +69,6 @@ public class PlayerCollision : ItemLogic,ICardAffected
 
    }
    
-   private void OnCollisionEnter2D(Collision2D other)
-   {
-
-   }
-
-   private void OnCollisionExit2D(Collision2D other)
-   {
-
-   }
 
    public void FNoteDisable()
    {
@@ -126,5 +80,14 @@ public class PlayerCollision : ItemLogic,ICardAffected
    {
     npcDialogueTreeController.StartDialogue();
    }
+
+
+    public override void FireCardEffect()
+    {
+       Debug.Log("攻击");
+       this.gameObject.GetComponent<PlayerStatus>().TakeDamage(1); //每次被攻击一次掉1血
+    }
+
+
 
 }

@@ -23,7 +23,7 @@ public class CharacterStatus : MonoBehaviour
     public virtual void OnCharacterIsHealthy()
     {
         //TODO:这里添加恢复成人的处理方法
-        Debug.Log("CharacterIsHealthy");
+       // Debug.Log("CharacterIsHealthy");
         HealEvent?.Invoke();
     }
     public virtual void TakeDamage(int damage)

@@ -7,39 +7,31 @@ public class ZombieLogic : ItemLogic,ICardAffected
     public List<GameObject> DeadObject;
     public List<GameObject> BackToNPCObject;
     
-    private void OnTriggerEnter2D(Collider2D other)
+    protected override void OnTriggerEnter2D(Collider2D other)
     {
-      if(other.gameObject.tag == "Fire")
-      {
-          OnFire();
-          Destroy(other.gameObject);  //这里需要替换为：将火球置入对象池
-          //AudioManager.instance.PlayOneShot(destroyBoxAudioName);
-          this.gameObject.GetComponent<ZombieStatus>().TakeDamage(1); //每次被攻击一次掉1血
-      }
-      if(other.gameObject.tag == "Heal")
-      {
-        Debug.Log("我被治愈了");
-        Destroy(other.gameObject);  //这里需要替换为：将治愈球置入对象池
-        this.gameObject.GetComponent<ZombieStatus>().Heal(1);
-      }
-      if(other.gameObject.tag == "Card")
-      {
-        other.gameObject.GetComponent<CardHandler>().SetExcuteTure(this);
-        //Debug.Log("发现卡牌");--实际功能
-      }
 
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if(other.gameObject.tag == "Card")
+        switch(other.gameObject.tag)
         {
-            other.gameObject.GetComponent<CardHandler>().SetExcuteFalse(this);
-            //Debug.Log("离开卡牌");--实际功能
+            case "Player":
+                Debug.Log("我被攻击了");
+                this.gameObject.GetComponent<ZombieStatus>().TakeDamage(1); //每次被攻击一次掉1血
+                break;
+            case "Card":
+                other.gameObject.GetComponent<CardHandler>().SetExcuteTure(this);
+                //Debug.Log("发现卡牌");--实际功能
+                break;
+            case "Fire":
+                AttackedByFireBall(other);
+                break;
+            case "Heal":
+                HealedByHealBall(other);
+                break;
         }
 
+
     }
 
+    
     public void AfterDieShowCard()
     {
         DataManager.Instance.evilCount++;
@@ -61,5 +53,19 @@ public class ZombieLogic : ItemLogic,ICardAffected
             BackToNPCObject[i].SetActive(true);
         }
         this.gameObject.SetActive(false);//怪物消失
+    }
+
+    public override void AttackedByFireBall(Collider2D collider2D)
+    {
+         Destroy(collider2D.gameObject);  //这里需要替换为：将火球置入对象池
+          //AudioManager.instance.PlayOneShot(destroyBoxAudioName);
+          this.gameObject.GetComponent<ZombieStatus>().TakeDamage(1); //每次被攻击一次掉1血
+    }
+
+    public override void HealedByHealBall(Collider2D collider2D)
+    {
+         Debug.Log("我被治愈了");
+        Destroy(collider2D.gameObject);  //这里需要替换为：将治愈球置入对象池
+        this.gameObject.GetComponent<ZombieStatus>().Heal(1);
     }
 }

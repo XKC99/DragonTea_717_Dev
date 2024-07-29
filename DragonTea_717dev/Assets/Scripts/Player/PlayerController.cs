@@ -1,4 +1,5 @@
 using NodeCanvas.DialogueTrees;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.Playables;
@@ -174,6 +175,7 @@ public class PlayerController : MonoBehaviour
         direction=(mousePos-new Vector2(transform.position.x,transform.position.y)).normalized;
         //transform.right=direction;
         GameObject fire=Instantiate(attackFireBall,fromPos.position,Quaternion.identity);
+        Debug.Log("攻击球实例化");
         fire.GetComponent<FireBall>().SetFireSpeed(direction);
     }
 
@@ -182,6 +184,7 @@ public class PlayerController : MonoBehaviour
         direction=(mousePos-new Vector2(transform.position.x,transform.position.y)).normalized;
         //transform.right=direction;
         GameObject fire=Instantiate(healFireBall,fromPos.position,Quaternion.identity);
+        Debug.Log("治疗球实例化");
         fire.GetComponent<FireBall>().SetFireSpeed(direction);
     }
    

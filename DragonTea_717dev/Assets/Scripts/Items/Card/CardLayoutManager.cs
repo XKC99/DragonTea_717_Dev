@@ -22,6 +22,7 @@ public class CardLayoutManager : MonoBehaviour
 
    public void CalculatePosition(int numbersOfCards,bool horizontal)
    {
+        if (Camera.main == null) return;
         var pivot = Camera.main.transform.GetChild(0);
 
         cardPositions.Clear();

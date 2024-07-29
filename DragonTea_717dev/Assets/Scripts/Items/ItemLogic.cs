@@ -56,14 +56,10 @@ public class ItemLogic : MonoBehaviour,IFireHitandHeal  //接口命名往往以I
         
     }
 
-   protected virtual void OnFirehaha()
-   {
-      Debug.Log("OnFire-我被火球打到了！");
-   }
-
+  
    public virtual void OnFire()  //这里是接口提供的方法，需要实现
    {
-    Debug.Log("我被击中了");
+    Debug.Log("我被攻击了");
 
    }
 

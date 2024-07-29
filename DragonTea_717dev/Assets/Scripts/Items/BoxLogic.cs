@@ -59,7 +59,7 @@ public class BoxLogic : ItemLogic,ICardAffected
       {
           OnFire();
           AudioManager.instance.PlayOneShot(destroyBoxAudioName);
-          Destroy(other.gameObject);
+          Destroy(other.gameObject);  //这里需要替换为存入对象池的方法
           this.transform.DetachChildren();//隐藏的道具爆出来
           for(int i=0;i<cardColletions.Count;i++)
           {
@@ -88,11 +88,13 @@ public class BoxLogic : ItemLogic,ICardAffected
         }
 
     }
-    override protected void OnCollider(string AudioName)
-    {
-        //AudioName=this.AudioName;
-        AudioManager.instance.PlayOneShot(AudioName);
-    }
+
+
+    // override protected void OnCollider(string AudioName)
+    // {
+    //     //AudioName=this.AudioName;
+    //     AudioManager.instance.PlayOneShot(AudioName);
+    // }
 
 
    

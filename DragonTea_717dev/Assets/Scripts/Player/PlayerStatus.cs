@@ -6,10 +6,10 @@ public class PlayerStatus : CharacterStatus
 {
    
 
-    private void Awake()
-    {
-        anim = GetComponent<Animator>();
-    }
+    // private void Awake()
+    // {
+    //     anim = GetComponent<Animator>();
+    // }
 
     void Start()
     {

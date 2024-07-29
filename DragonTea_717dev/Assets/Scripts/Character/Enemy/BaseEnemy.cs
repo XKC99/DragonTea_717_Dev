@@ -96,6 +96,12 @@ public class BaseEnemy : MonoBehaviour
 
     public virtual void EneymyMove()
     {   
+        //当玩家死亡，
+        if(DataManager.Instance.isPlayerDead==true) 
+        {
+            anim.SetBool("Walk",false);
+            return;
+        }//停止移动
         rb.velocity=new Vector2(faceDirct.x*currentSpeed*Time.deltaTime,rb.velocity.y);
         anim.SetBool("Walk",true);
     }

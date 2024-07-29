@@ -42,6 +42,7 @@ public class ZombieLogic : ItemLogic,ICardAffected
 
     public void AfterDieShowCard()
     {
+        DataManager.Instance.evilCount++;
         this.transform.DetachChildren();//隐藏的道具爆出来
         for(int i=0;i<DeadObject.Count;i++)
         {
@@ -53,6 +54,7 @@ public class ZombieLogic : ItemLogic,ICardAffected
 
     public void BackToNPCShowCard()
     {
+        DataManager.Instance.evilCount--;
         this.transform.DetachChildren();
         for(int i=0;i<BackToNPCObject.Count;i++)
         {

@@ -11,6 +11,14 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 10f;
 
     public float jumpDeadSpeed=-10f;   //落地时死亡速度
+
+    public GameObject attackFireBall;
+    public GameObject healFireBall;
+    public Transform fromPos;
+    public Vector2 mousePos;
+    public Vector2 direction;
+
+
     private Rigidbody2D rb;
     private Animator animator;
 
@@ -51,6 +59,7 @@ public class PlayerController : MonoBehaviour
         // {
         //     PlayerIsAttack();
         // }
+
         if (Input.GetKeyDown("space") && physicsCheck.isGround && !cantMove)  //按下空格，且在地面，且不能移动时才可添加力
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
@@ -142,11 +151,37 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    public void PlayerIsAttack()
+    public void PlayerIsAttack()  //使用攻击牌后玩家的操作
     {
         isAttack = true;
         Debug.Log("攻击");
         animator.SetTrigger("Attack");
+        mousePos=Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        ShootAttack();
+    }
+
+    public void PlayerIsHeal()  //使用治疗牌后玩家的操作
+    {
+        Debug.Log("治疗");
+        animator.SetTrigger("Attack");
+        mousePos=Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        ShootHeal();
+    }
+
+    public void ShootAttack()  //攻击牌生效后发射攻击火球
+    {
+        direction=(mousePos-new Vector2(transform.position.x,transform.position.y)).normalized;
+        //transform.right=direction;
+        GameObject fire=Instantiate(attackFireBall,fromPos.position,Quaternion.identity);
+        fire.GetComponent<FireBall>().SetFireSpeed(direction);
+    }
+
+    public void ShootHeal()  //治疗牌生效后发射治疗火球
+    {
+        direction=(mousePos-new Vector2(transform.position.x,transform.position.y)).normalized;
+        //transform.right=direction;
+        GameObject fire=Instantiate(healFireBall,fromPos.position,Quaternion.identity);
+        fire.GetComponent<FireBall>().SetFireSpeed(direction);
     }
    
 

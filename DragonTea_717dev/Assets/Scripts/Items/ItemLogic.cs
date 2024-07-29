@@ -1,24 +1,22 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemLogic : MonoBehaviour,IFireHitandHeal  //接口命名往往以I开头
+public class ItemLogic : MonoBehaviour,ICardAffected //接口命名往往以I开头
 {
 
    protected GameObject player;
    protected Rigidbody2D rb;
-   public float jumpForce=10f;
+   public float jumpForce;
+
    protected virtual void Awake()
    {
       player=GameObject.FindGameObjectWithTag("Player");
-      rb=this.gameObject.GetComponent<Rigidbody2D>();
+      rb = GetComponent<Rigidbody2D>();
       if(rb==null)
       {
-        Debug.Log("当前对象不村子Rigidbody2D");
         return;
       }
-
    }
 
     public virtual bool Execute(Card card) 
@@ -26,47 +24,106 @@ public class ItemLogic : MonoBehaviour,IFireHitandHeal  //接口命名往往以I
         switch(card.cardType)
         {
             case CardType.Fire:
-                Debug.Log("攻击");
-                player.GetComponent<PlayerController>().PlayerIsAttack();
+                FireCardEffect();
                 return true;
-            case CardType.Heal:
-                Debug.Log("治疗");
-                player.GetComponent<PlayerController>().PlayerIsHeal();
+             case CardType.Heal:
+                HealCardEffect();
                 return true;  //如果不想让这类牌发挥作用，返回false或者直接注释
-            case CardType.Fly:
-                Debug.Log("飞行");
-                if(rb!=null)
-                {
-                    //rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse); //给一个向上的力
-                    rb.AddForce(Vector2.up*jumpForce, ForceMode2D.Impulse);
-                }
-                else{
-                    Debug.Log("进行特殊处理"); 
-                }
+             case CardType.Fly:
+                FlyCardEffect();
                 return true;
             case CardType.Fall:
-                Debug.Log("坠落");
+                FallCardEffect();
                 return true;
         }
         return false;
     }
-    
-    protected virtual void OnCollider(string AudioName)
+
+    protected virtual void OnTriggerEnter2D(Collider2D other)
     {
+        switch(other.gameObject.tag)
+        {
+            case "Card":
+                other.gameObject.GetComponent<CardHandler>().SetExcuteTure(this);
+                break;
+            case "Fire":
+                AttackedByFireBall(other);
+                break;
+            case "Heal":
+                HealedByHealBall(other);
+                break;
+        }
         
     }
 
-  
-   public virtual void OnFire()  //这里是接口提供的方法，需要实现
-   {
-    Debug.Log("我被攻击了");
-
-   }
-
-    public void OnHeal()//这里是接口提供的方法，需要实现
+    protected virtual void OnTriggerExit2D(Collider2D other)
     {
-       Debug.Log("我被治疗了");
+        switch(other.gameObject.tag)
+        {
+            case "Card":
+                other.gameObject.GetComponent<CardHandler>().SetExcuteFalse(this);
+                break;
+        }
+
+    }
+
+    public virtual void FireCardEffect()
+    {
+        Debug.Log("攻击牌的作用");
+        player.GetComponent<PlayerController>().PlayerIsAttack();
+    }
+
+    public virtual void HealCardEffect()
+    {
+        Debug.Log("治疗牌的作用");
+        player.GetComponent<PlayerController>().PlayerIsHeal();
+    }
+
+    public virtual void FlyCardEffect()
+    {
+        Debug.Log("飞行牌的作用");
+        if(rb!=null)
+        {
+            rb.AddForce(Vector2.up*jumpForce, ForceMode2D.Impulse);
+        }
+        else{
+            Debug.Log("进行特殊处理");
+        }
+    }
+
+    public virtual void FallCardEffect()
+    {
+        Debug.Log("坠落牌的作用");
     }
 
 
+
+
+    public virtual void AttackedByFireBall(Collider2D collider2D)
+    {
+        Debug.Log("我被火球攻击了");
+        Destroy(collider2D.gameObject);  //这里需要替换为存入对象池的方法
+        this.gameObject.SetActive(false);//将本物体设置为不可见
+    }
+
+    public virtual void HealedByHealBall(Collider2D collider2D)
+    {
+        Debug.Log("我被治愈了");
+        Destroy(collider2D.gameObject);  //这里需要替换为存入对象池的方法
+    }
+
+    // public virtual void UpByFlyCard()
+    // {
+    //     Debug.Log("给一个向上的力");
+    // }
+
+    // public virtual void DownByFallCard()
+    // {
+    //     Debug.Log("缓慢坠落");
+    // }
+
+
+
+
+  
 }

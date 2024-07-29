@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class NPCLogic : ItemLogic,ICardAffected 
 {
-     private void OnTriggerEnter2D(Collider2D other)
+    protected override void OnTriggerEnter2D(Collider2D other)
     {
       if(other.gameObject.tag == "Fire")
       {
-          OnFire();
           Destroy(other.gameObject);
           this.gameObject.SetActive(false);
       }
@@ -25,12 +24,5 @@ public class NPCLogic : ItemLogic,ICardAffected
 
     }
 
-     private void OnTriggerExit2D(Collider2D other)
-    {
-        if(other.gameObject.tag == "Card")
-        {
-            other.gameObject.GetComponent<CardHandler>().SetExcuteFalse(this);
-            //Debug.Log("离开卡牌");--实际功能
-        }
-    }
+    
 }

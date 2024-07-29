@@ -7,12 +7,18 @@ using UnityEngine;
 public class BoxLogic : ItemLogic,ICardAffected 
 {
     public string destroyBoxAudioName;
+    private Rigidbody2D rb;
     public List<GameObject> cardColletions;
     // private GameObject player;
     // private void Awake()
     // {
     //     player=GameObject.FindGameObjectWithTag("Player");
     // }
+    override protected void Awake()
+    {
+        base.Awake();
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     public override bool Execute(Card card) 
     {

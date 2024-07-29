@@ -35,6 +35,7 @@ public class CardDeck : Singleton<CardDeck>
             Card currentCard=handCardObjects[i];
             CardTranform cardTranform=cardLayoutManager.GetCardTranform(i,handCardObjects.Count);
 
+            if (Camera.main == null) return;
             var pivot = Camera.main.transform.GetChild(0);
             currentCard.transform.SetParent(pivot);
             currentCard.transform.SetPositionAndRotation(cardTranform.pos,cardTranform.rotation);

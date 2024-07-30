@@ -16,8 +16,8 @@ public class PlayerController : MonoBehaviour
     public GameObject attackFireBall;
     public GameObject healFireBall;
     public Transform fromPos;
-    public Vector2 mousePos;
-    public Vector2 direction;
+    [HideInInspector]public Vector2 mousePos;
+    [HideInInspector]public Vector2 direction;
 
     public GameObject playerFallToDeadSpeaker;
 
@@ -183,10 +183,13 @@ public class PlayerController : MonoBehaviour
     public void ShootAttack()  //攻击牌生效后发射攻击火球
     {
         direction=(mousePos-new Vector2(transform.position.x,transform.position.y)).normalized;
-        //transform.right=direction;
-        GameObject fire=Instantiate(attackFireBall,fromPos.position,Quaternion.identity);
+        //transform.right=direction;不需要
+        //GameObject fire=Instantiate(attackFireBall,fromPos.position,Quaternion.identity); 换成下2行
+        GameObject fireBall=SkillBallPool.Instance.GetBallObject(attackFireBall);
+        fireBall.transform.position=fromPos.position;
         Debug.Log("攻击球实例化");
-        fire.GetComponent<FireBall>().SetFireSpeed(direction);
+        //fire.GetComponent<FireBall>().SetFireSpeed(direction);//换成下1行
+        fireBall.GetComponent<FireBall>().SetFireSpeed(direction);
     }
 
     public void ShootHeal()  //治疗牌生效后发射治疗火球

@@ -105,7 +105,8 @@ public class ItemLogic : MonoBehaviour,ICardAffected //接口命名往往以I开
     public virtual void AttackedByFireBall(Collider2D collider2D)
     {
         Debug.Log("我被火球攻击了");
-        Destroy(collider2D.gameObject);  //这里需要替换为存入对象池的方法
+        //Destroy(collider2D.gameObject);  //这里需要替换为存入对象池的方法
+        SkillBallPool.Instance.PushBallObject(collider2D.gameObject);
         this.gameObject.SetActive(false);//将本物体设置为不可见
     }
 

@@ -37,7 +37,8 @@ public class BoxLogic : ItemLogic,ICardAffected
     public override void AttackedByFireBall(Collider2D collider2D)
     {
         AudioManager.instance.PlayOneShot(destroyBoxAudioName);
-          Destroy(collider2D.gameObject);  //这里需要替换为存入对象池的方法
+          //Destroy(collider2D.gameObject);  //这里需要替换为存入对象池的方法
+          SkillBallPool.Instance.PushBallObject(collider2D.gameObject);
           this.transform.DetachChildren();//隐藏的道具爆出来
           for(int i=0;i<cardColletions.Count;i++)
           {

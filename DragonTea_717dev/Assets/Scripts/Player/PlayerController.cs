@@ -32,7 +32,6 @@ public class PlayerController : MonoBehaviour
 
     protected PhysicsCheck physicsCheck;
     
-    
     protected PlayerCollision playerCollision;
     protected bool cantMove => playerCollision.npcDialogueTreeController != null && playerCollision.npcDialogueTreeController.isRunning;
 
@@ -62,7 +61,7 @@ public class PlayerController : MonoBehaviour
         // {
         //     PlayerIsAttack();
         // }
-        if (Input.GetKeyDown("space") && physicsCheck.isGround && !cantMove)  //按下空格，且在地面，且不能移动时才可添加力
+        if (Input.GetKeyDown("space") && physicsCheck.isGround && !cantMove&&!isDead)  //按下空格，且在地面，且不能移动时才可添加力
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }

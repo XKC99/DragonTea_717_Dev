@@ -8,7 +8,7 @@ public class SkillBallPool:Singleton<SkillBallPool>
    private Dictionary<string,Queue<GameObject>> skillBallPool = new Dictionary<string, Queue<GameObject>>();
    private GameObject poll;
 
-   public GameObject GetBallObject(GameObject ballPrefab)
+    public GameObject GetBallObject(GameObject ballPrefab)
    {
       GameObject gameObject;
       if(!skillBallPool.ContainsKey(ballPrefab.name)||skillBallPool[ballPrefab.name].Count==0)

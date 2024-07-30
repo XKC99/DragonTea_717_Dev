@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class DragonController : PlayerController
 {
+    public float flySpeed;
+    private float recordMoveSpeed;
+
+    private void Awake() {
+        recordMoveSpeed=moveSpeed;
+    }
     protected override void Update()
     {
         if (Input.GetKey("space") && !cantMove)  //按下空格，且在地面，且不能移动时才可添加力
         {
-            
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Force);
         }
 
@@ -16,6 +21,7 @@ public class DragonController : PlayerController
         {
             animator.SetTrigger("Fly");
             Debug.Log("起飞");
+            moveSpeed=flySpeed;
         }
         
        if(Input.GetKeyDown("f") && playerCollision.npcDialogueTreeController!= null)
@@ -30,11 +36,16 @@ public class DragonController : PlayerController
             Debug.Log("我正在攻击");
             
         }
+        
     }
 
     protected override void OnGroundChange(bool isOnGround)
     {
-        //
+        if(isOnGround)
+        {
+            moveSpeed=recordMoveSpeed;
+        }
+
     }
 
     

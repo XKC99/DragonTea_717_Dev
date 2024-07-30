@@ -16,26 +16,28 @@ public class PlayerController : MonoBehaviour
     public GameObject attackFireBall;
     public GameObject healFireBall;
     public Transform fromPos;
-    public Vector2 mousePos;
-    public Vector2 direction;
+    [HideInInspector]public Vector2 mousePos;
+    [HideInInspector]public Vector2 direction;
+
+    public GameObject playerFallToDeadSpeaker;
 
 
-    private Rigidbody2D rb;
-    private Animator animator;
+    protected Rigidbody2D rb;
+    protected Animator animator;
 
-    private bool isGrounded = false;
-    private bool facingRight = true;
-    private bool isDead= false;
-    private bool isAttack = false;
+    protected bool isGrounded = false;
+    protected bool facingRight = true;
+    protected bool isDead= false;
+    protected bool isAttack = false;
 
-    private PhysicsCheck physicsCheck;
+    protected PhysicsCheck physicsCheck;
     
     
-    private PlayerCollision playerCollision;
-    private bool cantMove => playerCollision.npcDialogueTreeController != null && playerCollision.npcDialogueTreeController.isRunning;
+    protected PlayerCollision playerCollision;
+    protected bool cantMove => playerCollision.npcDialogueTreeController != null && playerCollision.npcDialogueTreeController.isRunning;
 
 
-    private void Start()
+    protected void Start()
     {
         playerCollision=GetComponent<PlayerCollision>();
         rb = GetComponent<Rigidbody2D>();
@@ -45,7 +47,7 @@ public class PlayerController : MonoBehaviour
         physicsCheck.onGroundChange += OnGroundChange;
     }
 
-    private void FixedUpdate()
+    protected void FixedUpdate()
     {
         if (cantMove||isDead) {  //不能移动就动不了
             return;
@@ -54,13 +56,12 @@ public class PlayerController : MonoBehaviour
         MovePlayer();  
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         // if(Input.GetMouseButtonDown(0))
         // {
         //     PlayerIsAttack();
         // }
-
         if (Input.GetKeyDown("space") && physicsCheck.isGround && !cantMove)  //按下空格，且在地面，且不能移动时才可添加力
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
@@ -75,7 +76,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void MovePlayer()
+    protected void MovePlayer()
     {
         float moveX = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(moveX * moveSpeed, rb.velocity.y);
@@ -91,7 +92,7 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Speed",Mathf.Abs(moveX));
     }
 
-     private void Flip()
+    protected void Flip()
     {
         facingRight = !facingRight;
         Vector3 scale = transform.localScale;
@@ -102,12 +103,13 @@ public class PlayerController : MonoBehaviour
 
 
     //碰撞检测↓
-    private void OnCollisionEnter2D(Collision2D collision)  
+    protected void OnCollisionEnter2D(Collision2D collision)  
     {
         switch(collision.gameObject.tag)
         {
             case "Ground":
                 isGrounded = true;
+                rb.gravityScale=1f;
                 break;
             case "Teleport":
                 var teleport =collision.gameObject.GetComponent<Teleport>();
@@ -118,11 +120,12 @@ public class PlayerController : MonoBehaviour
                 break;
             case"Box":
                 isGrounded = true;
+                rb.gravityScale=1f;
                 break;
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    protected void OnCollisionExit2D(Collision2D collision)
     {
         switch(collision.gameObject.tag)
         {
@@ -136,11 +139,12 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    private void OnGroundChange(bool isGround) 
+    protected virtual void OnGroundChange(bool isGround) 
     {
         if (isGround) {
             if (physicsCheck.LastVelocity.y < jumpDeadSpeed) {
                 PlayerIsDead();
+                playerFallToDeadSpeaker.GetComponent<DialogueSpeaker>().Play(); 
             }
         }
     }
@@ -170,13 +174,22 @@ public class PlayerController : MonoBehaviour
         ShootHeal();
     }
 
+    public void PleyIsSlowlyFall() //使用下落牌后玩家的操作
+    {
+        Debug.Log(" SlowlyFall");
+
+    }
+
     public void ShootAttack()  //攻击牌生效后发射攻击火球
     {
         direction=(mousePos-new Vector2(transform.position.x,transform.position.y)).normalized;
-        //transform.right=direction;
-        GameObject fire=Instantiate(attackFireBall,fromPos.position,Quaternion.identity);
+        //transform.right=direction;不需要
+        //GameObject fire=Instantiate(attackFireBall,fromPos.position,Quaternion.identity); 换成下2行
+        GameObject fireBall=SkillBallPool.Instance.GetBallObject(attackFireBall);
+        fireBall.transform.position=fromPos.position;
         Debug.Log("攻击球实例化");
-        fire.GetComponent<FireBall>().SetFireSpeed(direction);
+        //fire.GetComponent<FireBall>().SetFireSpeed(direction);//换成下1行
+        fireBall.GetComponent<FireBall>().SetFireSpeed(direction);
     }
 
     public void ShootHeal()  //治疗牌生效后发射治疗火球

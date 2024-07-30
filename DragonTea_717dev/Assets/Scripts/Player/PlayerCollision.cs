@@ -68,7 +68,13 @@ public class PlayerCollision : ItemLogic,ICardAffected
         }
 
    }
-   
+
+
+    protected override void OnCollisionEnter2D()
+    {
+        //
+    }
+
 
    public void FNoteDisable()
    {

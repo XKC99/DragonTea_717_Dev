@@ -1084,7 +1084,7 @@ GameObject:
   m_Component:
   - component: {fileID: 241745185}
   m_Layer: 0
-  m_Name: Speaker
+  m_Name: ///Speaker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5018,7 +5018,7 @@ MonoBehaviour:
   dialogues:
   - clip: {fileID: 8300000, guid: 164c4d39784f0ef448ee3e1b5fe34bc3, type: 3}
     time: 0
-    subtitles: "\u524D\u65B9\uFF0C\u4E00\u6761\u6C9F\u58D1\u6321\u4F4F\u4E86\u52C7\u8005\u7684\u53BB\u8DEF\u3002"
+    subtitles: "\u524D\u65B9\uFF0C\u4E00\u4E2A\u6DF1\u5751\u6321\u4F4F\u4E86\u52C7\u8005\u7684\u53BB\u8DEF\u3002"
     triggerEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -6187,6 +6187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 10
+  gravityChangeScale: 0
   destroyBoxAudioName: 
   cardColletions: []
 --- !u!50 &1697929241
@@ -8978,6 +8979,7 @@ MonoBehaviour:
   fromPos: {fileID: 0}
   mousePos: {x: 0, y: 0}
   direction: {x: 0, y: 0}
+  playerFallToDeadSpeaker: {fileID: 0}
 --- !u!1 &2422824553772025962
 GameObject:
   m_ObjectHideFlags: 0
@@ -11436,6 +11438,63 @@ RectTransform:
   m_AnchoredPosition: {x: -2070.03, y: -1082.07}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &6303402688143049098
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3258496825346996968, guid: 0333f31ef44461142acb2410eb1f7244, type: 3}
+      propertyPath: m_Name
+      value: MusicPlayerTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930898411129553421, guid: 0333f31ef44461142acb2410eb1f7244, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -154.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930898411129553421, guid: 0333f31ef44461142acb2410eb1f7244, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930898411129553421, guid: 0333f31ef44461142acb2410eb1f7244, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930898411129553421, guid: 0333f31ef44461142acb2410eb1f7244, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930898411129553421, guid: 0333f31ef44461142acb2410eb1f7244, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930898411129553421, guid: 0333f31ef44461142acb2410eb1f7244, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930898411129553421, guid: 0333f31ef44461142acb2410eb1f7244, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930898411129553421, guid: 0333f31ef44461142acb2410eb1f7244, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930898411129553421, guid: 0333f31ef44461142acb2410eb1f7244, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930898411129553421, guid: 0333f31ef44461142acb2410eb1f7244, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0333f31ef44461142acb2410eb1f7244, type: 3}
 --- !u!1 &6329639304454005625
 GameObject:
   m_ObjectHideFlags: 0
@@ -11481,6 +11540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 10
+  gravityChangeScale: 0
   npcDialogueTreeController: {fileID: 0}
 --- !u!4 &6901174923546850695
 Transform:
@@ -12089,3 +12149,4 @@ SceneRoots:
   - {fileID: 8697234226622985884}
   - {fileID: 917493195}
   - {fileID: 556854061}
+  - {fileID: 6303402688143049098}

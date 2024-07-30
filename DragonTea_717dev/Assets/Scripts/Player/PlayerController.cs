@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     public Vector2 mousePos;
     public Vector2 direction;
 
+    public GameObject playerFallToDeadSpeaker;
+
 
     private Rigidbody2D rb;
     private Animator animator;
@@ -60,7 +62,6 @@ public class PlayerController : MonoBehaviour
         // {
         //     PlayerIsAttack();
         // }
-
         if (Input.GetKeyDown("space") && physicsCheck.isGround && !cantMove)  //按下空格，且在地面，且不能移动时才可添加力
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
@@ -108,6 +109,7 @@ public class PlayerController : MonoBehaviour
         {
             case "Ground":
                 isGrounded = true;
+                rb.gravityScale=1f;
                 break;
             case "Teleport":
                 var teleport =collision.gameObject.GetComponent<Teleport>();
@@ -118,6 +120,7 @@ public class PlayerController : MonoBehaviour
                 break;
             case"Box":
                 isGrounded = true;
+                rb.gravityScale=1f;
                 break;
         }
     }
@@ -141,6 +144,7 @@ public class PlayerController : MonoBehaviour
         if (isGround) {
             if (physicsCheck.LastVelocity.y < jumpDeadSpeed) {
                 PlayerIsDead();
+                playerFallToDeadSpeaker.GetComponent<DialogueSpeaker>().Play(); 
             }
         }
     }
@@ -168,6 +172,12 @@ public class PlayerController : MonoBehaviour
         animator.SetTrigger("Attack");
         mousePos=Camera.main.ScreenToWorldPoint(Input.mousePosition);
         ShootHeal();
+    }
+
+    public void PleyIsSlowlyFall() //使用下落牌后玩家的操作
+    {
+        Debug.Log(" SlowlyFall");
+
     }
 
     public void ShootAttack()  //攻击牌生效后发射攻击火球

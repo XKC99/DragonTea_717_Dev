@@ -8,6 +8,7 @@ public class ItemLogic : MonoBehaviour,ICardAffected //接口命名往往以I开
    protected GameObject player;
    protected Rigidbody2D rb;
    public float jumpForce;
+   public float gravityChangeScale;
 
    protected virtual void Awake()
    {
@@ -66,6 +67,10 @@ public class ItemLogic : MonoBehaviour,ICardAffected //接口命名往往以I开
         }
 
     }
+    protected virtual void OnCollisionEnter2D()
+    {
+        rb.gravityScale=1f;
+    }
 
     public virtual void FireCardEffect()
     {
@@ -93,11 +98,9 @@ public class ItemLogic : MonoBehaviour,ICardAffected //接口命名往往以I开
 
     public virtual void FallCardEffect()
     {
+        rb.gravityScale=gravityChangeScale;
         Debug.Log("坠落牌的作用");
     }
-
-
-
 
     public virtual void AttackedByFireBall(Collider2D collider2D)
     {

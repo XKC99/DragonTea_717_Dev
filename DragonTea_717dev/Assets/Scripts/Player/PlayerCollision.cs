@@ -7,6 +7,8 @@ public class PlayerCollision : ItemLogic,ICardAffected
 {
 
     private GameObject FNote;//靠近NPC显示的提示UI
+    public Texture2D playerImage;
+    public Texture2D playerOldImage;
     public DialogueTreeController npcDialogueTreeController;  //NPC身上的DialogueTreeController组件
 
     public override bool Execute(Card card)
@@ -87,7 +89,21 @@ public class PlayerCollision : ItemLogic,ICardAffected
     npcDialogueTreeController.StartDialogue();
    }
 
+    public void ChangeToOldImage()  //变成曾经的勇者形象
+    {
+        this.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].mainTexture = playerOldImage;
+        this.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].mainTexture = playerOldImage;
+        this.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].mainTexture = playerOldImage;
+        this.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().materials[3].mainTexture = playerOldImage;
+    }
 
+    public void ChangeToNowImage() //变成现在的勇者形象
+    {
+        this.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().materials[0].mainTexture = playerImage;
+        this.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().materials[1].mainTexture = playerImage;
+        this.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().materials[2].mainTexture = playerImage;
+        this.gameObject.GetComponentInChildren<SkinnedMeshRenderer>().materials[3].mainTexture = playerImage;
+    }
     public override void FireCardEffect()
     {
        Debug.Log("攻击");

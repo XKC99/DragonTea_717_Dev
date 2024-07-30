@@ -22,22 +22,22 @@ public class PlayerController : MonoBehaviour
     public GameObject playerFallToDeadSpeaker;
 
 
-    private Rigidbody2D rb;
-    private Animator animator;
+    protected Rigidbody2D rb;
+    protected Animator animator;
 
-    private bool isGrounded = false;
-    private bool facingRight = true;
-    private bool isDead= false;
-    private bool isAttack = false;
+    protected bool isGrounded = false;
+    protected bool facingRight = true;
+    protected bool isDead= false;
+    protected bool isAttack = false;
 
-    private PhysicsCheck physicsCheck;
+    protected PhysicsCheck physicsCheck;
     
     
-    private PlayerCollision playerCollision;
-    private bool cantMove => playerCollision.npcDialogueTreeController != null && playerCollision.npcDialogueTreeController.isRunning;
+    protected PlayerCollision playerCollision;
+    protected bool cantMove => playerCollision.npcDialogueTreeController != null && playerCollision.npcDialogueTreeController.isRunning;
 
 
-    private void Start()
+    protected void Start()
     {
         playerCollision=GetComponent<PlayerCollision>();
         rb = GetComponent<Rigidbody2D>();
@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
         physicsCheck.onGroundChange += OnGroundChange;
     }
 
-    private void FixedUpdate()
+    protected void FixedUpdate()
     {
         if (cantMove||isDead) {  //不能移动就动不了
             return;
@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
         MovePlayer();  
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         // if(Input.GetMouseButtonDown(0))
         // {
@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void MovePlayer()
+    protected void MovePlayer()
     {
         float moveX = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(moveX * moveSpeed, rb.velocity.y);
@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Speed",Mathf.Abs(moveX));
     }
 
-     private void Flip()
+    protected void Flip()
     {
         facingRight = !facingRight;
         Vector3 scale = transform.localScale;
@@ -103,7 +103,7 @@ public class PlayerController : MonoBehaviour
 
 
     //碰撞检测↓
-    private void OnCollisionEnter2D(Collision2D collision)  
+    protected void OnCollisionEnter2D(Collision2D collision)  
     {
         switch(collision.gameObject.tag)
         {
@@ -125,7 +125,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    protected void OnCollisionExit2D(Collision2D collision)
     {
         switch(collision.gameObject.tag)
         {
@@ -139,7 +139,7 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    private void OnGroundChange(bool isGround) 
+    protected virtual void OnGroundChange(bool isGround) 
     {
         if (isGround) {
             if (physicsCheck.LastVelocity.y < jumpDeadSpeed) {

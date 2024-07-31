@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour
     protected bool isDead= false;
     protected bool isAttack = false;
 
+    protected bool isTimelineing=false;
+
     protected PhysicsCheck physicsCheck;
     
     protected PlayerCollision playerCollision;
@@ -50,7 +52,7 @@ public class PlayerController : MonoBehaviour
 
     protected void FixedUpdate()
     {
-        if (cantMove||isDead) {  //不能移动就动不了
+        if (cantMove||isDead||isTimelineing) {  //不能移动就动不了
             return;
         }
 
@@ -222,7 +224,17 @@ public class PlayerController : MonoBehaviour
     //     StartCoroutine("");
     // }
 
-   
+   public void TimelineStartToStopMove()  //Timeline开始时，禁止移动
+   {
+    isTimelineing=true;
+   }
+
+   public void TimelineEndToStartMove()  //Timeline结束时，允许移动
+   {
+    isTimelineing=false;
+   }
+
+ 
 
 
 

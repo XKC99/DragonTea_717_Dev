@@ -48,5 +48,17 @@ public class DragonController : PlayerController
 
     }
 
+    public void DragonDropIntoFireDieAndRevive()  //龙掉岩浆死亡
+    {
+        StartCoroutine("DragonDropIntoFireDieAndReviveCo");
+    }    
+    public IEnumerator DragonDropIntoFireDieAndReviveCo()
+    {
+        PlayerIsDead();
+        playerFallToDeadSpeaker.GetComponent<DialogueSpeaker>().Play();  //玩家坠落死亡后播放语音
+        yield return new WaitUntil(()=>playerFallToDeadSpeaker.GetComponent<DialogueSpeaker>().isFinished);
+        Revive();
+    }
+
     
 }

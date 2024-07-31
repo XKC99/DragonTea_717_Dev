@@ -1,3 +1,4 @@
+using System.Collections;
 using NodeCanvas.DialogueTrees;
 using UnityEditor;
 using UnityEngine;
@@ -16,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public GameObject attackFireBall;
     public GameObject healFireBall;
     public Transform fromPos;
+    public Transform RevivePos;
     [HideInInspector]public Vector2 mousePos;
     [HideInInspector]public Vector2 direction;
 
@@ -142,10 +144,19 @@ public class PlayerController : MonoBehaviour
     {
         if (isGround) {
             if (physicsCheck.LastVelocity.y < jumpDeadSpeed) {
-                PlayerIsDead();
-                playerFallToDeadSpeaker.GetComponent<DialogueSpeaker>().Play(); 
+                //PlayerIsDead();
+                //playerFallToDeadSpeaker.GetComponent<DialogueSpeaker>().Play();  //玩家坠落死亡后播放语音
+                StartCoroutine(PlayerJumpToDieAndReviveCo());
             }
         }
+    }
+
+     public IEnumerator PlayerJumpToDieAndReviveCo()  //玩家坠崖死亡
+    {
+        PlayerIsDead();
+        playerFallToDeadSpeaker.GetComponent<DialogueSpeaker>().Play();  //玩家坠落死亡后播放语音
+        yield return new WaitUntil(()=>playerFallToDeadSpeaker.GetComponent<DialogueSpeaker>().isFinished);
+        Revive();
     }
 
     public void PlayerIsDead()  //这里是玩家死后执行的东西。可以添加很多具体内容。
@@ -153,9 +164,15 @@ public class PlayerController : MonoBehaviour
         isDead = true;
         animator.SetBool("Dead",true);
         DataManager.Instance.isPlayerDead=true;
-        
     }
-
+    public void Revive()  //玩家复活
+    {
+        this.transform.localPosition=RevivePos.position;
+        isDead = false;
+        animator.SetBool("Dead",false);
+        DataManager.Instance.isPlayerDead=false;
+    }
+   
     public void PlayerIsAttack()  //使用攻击牌后玩家的操作
     {
         isAttack = true;
@@ -199,6 +216,12 @@ public class PlayerController : MonoBehaviour
         Debug.Log("治疗球实例化");
         fire.GetComponent<FireBall>().SetFireSpeed(direction);
     }
+
+    // public void Revive()
+    // {
+    //     StartCoroutine("");
+    // }
+
    
 
 

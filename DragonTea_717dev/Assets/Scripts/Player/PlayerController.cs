@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Speed",Mathf.Abs(moveX));
     }
 
-    protected void Flip()
+    protected virtual void Flip()
     {
         facingRight = !facingRight;
         Vector3 scale = transform.localScale;
@@ -175,7 +175,7 @@ public class PlayerController : MonoBehaviour
         DataManager.Instance.isPlayerDead=false;
     }
    
-    public void PlayerIsAttack()  //使用攻击牌后玩家的操作
+    public virtual void PlayerIsAttack()  //使用攻击牌后玩家的操作
     {
         isAttack = true;
         Debug.Log("攻击");
@@ -198,7 +198,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public void ShootAttack()  //攻击牌生效后发射攻击火球
+    public virtual void ShootAttack()  //攻击牌生效后发射攻击火球
     {
         direction=(mousePos-new Vector2(transform.position.x,transform.position.y)).normalized;
         //transform.right=direction;不需要

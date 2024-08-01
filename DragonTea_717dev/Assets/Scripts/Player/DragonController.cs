@@ -5,6 +5,11 @@ using UnityEngine;
 public class DragonController : PlayerController
 {
     public float flySpeed;
+    public float fireBallSpeed;
+    public Vector2 fireBallDirection;
+    public float fireRate; //火球发射间隔时间
+    public float nextFireTime; //下次可以发射的时间
+    public float fireLifeTime;//火焰存活时间
     public DialogueSpeaker playerAttackedByLavaSpeaker;
     private float recordMoveSpeed;
 
@@ -31,11 +36,11 @@ public class DragonController : PlayerController
             playerCollision.StartToTalk();
         }
 
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0)&&Time.time>=nextFireTime)
         {
             PlayerIsAttack();
             Debug.Log("我正在攻击");
-            
+            nextFireTime=Time.time+fireRate;
         }
         
     }
@@ -61,7 +66,7 @@ public class DragonController : PlayerController
         Revive();
     }
 
-    public void DragonAttackedByLava()
+    public void DragonAttackedByLava()  //龙被岩浆球攻击死亡
     {
         StartCoroutine("DragonAttackedByLavaCo");
     }
@@ -73,5 +78,25 @@ public class DragonController : PlayerController
         yield return new WaitUntil(()=>playerAttackedByLavaSpeaker.GetComponent<DialogueSpeaker>().isFinished);
         Revive();
     }
-    
+
+    public override void PlayerIsAttack()  //发射火球
+    {
+        isAttack = true;
+        Debug.Log("攻击");
+        animator.SetTrigger("Attack");
+        GameObject fireBall=SkillBallPool.Instance.GetBallObject(attackFireBall);
+        fireBall.transform.position=fromPos.position;
+        fireBall.GetComponent<Rigidbody2D>().velocity=fireBallDirection*fireBallSpeed;
+
+        Destroy(fireBall,fireLifeTime);
+    }
+
+    protected override void Flip()
+    {
+        base.Flip();
+        fireBallDirection.x*=-1; //改变火球位置
+    }
+
+
+
 }

@@ -445,6 +445,51 @@ Transform:
   - {fileID: 4853632912188146493}
   m_Father: {fileID: 2619315979757413770}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1082475520567895419
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 714717711582031088}
+  - component: {fileID: 8318012970269379858}
+  m_Layer: 3
+  m_Name: "\u706B\u7130\u53D1\u5C04\u53E3"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &714717711582031088
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082475520567895419}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.76, y: 1.01, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4400901344620402037}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8318012970269379858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082475520567895419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da0b4451ceed2bf42be2f519c8de972b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  facingRight: 0
 --- !u!1 &1144355363851342749
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,11 +616,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1413629280289607800}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -108.06, y: -2.35, z: -0.68}
   m_LocalScale: {x: -2, y: 2, z: -1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 714717711582031088}
   - {fileID: 3735676468259118716}
   - {fileID: 6484816030985894253}
   - {fileID: 8985111177635656731}
@@ -615,10 +661,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 20
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -752,12 +798,20 @@ MonoBehaviour:
   moveSpeed: 2
   jumpForce: 30
   jumpDeadSpeed: -100
-  attackFireBall: {fileID: 0}
+  attackFireBall: {fileID: 292846501996241652, guid: 0f3355cd4da447644bbb3ee4f629de7d, type: 3}
   healFireBall: {fileID: 0}
-  fromPos: {fileID: 4400901344620402037}
+  fromPos: {fileID: 714717711582031088}
+  RevivePos: {fileID: 0}
   mousePos: {x: 0, y: 0}
   direction: {x: 0, y: 0}
   playerFallToDeadSpeaker: {fileID: 0}
+  flySpeed: 5
+  fireBallSpeed: 2
+  fireBallDirection: {x: 1, y: 0}
+  fireRate: 3
+  nextFireTime: 0
+  fireLifeTime: 3
+  playerAttackedByLavaSpeaker: {fileID: 0}
 --- !u!1 &1463798093583870301
 GameObject:
   m_ObjectHideFlags: 0

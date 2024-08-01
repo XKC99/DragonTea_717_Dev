@@ -227,6 +227,7 @@ public class PlayerController : MonoBehaviour
    public void TimelineStartToStopMove()  //Timeline开始时，禁止移动
    {
     isTimelineing=true;
+    animator.SetFloat("Speed",0f);
    }
 
    public void TimelineEndToStartMove()  //Timeline结束时，允许移动

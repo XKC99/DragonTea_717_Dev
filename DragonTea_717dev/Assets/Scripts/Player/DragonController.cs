@@ -5,6 +5,7 @@ using UnityEngine;
 public class DragonController : PlayerController
 {
     public float flySpeed;
+    public DialogueSpeaker playerAttackedByLavaSpeaker;
     private float recordMoveSpeed;
 
     private void Awake() {
@@ -60,5 +61,17 @@ public class DragonController : PlayerController
         Revive();
     }
 
+    public void DragonAttackedByLava()
+    {
+        StartCoroutine("DragonAttackedByLavaCo");
+    }
+
+    public IEnumerator DragonAttackedByLavaCo()
+    {
+        PlayerIsDead();
+        playerAttackedByLavaSpeaker.GetComponent<DialogueSpeaker>().Play();  //玩家坠落死亡后播放语音
+        yield return new WaitUntil(()=>playerAttackedByLavaSpeaker.GetComponent<DialogueSpeaker>().isFinished);
+        Revive();
+    }
     
 }

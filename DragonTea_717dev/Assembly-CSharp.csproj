@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Character\Enemy\ZombieChaseState.cs" />
+    <Compile Include="Assets\Scripts\Items\Lava\Lava.cs" />
     <Compile Include="Assets\Scripts\Timeline\SelfTransTrack\CustomBehaviour.cs" />
     <Compile Include="Assets\Scripts\Character\PhysicsCheck.cs" />
     <Compile Include="Assets\Scripts\Audio\Data_SO\PlayAudio_SO.cs" />
@@ -90,7 +91,9 @@
     <Compile Include="Assets\Scripts\Inventory\Logic\Item.cs" />
     <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
     <Compile Include="Assets\Scripts\Timeline\SelfTransTrack\CustomTrack.cs" />
+    <Compile Include="Assets\Scripts\Items\Lava\LavaAutoTrigger.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerItemLogic.cs" />
+    <Compile Include="Assets\Scripts\Items\Lava\LavaTrigger.cs" />
     <Compile Include="Assets\Scripts\Utilities\Event\BaseEvent.cs" />
     <Compile Include="Assets\Scripts\Transition\TransitionManager.cs" />
     <Compile Include="Assets\Plugs\Dialogue Speaker\Demo\Scripts\DialogueControls.cs" />
@@ -107,6 +110,7 @@
     <Compile Include="Assets\Scripts\Audio\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Items\Card\CardLayoutManager.cs" />
     <Compile Include="Assets\Scripts\Utilities\PoolTool.cs" />
+    <Compile Include="Assets\Scripts\Items\JinJiLogic.cs" />
     <Compile Include="Assets\Scripts\Cursor\CursorManager.cs" />
     <Compile Include="Assets\Scripts\Character\Enemy\ZombieEnemy.cs" />
     <Compile Include="Assets\Arts\PixelWeatherFX\Scripts\TranslateObject.cs" />

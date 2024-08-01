@@ -76,7 +76,7 @@ public class PlayerCollision : ItemLogic,ICardAffected
     {
         //
     }
-
+  
 
    public void FNoteDisable()
    {

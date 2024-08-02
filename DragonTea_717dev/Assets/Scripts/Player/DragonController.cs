@@ -18,12 +18,12 @@ public class DragonController : PlayerController
     }
     protected override void Update()
     {
-        if (Input.GetKey("space") && !cantMove)  //按下空格，且在地面，且不能移动时才可添加力
+        if (Input.GetKey("space") && !cantMove&&!isDead)  //按下空格，且在地面，且不能移动时才可添加力
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Force);
         }
 
-        if(Input.GetKeyDown("space"))
+        if(Input.GetKeyDown("space")&&!isDead)
         {
             animator.SetTrigger("Fly");
             Debug.Log("起飞");
@@ -36,7 +36,7 @@ public class DragonController : PlayerController
             playerCollision.StartToTalk();
         }
 
-        if(Input.GetMouseButtonDown(0)&&Time.time>=nextFireTime)
+        if(Input.GetMouseButtonDown(0)&&Time.time>=nextFireTime&&!isDead)
         {
             PlayerIsAttack();
             Debug.Log("我正在攻击");

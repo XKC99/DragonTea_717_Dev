@@ -15,7 +15,6 @@ public class ColliderEvent : BaseEvent
             //OnCollider();
             OnColliderPlayer();
         }
-
      
     }
 

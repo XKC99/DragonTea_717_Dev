@@ -9022,6 +9022,7 @@ MonoBehaviour:
   attackFireBall: {fileID: 0}
   healFireBall: {fileID: 0}
   fromPos: {fileID: 0}
+  RevivePos: {fileID: 0}
   mousePos: {x: 0, y: 0}
   direction: {x: 0, y: 0}
   playerFallToDeadSpeaker: {fileID: 0}
@@ -11041,7 +11042,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bb7c9e59b7338a4da8697f95fded85e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thePlayAudioName: Music_1001
+  thePlayAudioName: m1001
   theStopAudioName: 
 --- !u!4 &4499260808002648742
 Transform:
@@ -11543,6 +11544,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 10
   gravityChangeScale: 0
+  playerImage: {fileID: 0}
+  playerOldImage: {fileID: 0}
   npcDialogueTreeController: {fileID: 0}
 --- !u!4 &6901174923546850695
 Transform:
@@ -12028,6 +12031,7 @@ GameObject:
   - component: {fileID: 7059238613737014151}
   - component: {fileID: 982091431523439982}
   - component: {fileID: 4367235328360339180}
+  - component: {fileID: 8809795961410419555}
   m_Layer: 0
   m_Name: MusicPlayerTrigger
   m_TagString: Untagged
@@ -12035,6 +12039,48 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8809795961410419555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8809795961410419554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 262bad0881759f54dbf10adef75bd772, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerPlayerUnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4367235328360339180}
+        m_TargetAssemblyTypeName: AudioPlayTest, Assembly-CSharp
+        m_MethodName: PlayerTheCLip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerBoxUnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8828093660016521521
 MonoBehaviour:
   m_ObjectHideFlags: 0

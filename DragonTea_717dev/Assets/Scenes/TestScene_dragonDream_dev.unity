@@ -75881,6 +75881,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8196096178610390479, guid: e1e5948b6586b624d961bc6a480a77bb, type: 3}
+      propertyPath: fireRate
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8196096178610390479, guid: e1e5948b6586b624d961bc6a480a77bb, type: 3}
       propertyPath: RevivePos
       value: 
       objectReference: {fileID: 1070272931}
@@ -75888,6 +75892,10 @@ PrefabInstance:
       propertyPath: fireBallSpeed
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 8196096178610390479, guid: e1e5948b6586b624d961bc6a480a77bb, type: 3}
+      propertyPath: attackFireBall
+      value: 
+      objectReference: {fileID: 3340886047861285697, guid: 0c64fc8bd0fffeb47b75c8fe45b7b12e, type: 3}
     - target: {fileID: 8196096178610390479, guid: e1e5948b6586b624d961bc6a480a77bb, type: 3}
       propertyPath: fireBallDirection.x
       value: 1

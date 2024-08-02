@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]public Vector2 direction;
 
     public GameObject playerFallToDeadSpeaker;
+    public GameObject playerDeadByEnemySpeaker;
+
 
 
     protected Rigidbody2D rb;
@@ -158,6 +160,18 @@ public class PlayerController : MonoBehaviour
         PlayerIsDead();
         playerFallToDeadSpeaker.GetComponent<DialogueSpeaker>().Play();  //玩家坠落死亡后播放语音
         yield return new WaitUntil(()=>playerFallToDeadSpeaker.GetComponent<DialogueSpeaker>().isFinished);
+        Revive();
+    }
+
+    public void PlayerDeadByEnemy()  //调用玩家被敌人攻击死亡的协程
+    {
+        StartCoroutine(PlayerDeadByEnemyCo());
+    }
+    public IEnumerator PlayerDeadByEnemyCo()  //玩家被敌人攻击死亡
+    {
+        PlayerIsDead();
+        playerDeadByEnemySpeaker.GetComponent<DialogueSpeaker>().Play();  //玩家被敌人攻击死亡后播放语音
+        yield return new WaitUntil(()=>playerDeadByEnemySpeaker.GetComponent<DialogueSpeaker>().isFinished);
         Revive();
     }
 

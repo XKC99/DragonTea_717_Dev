@@ -1,48 +1,75 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioPlayTest : MonoBehaviour
 {
-    // public List<string> thePlayAudioName;
-    // public List<string> theStopAudioName;
-    public string thePlayAudioName;
-    public string theStopAudioName;
+    public string[] playAudioNames;
+    public string[] stopAudioNames;
 
+    private int currentPlayIndex = 0;
+    private int currentStopIndex = 0;
 
-    public void OnTriggerEnter2D(Collider2D other)
+    void Start()
     {
-        if(other.gameObject.tag == "Player")
+        AudioManager.Instance.ListAllSounds();
+    }
+
+    public void PlayNextAudio()
+    {
+        if (playAudioNames.Length == 0)
         {
-            // AudioManager.instance.Stop(theStopAudioName);
-            // if(theStopAudioName==null)
-            // {
-            //     return;
-            // }
-            AudioManager.instance.Play(thePlayAudioName);
-            Debug.Log("放音乐");
-            // this.gameObject.SetActive(false);
-            
+            Debug.LogWarning("No audio names set for playing.");
+            return;
+        }
+
+        string audioToPlay = playAudioNames[currentPlayIndex];
+        Debug.Log($"Attempting to play: {audioToPlay}");
+        AudioManager.Instance.Play(audioToPlay);
+
+        currentPlayIndex = (currentPlayIndex + 1) % playAudioNames.Length;
+    }
+
+    public void StopNextAudio()
+    {
+        if (stopAudioNames.Length == 0)
+        {
+            Debug.LogWarning("No audio names set for stopping.");
+            return;
+        }
+
+        string audioToStop = stopAudioNames[currentStopIndex];
+        Debug.Log($"Attempting to stop: {audioToStop}");
+        AudioManager.Instance.Stop(audioToStop);
+
+        currentStopIndex = (currentStopIndex + 1) % stopAudioNames.Length;
+    }
+
+    public void ToggleAudio(string audioName)
+    {
+        if (AudioManager.Instance.IsPlaying(audioName))
+        {
+            Debug.Log($"Stopping: {audioName}");
+            AudioManager.Instance.Stop(audioName);
+        }
+        else
+        {
+            Debug.Log($"Playing: {audioName}");
+            AudioManager.Instance.Play(audioName);
         }
     }
 
-    // public void PlayerTheCLip()
-    // {
-    //     for(int i=0;i<thePlayAudioName.Count;i++)
-    //     {
-    //         AudioManager.instance.Play(thePlayAudioName[i]);
-    //     }
-      
-    // }
+    public void PlayAllAudio()
+    {
+        foreach (string audioName in playAudioNames)
+        {
+            AudioManager.Instance.Play(audioName);
+        }
+    }
 
-    // public void StopTheCLip()
-    // {
-    //     for(int i=0;i<theStopAudioName.Count;i++)
-    //     {
-    //         AudioManager.instance.Stop(theStopAudioName[i]);
-    //     }
-      
-    // }
-
-    
+    public void StopAllAudio()
+    {
+        foreach (string audioName in stopAudioNames)
+        {
+            AudioManager.Instance.Stop(audioName);
+        }
+    }
 }

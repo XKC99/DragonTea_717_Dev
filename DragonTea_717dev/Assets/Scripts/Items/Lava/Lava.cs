@@ -12,7 +12,7 @@ public class Lava : MonoBehaviour
             collision.GetComponent<DragonController>().DragonAttackedByLava();
             Destroy(gameObject); // 击中玩家后销毁子弹
         }
-        if(collision.CompareTag("Fire"))
+        if(collision.CompareTag("Heal"))
         {
             Debug.Log("撞上了");
             SkillBallPool.Instance.PushBallObject(collision.gameObject);

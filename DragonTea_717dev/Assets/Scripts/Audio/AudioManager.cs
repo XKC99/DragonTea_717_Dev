@@ -34,8 +34,8 @@ public class AudioManager : MonoBehaviour
        foreach (AudioType audioType in AudioTypes)
         {
             //audioType.Source = gameObject.AddComponent<AudioSource>();
-            audioType.Source.clip = audioType.Clip;
             audioType.Source.name= audioType.Name;
+            audioType.Source.clip = audioType.Clip;
             audioType.Source.loop = audioType.Loop;
             audioType.Source.pitch = audioType.Pitch;
             audioType.Source.volume = audioType.Volume;

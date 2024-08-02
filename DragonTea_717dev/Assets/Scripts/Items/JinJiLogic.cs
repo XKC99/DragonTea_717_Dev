@@ -23,4 +23,15 @@ public class JinJiLogic : ItemLogic,ICardAffected
         }
         return false;
     }
+
+    public override void AttackedByFireBall(Collider2D collider2D)
+    {
+        Debug.Log("我被大火球攻击了");
+        //Destroy(collider2D.gameObject);  //这里需要替换为存入对象池的方法
+        SkillBallPool.Instance.PushBallObject(collider2D.gameObject);
+        this.gameObject.SetActive(false);//将本物体设置为不可见
+    }
+
+
+    
 }

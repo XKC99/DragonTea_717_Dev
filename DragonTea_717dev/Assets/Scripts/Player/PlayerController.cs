@@ -244,6 +244,13 @@ public class PlayerController : MonoBehaviour
     animator.SetFloat("Speed",0f);
    }
 
+   public void TimelineStartMoon()  //月光Timelin部分特殊处理
+   {
+    isTimelineing=true;
+    animator.SetFloat("Speed",0f);
+    this.GetComponent<Rigidbody2D>().gravityScale=0f;
+   }
+
    public void TimelineEndToStartMove()  //Timeline结束时，允许移动
    {
     isTimelineing=false;

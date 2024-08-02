@@ -1,107 +1,139 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using JetBrains.Annotations;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.Audio;
+using System.Collections.Generic;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager instance;  //设置为单例模式
-    public AudioType[] AudioTypes;
+    public static AudioManager Instance;
 
-   
-    private void Awake()
+    [System.Serializable]
+    public class Sound
     {
-        if(instance==null)
+        public string name;
+        public AudioClip clip;
+        [Range(0f, 1f)]
+        public float volume = 1f;
+        [Range(0.1f, 3f)]
+        public float pitch = 1f;
+        public bool loop = false;
+
+        [HideInInspector]
+        public AudioSource source;
+    }
+
+    public Sound[] sounds;
+    private Dictionary<string, Sound> soundDictionary = new Dictionary<string, Sound>();
+
+    void Awake()
+    {
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
             return;
         }
-        
-        DontDestroyOnLoad(gameObject);
-    }
 
-
-    private void Start()
-    {
-       foreach (AudioType audioType in AudioTypes)
+        foreach (Sound s in sounds)
         {
-            //audioType.Source = gameObject.AddComponent<AudioSource>();
-            audioType.Source.name= audioType.Name;
-            audioType.Source.clip = audioType.Clip;
-            audioType.Source.loop = audioType.Loop;
-            audioType.Source.pitch = audioType.Pitch;
-            audioType.Source.volume = audioType.Volume;
-            audioType.Source.playOnAwake = audioType.PlayOnAwake;
-            if(audioType.MixerGroup!=null)
-            {
-                audioType.Source.outputAudioMixerGroup = audioType.MixerGroup;
-            }
+            s.source = gameObject.AddComponent<AudioSource>();
+            s.source.clip = s.clip;
+            s.source.volume = s.volume;
+            s.source.pitch = s.pitch;
+            s.source.loop = s.loop;
+
+            soundDictionary[s.name] = s;
         }
     }
-    
 
     public void Play(string name)
     {
-        foreach(AudioType type in AudioTypes)
+        if (soundDictionary.TryGetValue(name, out Sound s))
         {
-            if(type.Name==name)
+            if (s.source.isPlaying)
             {
-                type.Source.Play();
-                Debug.Log("播放"+name);
-                return;
+                Debug.Log($"Sound {name} is already playing. Restarting.");
+                s.source.Stop();
             }
+            s.source.Play();
+            Debug.Log($"Playing sound: {name}");
         }
-        Debug.Log("没有找到这个音频");
-    }
-
-    public void Pause(string name)
-    {
-        foreach(AudioType type in AudioTypes)
+        else
         {
-            if(type.Name==name)
-            {
-                type.Source.Pause();
-                return;
-            }
+            Debug.LogWarning($"Sound: {name} not found!");
         }
-        Debug.Log("没有找到这个音频");
     }
 
     public void Stop(string name)
     {
-        foreach(AudioType type in AudioTypes)
+        if (soundDictionary.TryGetValue(name, out Sound s))
         {
-            if(type.Name==name)
-            {
-                type.Source.Stop();
-                return;
-            }
+            s.source.Stop();
+            Debug.Log($"Stopping sound: {name}");
         }
-        Debug.Log("没有找到这个音频");
+        else
+        {
+            Debug.LogWarning($"Sound: {name} not found!");
+        }
     }
 
-    public void PlayOneShot(string name)
+    public void Pause(string name)
     {
-        foreach(AudioType type in AudioTypes)
+        if (soundDictionary.TryGetValue(name, out Sound s))
         {
-            if(type.Name==name)
-            {
-                type.Source.PlayOneShot(type.Clip);
-                return;
-            }
+            s.source.Pause();
+            Debug.Log($"Pausing sound: {name}");
         }
-        Debug.Log("没有找到这个音频");
+        else
+        {
+            Debug.LogWarning($"Sound: {name} not found!");
+        }
     }
 
-    
+    public void Resume(string name)
+    {
+        if (soundDictionary.TryGetValue(name, out Sound s))
+        {
+            s.source.UnPause();
+            Debug.Log($"Resuming sound: {name}");
+        }
+        else
+        {
+            Debug.LogWarning($"Sound: {name} not found!");
+        }
+    }
 
-   
+    public bool IsPlaying(string name)
+    {
+        if (soundDictionary.TryGetValue(name, out Sound s))
+        {
+            return s.source.isPlaying;
+        }
+        Debug.LogWarning($"Sound: {name} not found!");
+        return false;
+    }
+
+    public void SetVolume(string name, float volume)
+    {
+        if (soundDictionary.TryGetValue(name, out Sound s))
+        {
+            s.source.volume = Mathf.Clamp01(volume);
+            Debug.Log($"Set volume of {name} to {volume}");
+        }
+        else
+        {
+            Debug.LogWarning($"Sound: {name} not found!");
+        }
+    }
+
+    public void ListAllSounds()
+    {
+        Debug.Log("All registered sounds:");
+        foreach (var sound in soundDictionary)
+        {
+            Debug.Log($"Name: {sound.Key}, Clip: {sound.Value.clip.name}, IsPlaying: {sound.Value.source.isPlaying}");
+        }
+    }
 }

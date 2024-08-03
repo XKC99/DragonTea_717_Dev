@@ -241,6 +241,7 @@ public class PlayerController : MonoBehaviour
    public void TimelineStartToStopMove()  //Timeline开始时，禁止移动
    {
     isTimelineing=true;
+    this.rb.gravityScale=0f;
     animator.SetFloat("Speed",0f);
    }
 
@@ -251,9 +252,16 @@ public class PlayerController : MonoBehaviour
     this.GetComponent<Rigidbody2D>().gravityScale=0f;
    }
 
-   public void TimelineEndToStartMove()  //Timeline结束时，允许移动
+   public virtual void TimelineEndToStartMove()  //Timeline结束时，允许移动
    {
     isTimelineing=false;
+    //this.rb.gravityScale=1f;
+    
+   }
+
+   public void ChangeReviePos(Vector3 newpos)
+   {
+        RevivePos.position=newpos;
    }
 
  

@@ -11,6 +11,14 @@ public class PlayerCollision : ItemLogic,ICardAffected
     public Texture2D playerOldImage;
     public DialogueTreeController npcDialogueTreeController;  //NPC身上的DialogueTreeController组件
 
+    public float recordGravityScale;
+
+    private void Start() 
+    {
+        recordGravityScale=this.GetComponent<Rigidbody2D>().gravityScale;
+    }
+
+
     public override bool Execute(Card card)
     {
         switch(card.cardType)
@@ -74,7 +82,7 @@ public class PlayerCollision : ItemLogic,ICardAffected
 
     protected override void OnCollisionEnter2D()
     {
-        //
+        rb.gravityScale=recordGravityScale;
     }
   
 

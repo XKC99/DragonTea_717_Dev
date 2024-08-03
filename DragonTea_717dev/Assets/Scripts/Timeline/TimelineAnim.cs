@@ -14,4 +14,17 @@ public class TimelineAnim : MonoBehaviour
    {
       animator.SetBool("Attack", true);
    }
+
+   public void gameObjectSetFalse()
+
+   {
+    this.gameObject.SetActive(false);
+
+   }
+
+   public void gameObjectSetTrue()
+   {
+    this.gameObject.SetActive(true);
+   }
+   
 }

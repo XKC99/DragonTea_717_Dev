@@ -24,10 +24,10 @@ public class PlayerController : MonoBehaviour
     public GameObject playerFallToDeadSpeaker;
     public GameObject playerDeadByEnemySpeaker;
 
-
-
     protected Rigidbody2D rb;
     protected Animator animator;
+
+    // protected float recordGravityScale;
 
     protected bool isGrounded = false;
     protected bool facingRight = true;
@@ -41,16 +41,24 @@ public class PlayerController : MonoBehaviour
     protected PlayerCollision playerCollision;
     protected bool cantMove => playerCollision.npcDialogueTreeController != null && playerCollision.npcDialogueTreeController.isRunning;
 
-
-    protected void Start()
+    protected virtual void Awake()
     {
         playerCollision=GetComponent<PlayerCollision>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-
         physicsCheck=GetComponent<PhysicsCheck>();
         physicsCheck.onGroundChange += OnGroundChange;
     }
+    
+    // protected void Start()
+    // {
+    //     playerCollision=GetComponent<PlayerCollision>();
+    //     rb = GetComponent<Rigidbody2D>();
+    //     animator = GetComponent<Animator>();
+
+    //     physicsCheck=GetComponent<PhysicsCheck>();
+    //     physicsCheck.onGroundChange += OnGroundChange;
+    // }
 
     protected void FixedUpdate()
     {
@@ -114,7 +122,7 @@ public class PlayerController : MonoBehaviour
         {
             case "Ground":
                 isGrounded = true;
-                rb.gravityScale=1f;
+                //rb.gravityScale=1f;
                 break;
             case "Teleport":
                 var teleport =collision.gameObject.GetComponent<Teleport>();
@@ -125,7 +133,7 @@ public class PlayerController : MonoBehaviour
                 break;
             case"Box":
                 isGrounded = true;
-                rb.gravityScale=1f;
+                //rb.gravityScale=1f;
                 break;
         }
     }
@@ -240,23 +248,23 @@ public class PlayerController : MonoBehaviour
 
    public void TimelineStartToStopMove()  //Timeline开始时，禁止移动
    {
+    Debug.Log("TimelineStartToStopMove");
     isTimelineing=true;
-    this.rb.gravityScale=0f;
+    this.rb.bodyType=RigidbodyType2D.Kinematic;//将刚体类型改为Kinematic，禁止运动
     animator.SetFloat("Speed",0f);
+   }
+
+    public virtual void TimelineEndToStartMove()  //Timeline结束时，允许移动
+   {
+    isTimelineing=false;
+    this.rb.bodyType=RigidbodyType2D.Dynamic;//将刚体类型改为Dynamic，允许运动
    }
 
    public void TimelineStartMoon()  //月光Timelin部分特殊处理
    {
     isTimelineing=true;
     animator.SetFloat("Speed",0f);
-    this.GetComponent<Rigidbody2D>().gravityScale=0f;
-   }
-
-   public virtual void TimelineEndToStartMove()  //Timeline结束时，允许移动
-   {
-    isTimelineing=false;
-    //this.rb.gravityScale=1f;
-    
+    // this.GetComponent<Rigidbody2D>().gravityScale=0f;
    }
 
    public void ChangeReviePos(Vector3 newpos)

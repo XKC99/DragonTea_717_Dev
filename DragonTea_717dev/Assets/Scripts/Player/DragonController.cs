@@ -12,10 +12,12 @@ public class DragonController : PlayerController
     public float fireLifeTime;//火焰存活时间
     public DialogueSpeaker playerAttackedByLavaSpeaker;
     private float recordMoveSpeed;
+    
 
     private void Awake() {
         recordMoveSpeed=moveSpeed;
     }
+
     protected override void Update()
     {
         if (Input.GetKey("space") && !cantMove&&!isDead)  //按下空格，且在地面，且不能移动时才可添加力
@@ -95,6 +97,12 @@ public class DragonController : PlayerController
     {
         base.Flip();
         fireBallDirection.x*=-1; //改变火球位置
+    }
+
+    public override void TimelineEndToStartMove()
+    {
+        isTimelineing=false;
+        this.rb.gravityScale=2f;
     }
 
 

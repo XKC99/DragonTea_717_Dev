@@ -19,6 +19,7 @@ public class TriggerEvent:BaseEvent
             OnTriggerBox();
         }
         
+        
     }
 
     private void OnTriggerBox()

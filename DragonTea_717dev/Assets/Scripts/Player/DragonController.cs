@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DragonController : PlayerController
@@ -14,12 +15,15 @@ public class DragonController : PlayerController
     private float recordMoveSpeed;
     
 
-    private void Awake() {
+    protected override void Awake() 
+    {
+        base.Awake();
         recordMoveSpeed=moveSpeed;
     }
 
     protected override void Update()
     {
+        Debug.Log("Dragon Velocity: " + rb.velocity);
         if (Input.GetKey("space") && !cantMove&&!isDead)  //按下空格，且在地面，且不能移动时才可添加力
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Force);
@@ -52,6 +56,7 @@ public class DragonController : PlayerController
         if(isOnGround)
         {
             moveSpeed=recordMoveSpeed;
+            // rb.gravityScale=2.0f;
         }
 
     }
@@ -99,11 +104,9 @@ public class DragonController : PlayerController
         fireBallDirection.x*=-1; //改变火球位置
     }
 
-    public override void TimelineEndToStartMove()
-    {
-        isTimelineing=false;
-        this.rb.gravityScale=2f;
-    }
+    
+   
+  
 
 
 

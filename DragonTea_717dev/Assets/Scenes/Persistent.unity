@@ -544,7 +544,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: m1001
-    clip: {fileID: 8300000, guid: 7d9060a7f162c0e4f82f3c2b80a8f581, type: 3}
+    clip: {fileID: 8300000, guid: 6ef060ec0dbf4a14bb851a377aed9c4d, type: 3}
     volume: 1
     pitch: 1
     loop: 1
@@ -568,10 +568,22 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   - name: m4001
+    clip: {fileID: 8300000, guid: 44ff9720af0f8af49aa50c4633c51aba, type: 3}
+    volume: 0.722
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: m4002
     clip: {fileID: 8300000, guid: 3b70bdeaef534d641a79703e47bf6211, type: 3}
     volume: 1
     pitch: 1
     loop: 1
+    source: {fileID: 0}
+  - name: CardCannotUse
+    clip: {fileID: 8300000, guid: 0e426b6f39cc356458839d5863f6b462, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
     source: {fileID: 0}
 --- !u!1 &1447489006
 GameObject:

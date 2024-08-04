@@ -28,6 +28,7 @@ public class JinJiLogic : ItemLogic,ICardAffected
     {
         Debug.Log("我被大火球攻击了");
         //Destroy(collider2D.gameObject);  //这里需要替换为存入对象池的方法
+        OnGameObjectDestroy();
         SkillBallPool.Instance.PushBallObject(collider2D.gameObject);
         this.gameObject.SetActive(false);//将本物体设置为不可见
     }

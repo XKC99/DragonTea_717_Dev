@@ -31,6 +31,24 @@ public class ZombieLogic : ItemLogic,ICardAffected
 
     }
 
+    public void ZombieDieEvent()
+    {
+        StartCoroutine(ZombieDieCo());
+    }
+
+    public IEnumerator ZombieDieCo()  //死亡的协程
+    {
+        this.gameObject.GetComponent<ZombieEnemy>().EnemyDie();
+        rb.velocity=new Vector2(0,0);
+        Debug.Log("协程yield");
+        yield return new WaitForSeconds(2f);
+        Debug.Log("协程after yield");
+        GameObject gb1=this.transform.Find("p_sotai").gameObject;
+        GameObject gb2=this.transform.Find("all_scale").gameObject;
+        gb1.SetActive(false);
+        gb2.SetActive(false);   
+        AfterDieShowCard();
+    }
     
     public void AfterDieShowCard()
     {

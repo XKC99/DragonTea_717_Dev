@@ -28,6 +28,9 @@ public class TriggerEvent:BaseEvent
         triggerBoxUnityEvent?.Invoke();
     }
 
+    
+
+
 
     
 

@@ -12,10 +12,12 @@ public class CardDeck : Singleton<CardDeck>
 
     public CardLayoutManager cardLayoutManager;
 
+    public GameObject cardFullSpeaker;
+
     private List<CardDataSO> drawDeck=new(); //抽牌堆
     private List<CardDataSO> discardDeck=new(); //弃牌堆
 
-    [SerializeField]private List<Card> handCardObjects=new(); //当前手牌
+    [SerializeField]public List<Card> handCardObjects=new(); //当前手牌
 
 
     public void InitCardDeck()
@@ -47,6 +49,12 @@ public class CardDeck : Singleton<CardDeck>
     {
         handCardObjects.Remove(card);
         SetCardLayOut();
+    }
+
+    public void HandCardFull()
+    {
+        Debug.Log("手牌已满,请弃牌");
+        cardFullSpeaker.GetComponent<DialogueSpeaker>().Play();
     }
 
 

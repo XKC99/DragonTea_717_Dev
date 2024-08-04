@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ItemLogic : MonoBehaviour,ICardAffected //接口命名往往以I开头
 {
@@ -9,6 +10,8 @@ public class ItemLogic : MonoBehaviour,ICardAffected //接口命名往往以I开
    protected Rigidbody2D rb;
    public float jumpForce;
    public float gravityChangeScale;
+
+   public UnityEvent gameObjectDestroyUnityEvent;
 
    protected virtual void Awake()
    {
@@ -130,6 +133,12 @@ public class ItemLogic : MonoBehaviour,ICardAffected //接口命名往往以I开
     {
         this.GetComponentInChildren<DialogueSpeaker>().Play();
         Debug.Log("不能使用该牌");
+    }
+
+    protected virtual void OnGameObjectDestroy()
+    {
+        Debug.Log($"Trigger触发:{gameObject.name}");
+        gameObjectDestroyUnityEvent?.Invoke();
     }
 
 

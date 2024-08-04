@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SpeacialBox : ItemLogic,ICardAffected,IShowF
 {
@@ -75,9 +76,12 @@ public class SpeacialBox : ItemLogic,ICardAffected,IShowF
     public void SpeacialBoxGetCard()
     {
         this.GetComponent<CardTrigger>().PlayerGetCard();
+        this.GetComponent<CardTrigger>().CardIsGot();
         this.GetComponent<CardTrigger>().GotTimesAdd();
+
     }
 
+   
 
     
 

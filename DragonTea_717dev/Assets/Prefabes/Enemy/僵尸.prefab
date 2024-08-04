@@ -80,6 +80,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardData: {fileID: 11400000, guid: 698a992b387a545478bf7b007ac37bcd, type: 2}
   isGot: 0
+  GotTimes: 0
+  CardTriggerEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &8306566534445368881
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2348,6 +2352,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardData: {fileID: 11400000, guid: e44879e0c81dd0343a1bb1739717b8ae, type: 2}
   isGot: 0
+  GotTimes: 0
+  CardTriggerEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &3841388736346306940
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2704,32 +2712,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3943494384194901151}
         m_TargetAssemblyTypeName: ZombieLogic, Assembly-CSharp
-        m_MethodName: AfterDieShowCard
+        m_MethodName: ZombieDieEvent
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4639534461060721903}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 186089063039277016}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2791,6 +2775,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 10
   gravityChangeScale: 0
+  gameObjectDestroyUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
   DeadObject:
   - {fileID: 5536999669707087581}
   - {fileID: 343669486269137878}

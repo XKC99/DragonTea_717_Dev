@@ -21,8 +21,8 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]public Vector2 mousePos;
     [HideInInspector]public Vector2 direction;
 
-    public GameObject playerFallToDeadSpeaker;
-    public GameObject playerDeadByEnemySpeaker;
+    public GameObject playerFallToDeadSpeaker;  //高空坠落死亡音
+    public GameObject playerDeadByEnemySpeaker; //被敌人攻击死亡音
 
     protected Rigidbody2D rb;
     protected Animator animator;

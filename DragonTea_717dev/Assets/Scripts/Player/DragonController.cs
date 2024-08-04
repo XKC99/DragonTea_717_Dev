@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DragonController : PlayerController
 {
@@ -11,7 +13,11 @@ public class DragonController : PlayerController
     public float fireRate; //火球发射间隔时间
     public float nextFireTime; //下次可以发射的时间
     public float fireLifeTime;//火焰存活时间
-    public DialogueSpeaker playerAttackedByLavaSpeaker;
+    public GameObject playerAttackedByLavaSpeaker;
+
+    public GameObject tipCanvas;
+    public TextMeshProUGUI CD_Text;
+    private string cdTip;
     private float recordMoveSpeed;
     
 
@@ -19,11 +25,12 @@ public class DragonController : PlayerController
     {
         base.Awake();
         recordMoveSpeed=moveSpeed;
+        cdTip = CD_Text.text;
     }
 
     protected override void Update()
     {
-        Debug.Log("Dragon Velocity: " + rb.velocity);
+        //Debug.Log("Dragon Velocity: " + rb.velocity);
         if (Input.GetKey("space") && !cantMove&&!isDead)  //按下空格，且在地面，且不能移动时才可添加力
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Force);
@@ -42,13 +49,32 @@ public class DragonController : PlayerController
             playerCollision.StartToTalk();
         }
 
-        if(Input.GetMouseButtonDown(0)&&Time.time>=nextFireTime&&!isDead)
+        if(Input.GetMouseButtonDown(0)&&!isDead)
         {
+            if(Time.time>=nextFireTime)
+            {
             PlayerIsAttack();
             Debug.Log("我正在攻击");
             nextFireTime=Time.time+fireRate;
+            }
+            else
+            {
+                Debug.Log("冷却中");
+                //comp.text.Replace("ss", 30);
+            }
+            
         }
         
+        var cd = nextFireTime-Time.time;
+        if (cd > 0)
+        {
+            CD_Text.text = string.Format(cdTip, cd.ToString("F0"));
+            tipCanvas.SetActive(true);
+        }
+        else
+        {
+            tipCanvas.SetActive(false);
+        }
     }
 
     protected override void OnGroundChange(bool isOnGround)
@@ -63,6 +89,10 @@ public class DragonController : PlayerController
 
     public void DragonDropIntoFireDieAndRevive()  //龙掉岩浆死亡
     {
+        if(isDead)
+        {
+            return;
+        }
         StartCoroutine("DragonDropIntoFireDieAndReviveCo");
     }    
     public IEnumerator DragonDropIntoFireDieAndReviveCo()
@@ -75,6 +105,10 @@ public class DragonController : PlayerController
 
     public void DragonAttackedByLava()  //龙被岩浆球攻击死亡
     {
+        if(isDead)
+        {
+            return;
+        }
         StartCoroutine("DragonAttackedByLavaCo");
     }
 

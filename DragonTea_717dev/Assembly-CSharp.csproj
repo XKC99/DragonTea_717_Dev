@@ -67,7 +67,6 @@
     <Compile Include="Assets\Scripts\Character\Enemy\ZombieChaseState.cs" />
     <Compile Include="Assets\Scripts\Items\Lava\Lava.cs" />
     <Compile Include="Assets\Scripts\Timeline\SelfTransTrack\CustomBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Items\SpeacialBox.cs" />
     <Compile Include="Assets\Scripts\Character\PhysicsCheck.cs" />
     <Compile Include="Assets\Scripts\Audio\Data_SO\PlayAudio_SO.cs" />
     <Compile Include="Assets\Scripts\Utilities\Event\SpecialTriggerEvent.cs" />
@@ -96,6 +95,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerItemLogic.cs" />
     <Compile Include="Assets\Scripts\Items\Lava\LavaTrigger.cs" />
     <Compile Include="Assets\Scripts\Utilities\Event\BaseEvent.cs" />
+    <Compile Include="Assets\Scripts\Items\SpecialBox\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\Transition\TransitionManager.cs" />
     <Compile Include="Assets\Plugs\Dialogue Speaker\Demo\Scripts\DialogueControls.cs" />
     <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Spawn System\CFX_SpawnSystem.cs" />
@@ -109,6 +109,7 @@
     <Compile Include="Assets\Scripts\Utilities\DataCollections.cs" />
     <Compile Include="Assets\Scripts\Audio\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Items\Card\CardLayoutManager.cs" />
+    <Compile Include="Assets\Scripts\Others\EnteredMemoryBool.cs" />
     <Compile Include="Assets\Scripts\Utilities\PoolTool.cs" />
     <Compile Include="Assets\Scripts\Items\JinJiLogic.cs" />
     <Compile Include="Assets\Scripts\Cursor\CursorManager.cs" />
@@ -123,6 +124,7 @@
     <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_AutoDestructShuriken.cs" />
     <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo.cs" />
     <Compile Include="Assets\Scripts\Audio\AudioPlayTest.cs" />
+    <Compile Include="Assets\Scripts\Others\ConditionCheck.cs" />
     <Compile Include="Assets\Plugs\Dialogue Speaker\Scripts\Dialogues.cs" />
     <Compile Include="Assets\Scripts\Timeline\ControlRigidbodyPhysics.cs" />
     <Compile Include="Assets\Scripts\Timeline\ResetGravity.cs" />
@@ -133,6 +135,7 @@
     <Compile Include="Assets\Scripts\Items\Card\CardTransform.cs" />
     <Compile Include="Assets\Scripts\PostProcessing\DeletePost.cs" />
     <Compile Include="Assets\Scripts\Timeline\TimelineAnim.cs" />
+    <Compile Include="Assets\Scripts\Transition\TransitionPos.cs" />
     <Compile Include="Assets\Scripts\Inventory\Data_SO\ItemDataList_SO.cs" />
     <Compile Include="Assets\Arts\PixelWeatherFX\Scripts\RotateObject.cs" />
     <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RotateCamera.cs" />
@@ -141,6 +144,7 @@
     <Compile Include="Assets\Scripts\Timeline\SelfTransTrack\CustomClip.cs" />
     <Compile Include="Assets\Scripts\Utilities\Event\ColliderEvent.cs" />
     <Compile Include="Assets\Scripts\Others\GameTimer.cs" />
+    <Compile Include="Assets\Scripts\Items\SpecialBox\SpeacialBox.cs" />
     <Compile Include="Assets\Plugs\Dialogue Speaker\Demo\Scripts\QuitApp.cs" />
     <Compile Include="Assets\Scripts\Character\Enemy\BaseEnemy.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerStatus.cs" />

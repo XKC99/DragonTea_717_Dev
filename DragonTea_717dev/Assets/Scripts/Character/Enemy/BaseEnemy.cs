@@ -138,7 +138,7 @@ public class BaseEnemy : MonoBehaviour
 
     public void HurtPlayer()
     {
-        anim.SetTrigger("Attack");
+        anim.SetTrigger("Hurt");
     }
 
     

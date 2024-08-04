@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BoxLogic : ItemLogic,ICardAffected 
 {
     public string destroyBoxAudioName;
     public List<GameObject> cardColletions;
+
+    public UnityEvent boxDestroyUnityEvent;
+
     // private GameObject player;
     // private void Awake()
     // {
@@ -39,6 +43,7 @@ public class BoxLogic : ItemLogic,ICardAffected
         //AudioManager.Instance.PlayOneShot(destroyBoxAudioName);
           //Destroy(collider2D.gameObject);  //这里需要替换为存入对象池的方法
           SkillBallPool.Instance.PushBallObject(collider2D.gameObject);
+          OnBoxDestroyPlayer();
           this.transform.DetachChildren();//隐藏的道具爆出来
           for(int i=0;i<cardColletions.Count;i++)
           {
@@ -47,6 +52,11 @@ public class BoxLogic : ItemLogic,ICardAffected
           this.gameObject.SetActive(false);
     }
 
+    protected virtual void OnBoxDestroyPlayer()
+    {
+        Debug.Log($"Trigger触发:{gameObject.name}");
+        boxDestroyUnityEvent?.Invoke();
+    }
 
 
 }

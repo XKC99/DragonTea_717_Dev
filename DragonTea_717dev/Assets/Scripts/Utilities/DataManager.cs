@@ -19,6 +19,8 @@ public class DataManager : Singleton<DataManager>
 {
    public bool isPlayerDead;
    public int evilCount=0;//罪恶值
+   public bool isEneteredMemory;//是否进入过记忆区域
+
 
    private readonly Dictionary<int, Dictionary<int, SerializableData>> _saveDataDict = new();
 

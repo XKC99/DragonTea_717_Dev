@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2142833739
   m_SortingLayer: 3
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300002, guid: 3af4957675b28264588522d33802222f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -174,9 +174,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 5
   gravityChangeScale: 0
+  gameObjectDestroyUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
   destroyBoxAudioName: 1003
   cardColletions:
   - {fileID: 5936297855048372078}
+  boxDestroyUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5936297855048372078
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,6 +231,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardData: {fileID: 11400000, guid: e44879e0c81dd0343a1bb1739717b8ae, type: 2}
   isGot: 0
+  GotTimes: 0
+  CardTriggerEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &1518684962356524270
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -263,10 +273,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -376243803330213716, guid: c1f1d70fa4b11a14f9ae762d0f8a2a76, type: 3}
+  m_SortingLayerID: 2142833739
+  m_SortingLayer: 3
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 7869716307332870136, guid: e06a218242bd70e42a93fd2b4fed52eb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -249,6 +249,7 @@ public class PlayerController : MonoBehaviour
    public void TimelineStartToStopMove()  //Timeline开始时，禁止移动
    {
     Debug.Log("TimelineStartToStopMove");
+    this.rb.velocity=new Vector2(0f,0f);
     isTimelineing=true;
     this.rb.bodyType=RigidbodyType2D.Kinematic;//将刚体类型改为Kinematic，禁止运动
     animator.SetFloat("Speed",0f);

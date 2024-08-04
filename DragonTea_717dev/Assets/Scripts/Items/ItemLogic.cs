@@ -126,6 +126,12 @@ public class ItemLogic : MonoBehaviour,ICardAffected //接口命名往往以I开
     //     Debug.Log("缓慢坠落");
     // }
 
+    public virtual void CannotUesCardOnThis()
+    {
+        this.GetComponentInChildren<DialogueSpeaker>().Play();
+        Debug.Log("不能使用该牌");
+    }
+
 
 
 

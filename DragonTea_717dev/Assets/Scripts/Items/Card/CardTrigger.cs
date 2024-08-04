@@ -6,16 +6,17 @@ public class CardTrigger : MonoBehaviour
 {
    public CardDataSO cardData;
 
-   public bool isGot;
-   
-   private void OnTriggerEnter2D(Collider2D other)
-   {
-     if(other.CompareTag("Player"))
-     {
-        PlayerGetCard();
-     }
+   private bool isGot;
 
-   }
+   private int GotTimes=0;   
+   // private void OnTriggerEnter2D(Collider2D other)
+   // {
+   //   if(other.CompareTag("Player"))
+   //   {
+   //      PlayerGetCard();
+   //   }
+
+   // }
 
    public void PlayerGetCard()
    {
@@ -26,4 +27,16 @@ public class CardTrigger : MonoBehaviour
         CardDeck.Instance.SetCardLayOut();
 
    }
+
+   public void CardIsGot()
+   {
+      isGot=true;
+   }
+
+   public void GotTimesAdd()
+   {
+      GotTimes++;
+   }
+
+
 }

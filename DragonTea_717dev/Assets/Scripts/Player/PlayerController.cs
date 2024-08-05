@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     // protected float recordGravityScale;
 
     protected bool isGrounded = false;
-    protected bool facingRight = true;
+    [SerializeField]protected bool facingRight = true;
     protected bool isDead= false;
     protected bool isAttack = false;
 

@@ -42,7 +42,7 @@ public class DataSerializerBase : MonoBehaviour
         {
             data.position = transform.position;
             data.rotation = transform.rotation;
-            data.scale = transform.localScale;
+            //data.scale = transform.localScale;  主要是玩家转向会出问题
         }
     }
 
@@ -58,7 +58,7 @@ public class DataSerializerBase : MonoBehaviour
         {
             transform.position = data.position;
             transform.rotation = data.rotation;
-            transform.localScale = data.scale;
+            //transform.localScale = data.scale; //主要是玩家转向会出问题
         }
         
         if (saveActive)

@@ -9,7 +9,6 @@ public class TransitionPos : MonoBehaviour
     public GameObject FNote;
     private bool playerIsInside;
 
-    
 
     private void Update() 
     {
@@ -43,11 +42,14 @@ public class TransitionPos : MonoBehaviour
 
     public void TransToEvil()
     {
+        
         TransitionManager.Instance.Transition("TestScene_02_dev","TestScene_BeatDragon_dev");
+
     }
 
     public void TransToGood()
     {
+        
         TransitionManager.Instance.Transition("TestScene_02_dev","TestScene_dragonDream_dev");
 
     }
@@ -62,6 +64,12 @@ public class TransitionPos : MonoBehaviour
         {
             TransToEvil();
         }
+    }
+
+    public void TransToFlyWithDragon()
+    {
+        
+        TransitionManager.Instance.Transition("TestScene_02_dev","TestScene_FlyWthDragon");
     }
 
 }

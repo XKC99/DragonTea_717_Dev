@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     public GameObject playerFallToDeadSpeaker;  //高空坠落死亡音
     public GameObject playerDeadByEnemySpeaker; //被敌人攻击死亡音
 
-    protected Rigidbody2D rb;
+    [HideInInspector]public Rigidbody2D rb;
     protected Animator animator;
 
     // protected float recordGravityScale;
@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         physicsCheck=GetComponent<PhysicsCheck>();
         physicsCheck.onGroundChange += OnGroundChange;
+        
     }
     
     // protected void Start()
@@ -166,6 +167,7 @@ public class PlayerController : MonoBehaviour
      public IEnumerator PlayerJumpToDieAndReviveCo()  //玩家坠崖死亡
     {
         PlayerIsDead();
+        AudioManager.Instance.PlayOneShot("sgaochuzhuiluo"); //勇者倒地音效
         playerFallToDeadSpeaker.GetComponent<DialogueSpeaker>().Play();  //玩家坠落死亡后播放语音
         yield return new WaitUntil(()=>playerFallToDeadSpeaker.GetComponent<DialogueSpeaker>().isFinished);
         Revive();
@@ -187,6 +189,7 @@ public class PlayerController : MonoBehaviour
     {
         isDead = true;
         animator.SetBool("Dead",true);
+        AudioManager.Instance.PlayOneShot("sdaodi"); //勇者倒地音效
         DataManager.Instance.isPlayerDead=true;
     }
     public void Revive()  //玩家复活
@@ -273,7 +276,21 @@ public class PlayerController : MonoBehaviour
         RevivePos.position=newpos;
    }
 
- 
+    public void PlayerDropIntoFireDieAndRevive()  //玩家掉岩浆死亡
+    {
+        if(isDead)
+        {
+            return;
+        }
+        StartCoroutine("PlayerDropIntoFireDieAndReviveCo");
+    }    
+    public IEnumerator PlayerDropIntoFireDieAndReviveCo()
+    {
+        PlayerIsDead();
+        playerFallToDeadSpeaker.GetComponent<DialogueSpeaker>().Play();  //玩家坠落死亡后播放语音
+        yield return new WaitUntil(()=>playerFallToDeadSpeaker.GetComponent<DialogueSpeaker>().isFinished);
+        Revive();
+    }
 
 
 

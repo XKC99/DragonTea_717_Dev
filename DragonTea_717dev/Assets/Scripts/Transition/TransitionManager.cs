@@ -31,6 +31,9 @@ public class TransitionManager : Singleton<TransitionManager>
     yield return Fade(0);
   }
 
+
+
+
   private IEnumerator Fade(float targetAlpha)
   {
     fadeCanvasGroup.alpha = 1 - targetAlpha;
@@ -50,4 +53,6 @@ public class TransitionManager : Singleton<TransitionManager>
     isFade = false;
 
   }
+
+  
 }

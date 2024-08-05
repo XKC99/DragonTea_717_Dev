@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Teleport : MonoBehaviour
 {
-    public GameObject player;
-
-    public bool needSavePlayerPos;
     [SceneName]public string SceneFrom;
     [SceneName]public string SceneTo;
     
@@ -17,7 +14,7 @@ public class Teleport : MonoBehaviour
     public void TeleportToScene()
     {
        
-         TransitionManager.Instance.Transition(SceneFrom, SceneTo,player,needSavePlayerPos);
+         TransitionManager.Instance.Transition(SceneFrom, SceneTo);
     }
     
 

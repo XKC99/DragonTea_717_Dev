@@ -4,6 +4,7 @@ public class AudioPlayTest : MonoBehaviour
 {
     public string[] playAudioNames;
     public string[] stopAudioNames;
+    public string[]sfxOrVoiceNames;
 
     private int currentPlayIndex = 0;
     private int currentStopIndex = 0;
@@ -70,6 +71,14 @@ public class AudioPlayTest : MonoBehaviour
         foreach (string audioName in stopAudioNames)
         {
             AudioManager.Instance.Stop(audioName);
+        }
+    }
+
+    public void PlaySFXorVoice()
+    {
+         foreach (string audioName in sfxOrVoiceNames)
+        {
+            AudioManager.Instance.PlayOneShot(audioName);
         }
     }
 }

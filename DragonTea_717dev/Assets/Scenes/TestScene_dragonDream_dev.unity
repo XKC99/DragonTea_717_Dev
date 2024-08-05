@@ -1914,7 +1914,7 @@ Transform:
   m_GameObject: {fileID: 225911710}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.836578, y: 15.147327, z: -3.6815126}
+  m_LocalPosition: {x: -10.746578, y: 15.327328, z: -3.6815126}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2175,7 +2175,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.20412445, y: -1.8911963}
+  m_Offset: {x: 0.28518295, y: -1.8911963}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2186,7 +2186,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4082489, y: 15.267904}
+  m_Size: {x: 1.2537308, y: 15.267904}
   m_EdgeRadius: 0
 --- !u!114 &268721436
 MonoBehaviour:
@@ -9894,7 +9894,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.836578, y: 15.147327, z: -3.6815126}
+  m_LocalPosition: {x: -10.746578, y: 15.327328, z: -3.6815126}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21558,7 +21558,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.20412445, y: -1.8911963}
+  m_Offset: {x: 1.2218208, y: -1.8911963}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -21569,7 +21569,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4082489, y: 15.267904}
+  m_Size: {x: 1.8403702, y: 15.267904}
   m_EdgeRadius: 0
 --- !u!1 &643789967
 GameObject:
@@ -22283,6 +22283,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f0df8a4d375e74ba422c37fea192fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  needSavePlayerPos: 0
   SceneFrom: TestScene_dragonDream_dev
   SceneTo: TestScene_02_dev
 --- !u!4 &697708886
@@ -22400,6 +22402,7 @@ PlayableDirector:
     m_References:
     - 506a164e7f6ff5641a9cad4e7ea6b195: {fileID: 133085095}
     - 17b87dcf825574b44bc6c861c3236564: {fileID: 225911711}
+    - 22d869f39da31624fb436d6e51bf57d8: {fileID: 1305911686}
     - 70220f0cad8bc2044a74133fb98f6ed2: {fileID: 225911711}
 --- !u!1 &705356011
 GameObject:
@@ -28836,7 +28839,7 @@ Transform:
   m_GameObject: {fileID: 933830104}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.09645371, w: 0.99533755}
-  m_LocalPosition: {x: 203.92001, y: 17.369999, z: -1.022598}
+  m_LocalPosition: {x: 203.34, y: 14.61, z: -1.022598}
   m_LocalScale: {x: 9.87, y: 2.37, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -35100,7 +35103,7 @@ Transform:
   m_GameObject: {fileID: 1099651934}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.931133, y: 14.9, z: 110.0414}
+  m_LocalPosition: {x: 22.931133, y: 14.9, z: 115.87}
   m_LocalScale: {x: 2, y: -2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -49147,6 +49150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f0df8a4d375e74ba422c37fea192fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 706208937}
+  needSavePlayerPos: 1
   SceneFrom: TestScene_dragonDream_dev
   SceneTo: TestScene_TrueEnd
 --- !u!1 &1408076799
@@ -55472,7 +55477,7 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: 28.72139, y: 39.799843, z: 0}
+    - position: {x: 27.131935, y: 37.141144, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -55480,15 +55485,15 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: 43.60768, y: 36.58321, z: 0}
-      leftTangent: {x: -5.067093, y: 0.7867012, z: 0}
-      rightTangent: {x: 6.655716, y: -1.0333481, z: 0}
+    - position: {x: 42.36503, y: 33.78002, z: 0}
+      leftTangent: {x: -5.0670776, y: 0.78671265, z: 0}
+      rightTangent: {x: 6.655731, y: -1.0333481, z: 0}
       mode: 1
       height: 1.22
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: 58.87773, y: 36.59076, z: 0}
+    - position: {x: 57.779564, y: 31.822449, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -55576,8 +55581,8 @@ SpriteShapeRenderer:
   - {fileID: 4289526544292180832, guid: 55308c70b8a2ea14a836db547521706a, type: 3}
   - {fileID: -5260952248589608813, guid: 55308c70b8a2ea14a836db547521706a, type: 3}
   m_LocalAABB:
-    m_Center: {x: 35.901497, y: 15.160189, z: 0}
-    m_Extent: {x: 24.335135, y: 25.725634, z: 0}
+    m_Center: {x: 35.3491, y: 13.833193, z: 0}
+    m_Extent: {x: 23.782736, y: 24.398638, z: 0}
   m_SpriteSortPoint: 0
 --- !u!1 &1526079487
 GameObject:
@@ -80708,7 +80713,7 @@ Transform:
   m_GameObject: {fileID: 2396359428047660142}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 142.99791, y: 14.93, z: -6.06}
+  m_LocalPosition: {x: 141.40791, y: 14.93, z: -6.06}
   m_LocalScale: {x: -2, y: 2, z: -1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -81111,11 +81116,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4400901344620402037, guid: e1e5948b6586b624d961bc6a480a77bb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.06
+      value: -10.97
       objectReference: {fileID: 0}
     - target: {fileID: 4400901344620402037, guid: e1e5948b6586b624d961bc6a480a77bb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.93
+      value: 8.11
       objectReference: {fileID: 0}
     - target: {fileID: 4400901344620402037, guid: e1e5948b6586b624d961bc6a480a77bb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -82817,7 +82822,7 @@ Transform:
   m_GameObject: {fileID: 5070267592905644301}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 145.01791, y: 15, z: -6.52}
+  m_LocalPosition: {x: 149.48792, y: 15, z: -6.52}
   m_LocalScale: {x: 1.5, y: 1.5, z: -1}
   m_ConstrainProportionsScale: 0
   m_Children:

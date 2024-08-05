@@ -75,7 +75,8 @@ public class ZombieLogic : ItemLogic,ICardAffected
 
     public override void AttackedByFireBall(Collider2D collider2D)
     {
-         Destroy(collider2D.gameObject);  //这里需要替换为：将火球置入对象池
+         //Destroy(collider2D.gameObject);  //这里需要替换为：将火球置入对象池
+         SkillBallPool.Instance.PushBallObject(collider2D.gameObject);
           //AudioManager.instance.PlayOneShot(destroyBoxAudioName);
           this.gameObject.GetComponent<ZombieStatus>().TakeDamage(1); //每次被攻击一次掉1血
     }
@@ -83,7 +84,8 @@ public class ZombieLogic : ItemLogic,ICardAffected
     public override void HealedByHealBall(Collider2D collider2D)
     {
          Debug.Log("我被治愈了");
-        Destroy(collider2D.gameObject);  //这里需要替换为：将治愈球置入对象池
+        //Destroy(collider2D.gameObject);  //这里需要替换为：将治愈球置入对象池
+        SkillBallPool.Instance.PushBallObject(collider2D.gameObject);
         this.gameObject.GetComponent<ZombieStatus>().Heal(1);
     }
 }

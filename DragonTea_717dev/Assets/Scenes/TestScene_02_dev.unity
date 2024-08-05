@@ -12569,6 +12569,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FNote: {fileID: 1951888778}
+  player: {fileID: 0}
+  needSavePlayerPos: 0
 --- !u!61 &749789058
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21154,6 +21156,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f0df8a4d375e74ba422c37fea192fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  needSavePlayerPos: 0
   SceneFrom: TestScene_02_dev
   SceneTo: TestScene_dragonDream_dev
 --- !u!4 &1318038415
@@ -26195,6 +26199,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1603639157 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8765722121261796025, guid: c1e6692c421e24a45a4bd7a0c81efab7, type: 3}
+  m_PrefabInstance: {fileID: 3484308303059695248}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1604770487
 GameObject:
   m_ObjectHideFlags: 0
@@ -34025,6 +34034,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FNote: {fileID: 79686520}
+  player: {fileID: 1603639157}
+  needSavePlayerPos: 1
 --- !u!1 &2064406236
 GameObject:
   m_ObjectHideFlags: 0
@@ -34054,6 +34065,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f0df8a4d375e74ba422c37fea192fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  needSavePlayerPos: 0
   SceneFrom: TestScene_02_dev
   SceneTo: TestScene_FlyWthDragon
 --- !u!4 &2064406238
@@ -42322,7 +42335,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 776578153218320774, guid: c1e6692c421e24a45a4bd7a0c81efab7, type: 3}
   m_PrefabInstance: {fileID: 3484308303059695248}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1603639157}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a15f05f9d01327d48812cd70009a2834, type: 3}
@@ -55319,7 +55332,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3646529840743607653, guid: c1e6692c421e24a45a4bd7a0c81efab7, type: 3}
   m_PrefabInstance: {fileID: 3484308303059695248}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1603639157}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f408c4110558baa4e952101e0f210823, type: 3}

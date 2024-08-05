@@ -8,8 +8,9 @@ public class TransitionPos : MonoBehaviour
     // Start is called before the first frame update
     public GameObject FNote;
     private bool playerIsInside;
+    public GameObject player;
+    public bool needSavePlayerPos;
 
-    
 
     private void Update() 
     {
@@ -43,12 +44,15 @@ public class TransitionPos : MonoBehaviour
 
     public void TransToEvil()
     {
-        TransitionManager.Instance.Transition("TestScene_02_dev","TestScene_BeatDragon_dev");
+        
+        TransitionManager.Instance.Transition("TestScene_02_dev","TestScene_BeatDragon_dev",player,true);
+
     }
 
     public void TransToGood()
     {
-        TransitionManager.Instance.Transition("TestScene_02_dev","TestScene_dragonDream_dev");
+        
+        TransitionManager.Instance.Transition("TestScene_02_dev","TestScene_dragonDream_dev",player,true);
 
     }
     public void CheckEvil()
@@ -66,7 +70,8 @@ public class TransitionPos : MonoBehaviour
 
     public void TransToFlyWithDragon()
     {
-        TransitionManager.Instance.Transition("TestScene_02_dev","TestScene_FlyWthDragon");
+        
+        TransitionManager.Instance.Transition("TestScene_02_dev","TestScene_FlyWthDragon",player,true);
     }
 
 }

@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         physicsCheck=GetComponent<PhysicsCheck>();
         physicsCheck.onGroundChange += OnGroundChange;
+        
     }
     
     // protected void Start()
@@ -273,7 +274,21 @@ public class PlayerController : MonoBehaviour
         RevivePos.position=newpos;
    }
 
- 
+    public void PlayerDropIntoFireDieAndRevive()  //龙掉岩浆死亡
+    {
+        if(isDead)
+        {
+            return;
+        }
+        StartCoroutine("PlayerDropIntoFireDieAndReviveCo");
+    }    
+    public IEnumerator PlayerDropIntoFireDieAndReviveCo()
+    {
+        PlayerIsDead();
+        playerFallToDeadSpeaker.GetComponent<DialogueSpeaker>().Play();  //玩家坠落死亡后播放语音
+        yield return new WaitUntil(()=>playerFallToDeadSpeaker.GetComponent<DialogueSpeaker>().isFinished);
+        Revive();
+    }
 
 
 

@@ -64,4 +64,9 @@ public class TransitionPos : MonoBehaviour
         }
     }
 
+    public void TransToFlyWithDragon()
+    {
+        TransitionManager.Instance.Transition("TestScene_02_dev","TestScene_FlyWthDragon");
+    }
+
 }

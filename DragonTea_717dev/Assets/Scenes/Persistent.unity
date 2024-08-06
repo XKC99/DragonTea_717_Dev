@@ -393,6 +393,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerDead: 0
   evilCount: 0
+  killNumber: 0
+  healNumber: 0
   isEneteredMemory: 0
 --- !u!1 &570278822
 GameObject:
@@ -613,6 +615,12 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  - name: a4001
+    clip: {fileID: 8300000, guid: 2ff986a8cf9f37b4aa90967c27ec4d81, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
   - name: a5001
     clip: {fileID: 8300000, guid: 177140b19e25e2f49ac5acbb50fa82eb, type: 3}
     volume: 1
@@ -688,6 +696,54 @@ MonoBehaviour:
   - name: shua
     clip: {fileID: 8300000, guid: 7b800d79888e18345baeaca70b11e13f, type: 3}
     volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: sjiangshisiwang
+    clip: {fileID: 8300000, guid: e11e5e53f40c2c9438d11cbf75e4274d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: sbianhuiren
+    clip: {fileID: 8300000, guid: 15a301a12e298454ca34ac869d8168fb, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: sdragondie
+    clip: {fileID: 8300000, guid: 5e6b152f7ccc871439d7661bb353a653, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: syanjiangzhu
+    clip: {fileID: 8300000, guid: 3066fdd16b6cf2e4fae307188ead7b40, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: sfireboom
+    clip: {fileID: 8300000, guid: 28e90f2a36d105341a4e79e5792784af, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: shealboom
+    clip: {fileID: 8300000, guid: 78a4bb47130fbb941a7b24f40ed53d05, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: sshoot
+    clip: {fileID: 8300000, guid: bbadcc0a898574d41baf24c58d2aba20, type: 3}
+    volume: 0.733
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: sfly
+    clip: {fileID: 8300000, guid: 306dffc290e1e81489ce1d9d1f317c90, type: 3}
+    volume: 0.61
     pitch: 1
     loop: 0
     source: {fileID: 0}

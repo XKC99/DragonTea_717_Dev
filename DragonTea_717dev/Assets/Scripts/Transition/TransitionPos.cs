@@ -8,7 +8,7 @@ public class TransitionPos : MonoBehaviour
     // Start is called before the first frame update
     public GameObject FNote;
     private bool playerIsInside;
-
+    public int playerCollideTimes=0;
 
     private void Update() 
     {
@@ -25,7 +25,11 @@ public class TransitionPos : MonoBehaviour
         if(other.gameObject.tag=="Player")
         {
             playerIsInside=true;
-            FNote.SetActive(true);
+            if(FNote!=null)
+            {
+                FNote.SetActive(true);
+            }
+            playerCollideTimes++;
         }
 
     }
@@ -35,7 +39,10 @@ public class TransitionPos : MonoBehaviour
         if(other.gameObject.tag=="Player")
         {
             playerIsInside=false;
-            FNote.SetActive(false);
+            if(FNote!=null)
+            {
+                FNote.SetActive(false);
+            }
         }
         
     }
@@ -71,5 +78,14 @@ public class TransitionPos : MonoBehaviour
         
         TransitionManager.Instance.Transition("TestScene_02_dev","TestScene_FlyWthDragon");
     }
+
+    public void QuitGame()  //退出游戏
+    {
+        Application.Quit();
+    }
+
+
+
+    
 
 }

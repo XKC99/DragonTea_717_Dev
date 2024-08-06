@@ -12,6 +12,7 @@ public class BulletSpawner : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            AudioManager.Instance.PlayOneShot("syanjiangzhu");
             FireBullet();
         }
     }

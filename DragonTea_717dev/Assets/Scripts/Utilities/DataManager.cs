@@ -19,6 +19,8 @@ public class DataManager : Singleton<DataManager>
 {
    public bool isPlayerDead;
    public int evilCount=0;//罪恶值
+   public int killNumber=0;//杀害数
+   public int healNumber=0;//治愈数
    public bool isEneteredMemory;//是否进入过记忆区域
 
 

@@ -89,6 +89,7 @@ public class ItemLogic : MonoBehaviour,ICardAffected //接口命名往往以I开
 
     public virtual void FlyCardEffect()
     {
+        AudioManager.Instance.PlayOneShot("sfly"); 
         Debug.Log("飞行牌的作用");
         if(rb!=null)
         {
@@ -101,12 +102,14 @@ public class ItemLogic : MonoBehaviour,ICardAffected //接口命名往往以I开
 
     public virtual void FallCardEffect()
     {
+        //价格滑行音效
         rb.gravityScale=gravityChangeScale;
         Debug.Log("坠落牌的作用");
     }
 
     public virtual void AttackedByFireBall(Collider2D collider2D)
     {
+        AudioManager.Instance.PlayOneShot("sfireboom"); //攻击音效
         Debug.Log("我被火球攻击了");
         //Destroy(collider2D.gameObject);  //这里需要替换为存入对象池的方法
         SkillBallPool.Instance.PushBallObject(collider2D.gameObject);
@@ -115,8 +118,10 @@ public class ItemLogic : MonoBehaviour,ICardAffected //接口命名往往以I开
 
     public virtual void HealedByHealBall(Collider2D collider2D)
     {
+        AudioManager.Instance.PlayOneShot("shealboom"); //攻击音效
         Debug.Log("我被治愈了");
-        Destroy(collider2D.gameObject);  //这里需要替换为存入对象池的方法
+        SkillBallPool.Instance.PushBallObject(collider2D.gameObject);
+        //Destroy(collider2D.gameObject);  //这里需要替换为存入对象池的方法
     }
 
     // public virtual void UpByFlyCard()

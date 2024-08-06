@@ -29,10 +29,11 @@ public class CardTrigger : MonoBehaviour
 
    public void PlayerGetCard()
    {
-       GameObject card=PoolTool.Instance.GetObjectFromPool();
+       //GameObject card=PoolTool.Instance.GetObjectFromPool();
         //GameObject card=CardManager.Instance.GetCardObject();
       if(CardDeck.Instance.handCardObjects.Count<=4)
       {
+         GameObject card=PoolTool.Instance.GetObjectFromPool();
         card.GetComponent<Card>().InitCard(cardData);   
         CardDeck.Instance.DrawCard(card.GetComponent<Card>());
         CardDeck.Instance.SetCardLayOut();

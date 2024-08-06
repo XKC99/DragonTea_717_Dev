@@ -203,6 +203,7 @@ public class PlayerController : MonoBehaviour
    
     public virtual void PlayerIsAttack()  //使用攻击牌后玩家的操作
     {
+        AudioManager.Instance.PlayOneShot("sshoot"); //勇者攻击音效
         isAttack = true;
         Debug.Log("攻击");
         animator.SetTrigger("Attack");
@@ -212,6 +213,7 @@ public class PlayerController : MonoBehaviour
 
     public void PlayerIsHeal()  //使用治疗牌后玩家的操作
     {
+        AudioManager.Instance.PlayOneShot("sshoot"); //勇者攻击音效
         Debug.Log("治疗");
         animator.SetTrigger("Attack");
         mousePos=Camera.main.ScreenToWorldPoint(Input.mousePosition);

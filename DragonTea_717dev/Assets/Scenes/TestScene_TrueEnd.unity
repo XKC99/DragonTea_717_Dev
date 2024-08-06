@@ -4843,6 +4843,7 @@ MonoBehaviour:
   - a5002
   stopAudioNames:
   - a5001
+  - m5001
   sfxOrVoiceNames: []
 --- !u!1 &390578529
 GameObject:
@@ -9957,6 +9958,7 @@ Transform:
   - {fileID: 1994011199}
   - {fileID: 1298379007}
   - {fileID: 1189296570}
+  - {fileID: 2017423265}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &406373423
@@ -24773,6 +24775,10 @@ PrefabInstance:
     - target: {fileID: 7797399943833055395, guid: 8ba197c58db798f4a9167374e3aec6f5, type: 3}
       propertyPath: m_Name
       value: "Timeline-\u6CBB\u6108"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7797399943833055395, guid: 8ba197c58db798f4a9167374e3aec6f5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8700160898047249761, guid: 8ba197c58db798f4a9167374e3aec6f5, type: 3}
       propertyPath: m_PlayableAsset
@@ -39778,7 +39784,7 @@ Transform:
   m_GameObject: {fileID: 1270377211}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 88.77342, y: 36.29237, z: -4.3315125}
+  m_LocalPosition: {x: 111.12342, y: 44.012367, z: -4.3315125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -40008,6 +40014,7 @@ MonoBehaviour:
     m_Signals:
     - {fileID: 11400000, guid: bedcec8c8890346438baccf1e189c90c, type: 2}
     - {fileID: 11400000, guid: 4939bba6e63812b4b838c5248deb7524, type: 2}
+    - {fileID: 11400000, guid: c8c8d561cbe913a4cae831df58453cf7, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -40036,6 +40043,32 @@ MonoBehaviour:
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1120515192}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1566801527}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
           m_CallState: 2
 --- !u!1 &1300200009
 GameObject:
@@ -40804,11 +40837,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8131041062272147448, guid: c1e6692c421e24a45a4bd7a0c81efab7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 88.55
+      value: 110.9
       objectReference: {fileID: 0}
     - target: {fileID: 8131041062272147448, guid: c1e6692c421e24a45a4bd7a0c81efab7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 29.28
+      value: 37
       objectReference: {fileID: 0}
     - target: {fileID: 8131041062272147448, guid: c1e6692c421e24a45a4bd7a0c81efab7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -45521,7 +45554,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1566801528
 Animator:
   serializedVersion: 5
@@ -46577,7 +46610,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1645649220
 Animator:
   serializedVersion: 5
@@ -48294,14 +48327,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"statement":{"_text":"\u5413\u6b7b\u6211\u4e86\uff01"},"_position":{"x":400.8,"y":234.4},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"0"},{"statement":{"_text":"\u4f60\u662f\uff1f"},"_position":{"x":312.8,"y":376.8},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"1"},{"_position":{"x":465.6,"y":460.8},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"2"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
-  _boundGraphObjectReferences: []
+  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"statement":{"_text":"\u80fd\u51ed\u81ea\u5df1\u7684\u529b\u91cf\u6765\u5230\u8fd9\u91cc\uff0c\u770b\u6765\uff0c\u4f60\u786e\u5b9e\u662f\u53c8\u4e00\u540d\u52c7\u8005\u3002"},"_position":{"x":308.0,"y":196.0},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"0"},{"statement":{"_text":"\u5982\u679c\u662f\u4f60\u7684\u8bdd\uff0c\u5e94\u8be5\u53ef\u4ee5\u62ef\u6551\u767d\u9f99\u5427\u3002"},"_position":{"x":350.4,"y":312.8},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"1"},{"statement":{"_text":"\u201c\u62ff\u8d77\u5251\u662f\u4e3a\u4e86\u5b88\u62a4\u201d\u2014\u2014\u8fd9\u662f\u5c5e\u4e8e\u52c7\u8005\u7684\u9b54\u6cd5\u3002"},"_position":{"x":318.4,"y":502.4},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"2"},{"statement":{"_text":"\u4e3a\u4ec0\u4e48\u4e0d\u8bd5\u8bd5\u5462\uff1f"},"_position":{"x":426.4,"y":627.2001},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"3"},{"_action":{"method":{"_baseInfo":"TrueEndTimeline|theTimelineTrue|System.Void","_paramsInfo":""},"parameters":[],"returnValue":{},"overrideAgent":{"_type":"TrueEndTimeline","_value":1},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction_Multiplatform"},"_position":{"x":283.256,"y":716.0646},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"4"},{"_position":{"x":493.7918,"y":854.347},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"5"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+  _boundGraphObjectReferences:
+  - {fileID: 0}
+  - {fileID: 2017423265}
   _boundGraphSource:
     _version: 3.28
     _category: 
     _comments: 
-    _translation: {x: 0, y: 0}
-    _zoomFactor: 1
+    _translation: {x: -42, y: -177}
+    _zoomFactor: 0.9842688
   _firstActivation: 0
   _enableAction: 1
   _disableAction: 2
@@ -48910,7 +48945,7 @@ Transform:
   m_GameObject: {fileID: 1803748570}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 88.77342, y: 36.29237, z: -4.3315125}
+  m_LocalPosition: {x: 111.12342, y: 44.012367, z: -4.3315125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -54629,6 +54664,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Timeline_\u7ED3\u5C40"
       objectReference: {fileID: 0}
+    - target: {fileID: 7797399943833055395, guid: 8ba197c58db798f4a9167374e3aec6f5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8700160898047249761, guid: 8ba197c58db798f4a9167374e3aec6f5, type: 3}
       propertyPath: m_PlayableAsset
       value: 
@@ -56738,6 +56777,55 @@ Transform:
   - {fileID: 1209096373}
   m_Father: {fileID: 236423725}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2017423264
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2017423265}
+  - component: {fileID: 2017423266}
+  m_Layer: 0
+  m_Name: "Timeline\u7BA1\u7406"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2017423265
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017423264}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 406160677}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2017423266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017423264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14fe7211df2c8b44d832cd9fbbc25e25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theTrueThing:
+  - {fileID: 1298379006}
+  - {fileID: 1189296569}
+  theFalseThing:
+  - {fileID: 1645649219}
 --- !u!1 &2017538561
 GameObject:
   m_ObjectHideFlags: 0
@@ -58855,7 +58943,7 @@ GameObject:
   - component: {fileID: 2261372445125233454}
   - component: {fileID: 5839287007851511584}
   m_Layer: 0
-  m_Name: MusicPlayerTrigger_a5001
+  m_Name: MusicPlayerTrigger_m/a5001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

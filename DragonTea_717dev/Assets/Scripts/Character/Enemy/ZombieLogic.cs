@@ -65,6 +65,7 @@ public class ZombieLogic : ItemLogic,ICardAffected
 
     public void BackToNPCShowCard()
     {
+        AudioManager.Instance.PlayOneShot("sbianhuiren");
         DataManager.Instance.evilCount--;
         DataManager.Instance.healNumber++;
         this.transform.DetachChildren();

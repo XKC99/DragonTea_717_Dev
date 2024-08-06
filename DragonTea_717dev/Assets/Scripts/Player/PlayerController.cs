@@ -186,7 +186,7 @@ public class PlayerController : MonoBehaviour
         Revive();
     }
 
-    public void PlayerIsDead()  //这里是玩家死后执行的东西。可以添加很多具体内容。
+    public virtual void PlayerIsDead()  //这里是玩家死后执行的东西。可以添加很多具体内容。
     {
         isDead = true;
         animator.SetBool("Dead",true);
@@ -294,7 +294,7 @@ public class PlayerController : MonoBehaviour
     }
 
     
-    public void PlayerAttackedByLava()  //玩家被岩浆球攻击死亡
+    public virtual void PlayerAttackedByLava()  //玩家被岩浆球攻击死亡
     {
         if(isDead)
         {
@@ -303,8 +303,9 @@ public class PlayerController : MonoBehaviour
         StartCoroutine("PlayerAttackedByLavaCo");
     }
 
-    public IEnumerator PlayerAttackedByLavaCo()
+    public virtual IEnumerator PlayerAttackedByLavaCo()
     {
+        AudioManager.Instance.PlayOneShot("sboom");
         PlayerIsDead();
         playerAttackedByLavaSpeaker.GetComponent<DialogueSpeaker>().Play();  //玩家被火球攻击死亡后播放语音
         yield return new WaitUntil(()=>playerAttackedByLavaSpeaker.GetComponent<DialogueSpeaker>().isFinished);

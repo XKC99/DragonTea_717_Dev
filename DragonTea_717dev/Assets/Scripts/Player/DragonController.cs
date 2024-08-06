@@ -39,6 +39,7 @@ public class DragonController : PlayerController
 
         if(Input.GetKeyDown("space")&&!isDead)
         {
+            AudioManager.Instance.PlayOneShot("sfly");
             animator.SetTrigger("Fly");
             Debug.Log("起飞");
             moveSpeed=flySpeed;
@@ -50,10 +51,11 @@ public class DragonController : PlayerController
             playerCollision.StartToTalk();
         }
 
-        if(Input.GetMouseButtonDown(0)&&!isDead)
+        if(Input.GetMouseButtonDown(0)&&!isDead&&!isTimelineing)
         {
             if(Time.time>=nextFireTime)
             {
+            AudioManager.Instance.PlayOneShot("sshoot");
             PlayerIsAttack();
             Debug.Log("我正在攻击");
             nextFireTime=Time.time+fireRate;
@@ -88,6 +90,14 @@ public class DragonController : PlayerController
 
     }
 
+    public override void PlayerIsDead()  //龙死亡
+    {
+        isDead = true;
+        animator.SetBool("Dead",true);
+        AudioManager.Instance.PlayOneShot("sdragondie"); //勇者倒地音效
+        DataManager.Instance.isPlayerDead=true;
+    }
+
     public void DragonDropIntoFireDieAndRevive()  //龙掉岩浆死亡
     {
         if(isDead)
@@ -104,34 +114,6 @@ public class DragonController : PlayerController
         Revive();
     }
 
-    public void DragonAttackedByLava()  //龙被岩浆球攻击死亡
-    {
-        if(isDead)
-        {
-            return;
-        }
-        StartCoroutine("DragonAttackedByLavaCo");
-    }
-
-    // public IEnumerator DragonAttackedByLavaCo()
-    // {
-    //     PlayerIsDead();
-    //     playerAttackedByLavaSpeaker.GetComponent<DialogueSpeaker>().Play();  //玩家坠落死亡后播放语音
-    //     yield return new WaitUntil(()=>playerAttackedByLavaSpeaker.GetComponent<DialogueSpeaker>().isFinished);
-    //     Revive();
-    // }
-
-    // public override void PlayerIsAttack()  //发射火球
-    // {
-    //     isAttack = true;
-    //     Debug.Log("攻击");
-    //     animator.SetTrigger("Attack");
-    //     GameObject fireBall=SkillBallPool.Instance.GetBallObject(attackFireBall);
-    //     fireBall.transform.position=fromPos.position;
-    //     fireBall.GetComponent<Rigidbody2D>().velocity=fireBallDirection*fireBallSpeed;
-
-    //     Destroy(fireBall,fireLifeTime);
-    // }
 
     protected override void Flip()
     {

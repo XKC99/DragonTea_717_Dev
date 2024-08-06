@@ -460,13 +460,13 @@ MonoBehaviour:
   subtitlesText: {fileID: 2445064142450216408}
   useSubtitles: 1
   dialogues:
-  - clip: {fileID: 8300000, guid: 164c4d39784f0ef448ee3e1b5fe34bc3, type: 3}
+  - clip: {fileID: 8300000, guid: f26f44f8357b0ac458142cd2888cab73, type: 3}
     time: 0
     subtitles: "\u5149\u4EAE\u6240\u7167\uFF0C\u4FBF\u662F\u51FA\u53E3\u4E4B\u5904\u3002"
     triggerEvent:
       m_PersistentCalls:
         m_Calls: []
-  - clip: {fileID: 8300000, guid: 164c4d39784f0ef448ee3e1b5fe34bc3, type: 3}
+  - clip: {fileID: 8300000, guid: 79f220fa2cb7fdb409addea964d8d4cb, type: 3}
     time: 0
     subtitles: "\u52C7\u8005\u4E49\u65E0\u53CD\u987E\u5730\u8E0F\u4E0A\u4E86\u6253\u5012\u6076\u9F99\u7684\u65C5\u7A0B\u3002"
     triggerEvent:
@@ -1754,7 +1754,7 @@ MonoBehaviour:
   subtitlesText: {fileID: 2445064142450216408}
   useSubtitles: 1
   dialogues:
-  - clip: {fileID: 8300000, guid: 164c4d39784f0ef448ee3e1b5fe34bc3, type: 3}
+  - clip: {fileID: 8300000, guid: 3c3444c9d4efb68429063c67a2d0e55c, type: 3}
     time: 0
     subtitles: "\u53F3\uFF0C\u53F3\u554A\uFF01\u4F60\u5DE6\u53F3\u4E0D\u5206\u5417\uFF01"
     triggerEvent:
@@ -2380,6 +2380,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardData: {fileID: 11400000, guid: bddf5ce9f8039dc42a4ca0c32401c297, type: 2}
   isGot: 0
+  GotTimes: 0
+  CardTriggerEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &480205723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2718,6 +2722,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardData: {fileID: 11400000, guid: e44879e0c81dd0343a1bb1739717b8ae, type: 2}
   isGot: 0
+  GotTimes: 0
+  CardTriggerEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &504856811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2859,13 +2867,13 @@ MonoBehaviour:
   subtitlesText: {fileID: 2445064142450216408}
   useSubtitles: 1
   dialogues:
-  - clip: {fileID: 8300000, guid: 2b1c146c166927549971c5d03fc1eb33, type: 3}
+  - clip: {fileID: 8300000, guid: e7b3dae6ea1c89a4e82ccd2f76a71edc, type: 3}
     time: 0
     subtitles: "\u5C45\u7136\u6CA1\u8E29\u7BB1\u5B50\uFF0C\u76F4\u63A5\u8DF3\u4E86\u8FC7\u6765\uFF01"
     triggerEvent:
       m_PersistentCalls:
         m_Calls: []
-  - clip: {fileID: 8300000, guid: 8552043ec650d7e44a6cd90011f39ce1, type: 3}
+  - clip: {fileID: 8300000, guid: 445484b17df0ff6439db69b3ed5170e7, type: 3}
     time: 0
     subtitles: "\u770B\u6765\u52C7\u8005\uFF0C\u5F88\u4F1A\u8DF3\u554A\u3002\u54C8\u54C8\u3002"
     triggerEvent:
@@ -3024,7 +3032,7 @@ MonoBehaviour:
   subtitlesText: {fileID: 2445064142450216408}
   useSubtitles: 1
   dialogues:
-  - clip: {fileID: 8300000, guid: 164c4d39784f0ef448ee3e1b5fe34bc3, type: 3}
+  - clip: {fileID: 8300000, guid: 2f149f38625223d43a0700d54fc3ff65, type: 3}
     time: 0
     subtitles: "\u52C7\u8005\u53EF\u80FD\u662F\u521A\u521A\u9192\u6765\u7684\u7F18\u6545\uFF0C\u6709\u4E9B\u660F\u4E86\u5934\u3002\u5E94\u8BE5\u671D\u524D\u8D70\u624D\u5BF9\u3002"
     triggerEvent:
@@ -3684,7 +3692,7 @@ MonoBehaviour:
   subtitlesText: {fileID: 2445064142450216408}
   useSubtitles: 1
   dialogues:
-  - clip: {fileID: 8300000, guid: 44b1c2d833fda8b4a8da5ef16e8651cb, type: 3}
+  - clip: {fileID: 8300000, guid: 0b3b887727cd3ff48aa6ccb5c746e515, type: 3}
     time: 0
     subtitles: "\u501F\u52A9\u7BB1\u5B50\uFF0C\u52C7\u8005\u722C\u4E0A\u4E86\u9661\u5761\u3002"
     triggerEvent:
@@ -3837,6 +3845,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardData: {fileID: 11400000, guid: 1e7bb18eadcff464a8f6e00c2d2557f5, type: 2}
   isGot: 0
+  GotTimes: 0
+  CardTriggerEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &693234243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4350,6 +4362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playAudioNames: []
   stopAudioNames: []
+  sfxOrVoiceNames: []
 --- !u!4 &966731391
 Transform:
   m_ObjectHideFlags: 0
@@ -4653,13 +4666,13 @@ MonoBehaviour:
   subtitlesText: {fileID: 2445064142450216408}
   useSubtitles: 1
   dialogues:
-  - clip: {fileID: 8300000, guid: 164c4d39784f0ef448ee3e1b5fe34bc3, type: 3}
+  - clip: {fileID: 8300000, guid: 5cd4594e086f1e14cb4d671fa209628a, type: 3}
     time: 0
-    subtitles: "\u662F\u52C7\u8005\u4E0D\u592A\u6E05\u695A\u8FD9\u4E2A\u4E16\u754C\u7684\u6784\u9020\u5417\uFF1F"
+    subtitles: "\u52C7\u8005\u662F\u4E0D\u592A\u6E05\u695A\u8FD9\u4E2A\u4E16\u754C\u7684\u6784\u9020\u5417\uFF1F"
     triggerEvent:
       m_PersistentCalls:
         m_Calls: []
-  - clip: {fileID: 8300000, guid: 164c4d39784f0ef448ee3e1b5fe34bc3, type: 3}
+  - clip: {fileID: 8300000, guid: df5695d338a48dc4ebf8063d7d922423, type: 3}
     time: 0
     subtitles: "\u8FD9\u6837\uFF0C\u53F3\u5C31\u662F\u524D\uFF0C\u5DE6\u5C31\u662F\u540E\u3002\u54B1\u4EEC\u5F97\u671D\u53F3\u8D70\u3002"
     triggerEvent:
@@ -5279,13 +5292,13 @@ MonoBehaviour:
   subtitlesText: {fileID: 2445064142450216408}
   useSubtitles: 1
   dialogues:
-  - clip: {fileID: 8300000, guid: 164c4d39784f0ef448ee3e1b5fe34bc3, type: 3}
+  - clip: {fileID: 8300000, guid: 226fc728289212240b9c44d8112565bc, type: 3}
     time: 0
     subtitles: "\u524D\u65B9\uFF0C\u4E00\u4E2A\u6DF1\u5751\u6321\u4F4F\u4E86\u52C7\u8005\u7684\u53BB\u8DEF\u3002"
     triggerEvent:
       m_PersistentCalls:
         m_Calls: []
-  - clip: {fileID: 8300000, guid: 164c4d39784f0ef448ee3e1b5fe34bc3, type: 3}
+  - clip: {fileID: 8300000, guid: 0e7e67cd174e1cd408598963172ac767, type: 3}
     time: 0
     subtitles: "\u52C7\u8005\u5C1D\u8BD5\u63A8\u52A8\u7BB1\u5B50\uFF0C\u4EE5\u7BB1\u5B50\u4E3A\u57AB\u811A\u77F3\u767B\u4E0A\u524D\u65B9\u7684\u9661\u5761\u3002"
     triggerEvent:
@@ -5872,9 +5885,9 @@ MonoBehaviour:
   subtitlesText: {fileID: 2445064142450216408}
   useSubtitles: 1
   dialogues:
-  - clip: {fileID: 8300000, guid: 164c4d39784f0ef448ee3e1b5fe34bc3, type: 3}
+  - clip: {fileID: 8300000, guid: 4ed5e9c0f9c731e4780ba10b5b58f62c, type: 3}
     time: 0
-    subtitles: "\u52C7\u8005\u63D0\u8D77\u5B9D\u5251\uFF0C\u5411\u7740\u524D\u65B9\u524D\u884C\u3002"
+    subtitles: "\u52C7\u8005\u63D0\u8D77\u5B9D\u5251\uFF0C\u5411\u7740\u524D\u65B9\u51FA\u53D1\u3002"
     triggerEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -6451,8 +6464,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 10
   gravityChangeScale: 0
+  gameObjectDestroyUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
   destroyBoxAudioName: 
   cardColletions: []
+  boxDestroyUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!50 &1697929241
 Rigidbody2D:
   serializedVersion: 4
@@ -7111,27 +7130,27 @@ MonoBehaviour:
   subtitlesText: {fileID: 2445064142450216408}
   useSubtitles: 1
   dialogues:
-  - clip: {fileID: 8300000, guid: 164c4d39784f0ef448ee3e1b5fe34bc3, type: 3}
+  - clip: {fileID: 8300000, guid: ba120d60606839941a356563b3460601, type: 3}
     time: 0
     subtitles: "\u52C7\u8005\u770B\u5230\u4E86\u4E00\u9897\uFF0C\u5DE8\u5927\u7684\u86CB\u3002"
     triggerEvent:
       m_PersistentCalls:
         m_Calls: []
-  - clip: {fileID: 8300000, guid: 164c4d39784f0ef448ee3e1b5fe34bc3, type: 3}
+  - clip: {fileID: 8300000, guid: 4ab14e098164dda44a7a1f9ec9a702ef, type: 3}
     time: 0
     subtitles: "\u8FD9\u4E2A\u4E16\u754C\u5145\u6EE1\u65E0\u9650\u53EF\u80FD\uFF0C\u8BF7\u4E0D\u8981\u611F\u5230\u610F\u5916\u3002"
     triggerEvent:
       m_PersistentCalls:
         m_Calls: []
-  - clip: {fileID: 8300000, guid: 164c4d39784f0ef448ee3e1b5fe34bc3, type: 3}
+  - clip: {fileID: 8300000, guid: e246f755ac500e24ba3d285584b71831, type: 3}
     time: 0
     subtitles: "\u4F60\uFF0C\u4E5F\u662F\u5145\u6EE1\u65E0\u9650\u53EF\u80FD\u7684\uFF0C\u5947\u8FF9\u7684\u52C7\u8005\u3002"
     triggerEvent:
       m_PersistentCalls:
         m_Calls: []
-  - clip: {fileID: 8300000, guid: 164c4d39784f0ef448ee3e1b5fe34bc3, type: 3}
+  - clip: {fileID: 8300000, guid: c8ff8cfa84ffc1e448fce88c7d522fec, type: 3}
     time: 0
-    subtitles: "\u5FEB\u53BB\u51FB\u8D25\u6076\u9F99\u5427\uFF0C\u5947\u8FF9\u7684\u52C7\u8005\uFF01"
+    subtitles: "\u5FEB\u53BB\u51FB\u8D25\u6076\u9F99\u5427\uFF0C\u6211\u4EEC\u4F1F\u5927\u7684\u5947\u8FF9\u7684\u52C7\u8005\uFF01"
     triggerEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -9245,6 +9264,9 @@ MonoBehaviour:
   direction: {x: 0, y: 0}
   playerFallToDeadSpeaker: {fileID: 0}
   playerDeadByEnemySpeaker: {fileID: 0}
+  playerAttackedByLavaSpeaker: {fileID: 0}
+  rb: {fileID: 0}
+  facingRight: 1
 --- !u!1 &2422824553772025962
 GameObject:
   m_ObjectHideFlags: 0
@@ -11264,6 +11286,7 @@ MonoBehaviour:
   playAudioNames:
   - m1001
   stopAudioNames: []
+  sfxOrVoiceNames: []
 --- !u!4 &4499260808002648742
 Transform:
   m_ObjectHideFlags: 0
@@ -11764,6 +11787,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 10
   gravityChangeScale: 0
+  gameObjectDestroyUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
   playerImage: {fileID: 0}
   playerOldImage: {fileID: 0}
   npcDialogueTreeController: {fileID: 0}

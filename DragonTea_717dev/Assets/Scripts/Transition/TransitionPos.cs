@@ -84,6 +84,8 @@ public class TransitionPos : MonoBehaviour
         Application.Quit();
     }
 
+
+
     
 
 }

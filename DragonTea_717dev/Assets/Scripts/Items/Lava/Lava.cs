@@ -9,7 +9,8 @@ public class Lava : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Debug.Log("撞上了");
-            collision.GetComponent<DragonController>().DragonAttackedByLava();
+            //collision.GetComponent<DragonController>().DragonAttackedByLava();
+            collision.GetComponent<PlayerController>().PlayerAttackedByLava();
             Destroy(gameObject); // 击中玩家后销毁子弹
         }
 

@@ -2203,6 +2203,7 @@ MonoBehaviour:
   playAudioNames: []
   stopAudioNames:
   - m4001
+  sfxOrVoiceNames: []
 --- !u!1 &269370177
 GameObject:
   m_ObjectHideFlags: 0
@@ -22283,8 +22284,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f0df8a4d375e74ba422c37fea192fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  needSavePlayerPos: 0
   SceneFrom: TestScene_dragonDream_dev
   SceneTo: TestScene_02_dev
 --- !u!4 &697708886
@@ -49150,8 +49149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f0df8a4d375e74ba422c37fea192fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 706208937}
-  needSavePlayerPos: 1
   SceneFrom: TestScene_dragonDream_dev
   SceneTo: TestScene_TrueEnd
 --- !u!1 &1408076799
@@ -50032,6 +50029,7 @@ MonoBehaviour:
   playAudioNames: []
   stopAudioNames:
   - m4002
+  sfxOrVoiceNames: []
 --- !u!1 &1496163919
 GameObject:
   m_ObjectHideFlags: 0
@@ -81211,6 +81209,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1070272931}
     - target: {fileID: 8196096178610390479, guid: e1e5948b6586b624d961bc6a480a77bb, type: 3}
+      propertyPath: jumpForce
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8196096178610390479, guid: e1e5948b6586b624d961bc6a480a77bb, type: 3}
       propertyPath: tipCanvas
       value: 
       objectReference: {fileID: 1292528110}
@@ -83086,6 +83088,7 @@ MonoBehaviour:
   playAudioNames:
   - m4002
   stopAudioNames: []
+  sfxOrVoiceNames: []
 --- !u!224 &6180282440018416650
 RectTransform:
   m_ObjectHideFlags: 0
@@ -83188,6 +83191,7 @@ MonoBehaviour:
   - m4001
   stopAudioNames:
   - 
+  sfxOrVoiceNames: []
 --- !u!114 &7669642794567781262
 MonoBehaviour:
   m_ObjectHideFlags: 0

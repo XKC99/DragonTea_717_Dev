@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject playerFallToDeadSpeaker;  //高空坠落死亡音
     public GameObject playerDeadByEnemySpeaker; //被敌人攻击死亡音
+    public GameObject playerAttackedByLavaSpeaker;//被岩浆攻击死亡音
 
     [HideInInspector]public Rigidbody2D rb;
     protected Animator animator;
@@ -289,6 +290,24 @@ public class PlayerController : MonoBehaviour
         PlayerIsDead();
         playerFallToDeadSpeaker.GetComponent<DialogueSpeaker>().Play();  //玩家坠落死亡后播放语音
         yield return new WaitUntil(()=>playerFallToDeadSpeaker.GetComponent<DialogueSpeaker>().isFinished);
+        Revive();
+    }
+
+    
+    public void PlayerAttackedByLava()  //玩家被岩浆球攻击死亡
+    {
+        if(isDead)
+        {
+            return;
+        }
+        StartCoroutine("PlayerAttackedByLavaCo");
+    }
+
+    public IEnumerator PlayerAttackedByLavaCo()
+    {
+        PlayerIsDead();
+        playerAttackedByLavaSpeaker.GetComponent<DialogueSpeaker>().Play();  //玩家被火球攻击死亡后播放语音
+        yield return new WaitUntil(()=>playerAttackedByLavaSpeaker.GetComponent<DialogueSpeaker>().isFinished);
         Revive();
     }
 

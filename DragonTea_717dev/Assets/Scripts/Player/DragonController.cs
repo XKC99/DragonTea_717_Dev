@@ -13,7 +13,8 @@ public class DragonController : PlayerController
     public float fireRate; //火球发射间隔时间
     public float nextFireTime; //下次可以发射的时间
     public float fireLifeTime;//火焰存活时间
-    public GameObject playerAttackedByLavaSpeaker;
+
+    //public GameObject playerAttackedByLavaSpeaker;
 
     public GameObject tipCanvas;
     public TextMeshProUGUI CD_Text;
@@ -112,25 +113,25 @@ public class DragonController : PlayerController
         StartCoroutine("DragonAttackedByLavaCo");
     }
 
-    public IEnumerator DragonAttackedByLavaCo()
-    {
-        PlayerIsDead();
-        playerAttackedByLavaSpeaker.GetComponent<DialogueSpeaker>().Play();  //玩家坠落死亡后播放语音
-        yield return new WaitUntil(()=>playerAttackedByLavaSpeaker.GetComponent<DialogueSpeaker>().isFinished);
-        Revive();
-    }
+    // public IEnumerator DragonAttackedByLavaCo()
+    // {
+    //     PlayerIsDead();
+    //     playerAttackedByLavaSpeaker.GetComponent<DialogueSpeaker>().Play();  //玩家坠落死亡后播放语音
+    //     yield return new WaitUntil(()=>playerAttackedByLavaSpeaker.GetComponent<DialogueSpeaker>().isFinished);
+    //     Revive();
+    // }
 
-    public override void PlayerIsAttack()  //发射火球
-    {
-        isAttack = true;
-        Debug.Log("攻击");
-        animator.SetTrigger("Attack");
-        GameObject fireBall=SkillBallPool.Instance.GetBallObject(attackFireBall);
-        fireBall.transform.position=fromPos.position;
-        fireBall.GetComponent<Rigidbody2D>().velocity=fireBallDirection*fireBallSpeed;
+    // public override void PlayerIsAttack()  //发射火球
+    // {
+    //     isAttack = true;
+    //     Debug.Log("攻击");
+    //     animator.SetTrigger("Attack");
+    //     GameObject fireBall=SkillBallPool.Instance.GetBallObject(attackFireBall);
+    //     fireBall.transform.position=fromPos.position;
+    //     fireBall.GetComponent<Rigidbody2D>().velocity=fireBallDirection*fireBallSpeed;
 
-        Destroy(fireBall,fireLifeTime);
-    }
+    //     Destroy(fireBall,fireLifeTime);
+    // }
 
     protected override void Flip()
     {

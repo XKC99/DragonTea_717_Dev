@@ -28,10 +28,12 @@ public class CharacterStatus : MonoBehaviour
     }
     public virtual void TakeDamage(int damage)
     {
+        AudioManager.Instance.PlayOneShot("sjizhong");
         currentHp -= damage;
     }
     public virtual void Heal(int heal)
     {
+        AudioManager.Instance.PlayOneShot("sjizhong");
         currentHp += heal;
     }
 }

@@ -73,9 +73,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 2142833739
+  m_SortingLayer: 3
+  m_SortingOrder: 10
   m_Sprite: {fileID: -3821050371604442713, guid: 80c45eaa21e96f2488a20fc371ee5b48, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -144,6 +144,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da3e3624c7955484d86a7d2b3eb58d34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpForce: 0
+  gravityChangeScale: 0
+  gameObjectDestroyUnityEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!50 &5270579386553576432
 Rigidbody2D:
   serializedVersion: 4

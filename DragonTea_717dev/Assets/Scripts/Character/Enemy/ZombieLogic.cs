@@ -6,6 +6,8 @@ public class ZombieLogic : ItemLogic,ICardAffected
 {
     public List<GameObject> DeadObject;
     public List<GameObject> BackToNPCObject;
+
+    public GameObject KillorHealPlay;
     
     protected override void OnTriggerEnter2D(Collider2D other)
     {
@@ -54,6 +56,10 @@ public class ZombieLogic : ItemLogic,ICardAffected
     {
         DataManager.Instance.evilCount++;
         DataManager.Instance.killNumber++;
+        if(KillorHealPlay!=null)
+        {
+            KillorHealPlay.GetComponent<ShowKillNumber>().SpeakerKillPlay();
+        }
         this.transform.DetachChildren();//隐藏的道具爆出来
         for(int i=0;i<DeadObject.Count;i++)
         {
@@ -68,6 +74,10 @@ public class ZombieLogic : ItemLogic,ICardAffected
         AudioManager.Instance.PlayOneShot("sbianhuiren");
         DataManager.Instance.evilCount--;
         DataManager.Instance.healNumber++;
+        if(KillorHealPlay!=null)
+        {
+            KillorHealPlay.GetComponent<ShowKillNumber>().SpeakerHealPlay();
+        }
         this.transform.DetachChildren();
         for(int i=0;i<BackToNPCObject.Count;i++)
         {

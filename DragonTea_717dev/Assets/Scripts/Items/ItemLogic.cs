@@ -102,7 +102,7 @@ public class ItemLogic : MonoBehaviour,ICardAffected //接口命名往往以I开
 
     public virtual void FallCardEffect()
     {
-        //价格滑行音效
+        //加个滑行音效
         rb.gravityScale=gravityChangeScale;
         Debug.Log("坠落牌的作用");
     }

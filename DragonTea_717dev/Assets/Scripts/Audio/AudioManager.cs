@@ -155,7 +155,8 @@ public class AudioManager : MonoBehaviour
                 s.source.Stop();
             }
             
-            s.source.Play();
+            //s.source.Play();
+            s.source.PlayOneShot(s.clip);
             Debug.Log($"Playing sound: {name}");
         }
         else

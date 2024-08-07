@@ -94,6 +94,7 @@ public class PlayerCollision : ItemLogic,ICardAffected
 
    public void StartToTalk()
    {
+    
     npcDialogueTreeController.StartDialogue();
    }
 
@@ -116,6 +117,21 @@ public class PlayerCollision : ItemLogic,ICardAffected
     {
        Debug.Log("攻击");
        this.gameObject.GetComponent<PlayerStatus>().TakeDamage(1); //每次被攻击一次掉1血
+    }
+
+    public override void FallCardEffect()
+    {
+        if(rb.velocity.y>=0)
+        {
+            Debug.Log("没有用");
+            //加上语音
+        }
+        else
+        {
+            rb.gravityScale=gravityChangeScale;
+            //加上音效
+            Debug.Log("坠落牌的作用");
+        }
     }
 
 

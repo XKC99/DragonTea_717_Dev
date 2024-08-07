@@ -88,6 +88,7 @@ public class PlayerController : MonoBehaviour
        if(Input.GetKeyDown("f") && playerCollision.npcDialogueTreeController!= null)
         {
             playerCollision.FNoteDisable();
+            animator.SetFloat("Speed",0f);
             playerCollision.StartToTalk();
         }
 
@@ -234,6 +235,16 @@ public class PlayerController : MonoBehaviour
         //transform.right=direction;不需要
         //GameObject fire=Instantiate(attackFireBall,fromPos.position,Quaternion.identity); 换成下2行
         GameObject fireBall=SkillBallPool.Instance.GetBallObject(attackFireBall);
+
+        if(facingRight) //这里是改变火球的方向
+        {
+            fireBall.GetComponent<SpriteRenderer>().flipX=true;
+        }
+        else
+        {
+            fireBall.GetComponent<SpriteRenderer>().flipX=false;
+        }
+
         fireBall.transform.position=fromPos.position;
         Debug.Log("攻击球实例化");
         //fire.GetComponent<FireBall>().SetFireSpeed(direction);//换成下1行
@@ -245,6 +256,14 @@ public class PlayerController : MonoBehaviour
         direction=(mousePos-new Vector2(transform.position.x,transform.position.y)).normalized;
         //transform.right=direction;
         GameObject fire=Instantiate(healFireBall,fromPos.position,Quaternion.identity);
+        if(facingRight)
+        {
+            healFireBall.GetComponent<SpriteRenderer>().flipX=true;
+        }
+        else
+        {
+            healFireBall.GetComponent<SpriteRenderer>().flipX=false;
+        }
         Debug.Log("治疗球实例化");
         fire.GetComponent<FireBall>().SetFireSpeed(direction);
     }

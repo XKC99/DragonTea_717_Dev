@@ -35,6 +35,7 @@ public class CardTrigger : MonoBehaviour
       {
          GameObject card=PoolTool.Instance.GetObjectFromPool();
         card.GetComponent<Card>().InitCard(cardData);   
+        AudioManager.Instance.PlayOneShot("sshouji");
         CardDeck.Instance.DrawCard(card.GetComponent<Card>());
         CardDeck.Instance.SetCardLayOut();
       }

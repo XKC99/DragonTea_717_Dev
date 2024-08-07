@@ -192,7 +192,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 243096719}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -328,8 +328,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHorizontal: 1
   maxWidth: 7
-  cardSpacing: 0.4
-  cardWidth: 2.35
+  cardSpacing: 0.2
+  cardWidth: 1.5
   cardCenterPoint: {x: 0, y: -4.5, z: 0}
   cardPositions: []
 --- !u!4 &415773610
@@ -756,6 +756,18 @@ MonoBehaviour:
   - name: sdragonjiao
     clip: {fileID: 8300000, guid: a78584d93cd87c042b2742fc973e7dcd, type: 3}
     volume: 0.61
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: sshouji
+    clip: {fileID: 8300000, guid: 78069a1bc1eb2aa4ea6bbd20115dc163, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: szhuanhuan
+    clip: {fileID: 8300000, guid: 58c8f42c7d0b8394c9261c0b4632145d, type: 3}
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}

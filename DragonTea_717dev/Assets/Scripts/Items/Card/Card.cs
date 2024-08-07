@@ -56,6 +56,7 @@ public class Card : MonoBehaviour
             cardSprite.sprite = data.cardImage;
             //cardDescription.text = data.description;
             cardValue = data.cardValue;
+            AudioManager.Instance.PlayOneShot("szhuanhuan");
         }
     }
     

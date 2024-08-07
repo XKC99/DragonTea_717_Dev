@@ -17,6 +17,18 @@ public class BoxLogic : ItemLogic,ICardAffected
     // {
     //     player=GameObject.FindGameObjectWithTag("Player");
     // }
+    private void Awake()
+    {
+        base.Awake();
+        // 初始化cardColletions列表
+        cardColletions = new List<GameObject>();
+        
+        // 获取所有子物体并添加到cardColletions列表
+        foreach (Transform child in transform)
+        {
+            cardColletions.Add(child.gameObject);
+        }
+    }
 
     public override bool Execute(Card card) 
     {

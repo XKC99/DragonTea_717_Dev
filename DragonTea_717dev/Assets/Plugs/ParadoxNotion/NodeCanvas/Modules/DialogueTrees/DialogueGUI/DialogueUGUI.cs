@@ -127,7 +127,8 @@ namespace NodeCanvas.DialogueTrees.UI.Examples
             actorSpeech.text = "";
 
             actorName.text = actor.name;
-            actorSpeech.color = actor.dialogueColor;
+            //actorSpeech.color = actor.dialogueColor;
+             actorSpeech.color = Color.black; // 将字体颜色修改为黑色
 
             actorPortrait.gameObject.SetActive(actor.portraitSprite != null);
             actorPortrait.sprite = actor.portraitSprite;

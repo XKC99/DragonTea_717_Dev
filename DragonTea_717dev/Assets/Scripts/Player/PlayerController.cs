@@ -21,9 +21,11 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]public Vector2 mousePos;
     [HideInInspector]public Vector2 direction;
 
-    public GameObject playerFallToDeadSpeaker;  //高空坠落死亡音
-    public GameObject playerDeadByEnemySpeaker; //被敌人攻击死亡音
-    public GameObject playerAttackedByLavaSpeaker;//被岩浆攻击死亡音
+    public GameObject playerFallToDeadSpeaker;  //高空坠落死亡对话
+    public GameObject playerDeadByEnemySpeaker; //被敌人攻击死亡对话
+    public GameObject playerAttackedByLavaSpeaker;//被岩浆攻击死亡对话
+    public DialogueSpeaker playKillHimSelfSpeaker;//勇者自杀音
+    
 
     [HideInInspector]public Rigidbody2D rb;
     protected Animator animator;
@@ -203,6 +205,7 @@ public class PlayerController : MonoBehaviour
    
     public virtual void PlayerIsAttack()  //使用攻击牌后玩家的操作
     {
+        AudioManager.Instance.PlayOneShot("sshoot"); //勇者攻击音效
         isAttack = true;
         Debug.Log("攻击");
         animator.SetTrigger("Attack");
@@ -212,6 +215,7 @@ public class PlayerController : MonoBehaviour
 
     public void PlayerIsHeal()  //使用治疗牌后玩家的操作
     {
+        AudioManager.Instance.PlayOneShot("sshoot"); //勇者攻击音效
         Debug.Log("治疗");
         animator.SetTrigger("Attack");
         mousePos=Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -303,12 +307,31 @@ public class PlayerController : MonoBehaviour
         StartCoroutine("PlayerAttackedByLavaCo");
     }
 
-    public virtual IEnumerator PlayerAttackedByLavaCo()
+    protected virtual IEnumerator PlayerAttackedByLavaCo()
     {
         AudioManager.Instance.PlayOneShot("sboom");
         PlayerIsDead();
         playerAttackedByLavaSpeaker.GetComponent<DialogueSpeaker>().Play();  //玩家被火球攻击死亡后播放语音
         yield return new WaitUntil(()=>playerAttackedByLavaSpeaker.GetComponent<DialogueSpeaker>().isFinished);
+        Revive();
+    }
+
+    public virtual void PlayerKillHimeSelf()
+    {
+        if(isDead)
+        {
+            return;
+        }
+        StartCoroutine("PlayKillHimSelfCo");
+    }
+
+    protected virtual IEnumerator PlayKillHimSelfCo()
+    {
+        AudioManager.Instance.PlayOneShot("sboom");
+        PlayerIsDead();
+        playKillHimSelfSpeaker.Play();
+        yield return new WaitUntil(()=>playKillHimSelfSpeaker.isFinished);
+        gameObject.GetComponent<PlayerStatus>().currentHp++;
         Revive();
     }
 

@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\Items\Lava\Lava.cs" />
     <Compile Include="Assets\Scripts\Timeline\SelfTransTrack\CustomBehaviour.cs" />
     <Compile Include="Assets\Scripts\Character\PhysicsCheck.cs" />
+    <Compile Include="Assets\Scripts\Timeline\TimeLineQuitGame.cs" />
     <Compile Include="Assets\Scripts\Audio\Data_SO\PlayAudio_SO.cs" />
     <Compile Include="Assets\Scripts\Utilities\Event\SpecialTriggerEvent.cs" />
     <Compile Include="Assets\Scripts\Items\Card\CardSkill\HealBall.cs" />
@@ -108,6 +109,7 @@
     <Compile Include="Assets\Scripts\Items\NormalInformatinItem\NormalItem.cs" />
     <Compile Include="Assets\Scripts\Utilities\DataManager.cs" />
     <Compile Include="Assets\Scripts\Items\Card\CardHandler.cs" />
+    <Compile Include="Assets\Scripts\Others\ShowKillNumber.cs" />
     <Compile Include="Assets\Scripts\Speaker\SpeakerLogic.cs" />
     <Compile Include="Assets\Scripts\Items\Card\CardManager.cs" />
     <Compile Include="Assets\Scripts\Utilities\归档\EventHandler.cs" />
@@ -152,6 +154,7 @@
     <Compile Include="Assets\Scripts\Items\SpecialBox\SpeacialBox.cs" />
     <Compile Include="Assets\Plugs\Dialogue Speaker\Demo\Scripts\QuitApp.cs" />
     <Compile Include="Assets\Scripts\Character\Enemy\BaseEnemy.cs" />
+    <Compile Include="Assets\Scripts\Timeline\TimelineTrigger.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerStatus.cs" />
     <Compile Include="Assets\Arts\CharacterPack\Sample\Sample.cs" />
     <Compile Include="Assets\Scripts\Character\Enemy\BaseState.cs" />
@@ -164,6 +167,7 @@
     <Compile Include="Assets\Plugs\Dialogue Speaker\Demo\Scripts\EndMethod.cs" />
     <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_LightIntensityFade.cs" />
     <Compile Include="Assets\Scripts\Utilities\Event\TriggerEvent.cs" />
+    <Compile Include="Assets\Scripts\Others\KillAndHealAudio.cs" />
     <Compile Include="Assets\Scripts\Character\NPC\NPCLogic.cs" />
     <Compile Include="Assets\Scripts\UI\IShowF.cs" />
     <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_Translate.cs" />

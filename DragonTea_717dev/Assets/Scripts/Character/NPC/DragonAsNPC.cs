@@ -10,4 +10,9 @@ public class DragonAsNPC : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
+    public void DragonDead()
+    {
+        this.gameObject.GetComponent<Animator>().SetBool("Dead",true);
+    }
+
 }

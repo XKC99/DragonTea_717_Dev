@@ -2360,6 +2360,8 @@ Transform:
   - {fileID: 702223958}
   - {fileID: 391502285}
   - {fileID: 2021959124}
+  - {fileID: 394798832}
+  - {fileID: 227699723}
   - {fileID: 82636487}
   - {fileID: 1351821844}
   - {fileID: 1302166530}
@@ -2982,6 +2984,164 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &227699722
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 227699723}
+  - component: {fileID: 227699725}
+  - component: {fileID: 227699724}
+  m_Layer: 0
+  m_Name: "SpeakerAudio_\u5343\u4E07\u4E0D\u8981\u542C\u4ED6"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &227699723
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227699722}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -59.06, y: -19.64, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 180997983}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &227699724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227699722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab434477b46b60d499db11a05f19c820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centralAudio: {fileID: 227699725}
+  playOnAwake: 0
+  subtitlesText: {fileID: 517946954}
+  useSubtitles: 1
+  dialogues:
+  - clip: {fileID: 8300000, guid: f83e77cf948651d4191a692976ee20e5, type: 3}
+    time: 0
+    subtitles: "\u5343\u4E07\u4E0D\u8981\u542C\u4ED6\u7684\u80E1\u8A00\u4E71\u8BED\uFF0C\u8FD9\u90FD\u662F\u5047\u8C61\uFF01"
+    triggerEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  fireFinishEvent: 0
+  finishedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  hideSubtitlesOnDelay: 0
+  hideSubtitlesOnFinish: 1
+--- !u!82 &227699725
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227699722}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &228152712
 GameObject:
   m_ObjectHideFlags: 0
@@ -5579,17 +5739,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"_condition":{"valueA":{"_name":"isFirstSee","_targetVariableID":"83d1f5d4-081d-45e4-bb66-b7722f84fbf3"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_position":{"x":346.8442,"y":1075.159},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"0"},{"statement":{"_text":"\u4f60\u521a\u521a\u5728\u505a\u4ec0\u4e48\uff01\u6211\u4e00\u76f4\u53eb\u4f60\uff0c\u4e3a\u4f55\u4e0d\u56de\u5e94\u6211\uff01"},"_position":{"x":207.6595,"y":1294.524},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"1"},{"statement":{"_text":"\u4f60\u4e0d\u4e5f\u4f1a\u88ab\u6076\u9b54\u86ca\u60d1\u4e86\u5427\uff1f\u5feb\u9192\u9192\uff01"},"_position":{"x":102.7098,"y":1441.954},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"2"},{"_action":{"boolVariable":{"_name":"isFirstSee","_targetVariableID":"83d1f5d4-081d-45e4-bb66-b7722f84fbf3"},"$type":"NodeCanvas.Tasks.Actions.SetBoolean"},"_position":{"x":402.6612,"y":1576.18},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"3"},{"_action":{"method":{"_baseInfo":"ShowKillNumber|SpeakerDialougePlay|System.Void","_paramsInfo":""},"parameters":[],"returnValue":{},"overrideAgent":{"_type":"ShowKillNumber","_value":1},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction_Multiplatform"},"_position":{"x":611.472,"y":1738.641},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"4"},{"_position":{"x":618.0891,"y":1952.9},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"5"},{"statement":{"_text":"\u60f3\u8d77\u6765\u4e86\u5417\uff0c\u6765\u8fd9\u91cc\u53d1\u751f\u7684\u4e8b\u60c5\uff1f"},"_position":{"x":648.0865,"y":1237.992},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"6"},{"availableChoices":[{"statement":{"_text":"\u8fd9\u91cc\u662f\u4ec0\u4e48\u5730\u65b9\uff1f"}},{"statement":{"_text":"\u544a\u8bc9\u6211\u5173\u4e8e\u4f60\u7684\u4e8b\u3002"}}],"_position":{"x":895.7981,"y":1319.295},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"7"},{"statement":{"_text":"\u5df4\u62c9\u5df4\u62c9\uff0c\u8fd9\u91cc\u8bb2\u52c7\u8005\u5df2\u7ecf\u7a7f\u8fc7\u6076\u9b54\u6d1e\u7a9f\u6765\u5230\u96ea\u9f99\u8c37\u4e86\uff0c\u4f46\u662f\u88ab\u6076\u9b54\u5728\u6076\u9b54\u6d1e\u7a9f\u4e0b\u4e86\u5e7b\u672f\uff0c\u770b\u8c01\u90fd\u662f\u654c\u4eba\u3002\uff08\u5360\u4f4d\uff0c\u8fd8\u6ca1\u5199\uff09"},"_position":{"x":576.0938,"y":1524.5},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"8"},{"statement":{"_text":"\u9f50\u683c\u98de\u66fe\u7ecf\u4e5f\u88ab\u6076\u9b54\u6b3a\u9a97\uff0c\u4f24\u5bb3\u4e86\u767d\u9f99\u540e\u6700\u7ec8\u9192\u609f\u3002\u4e3a\u4e86\u8d4e\u7f6a\uff0c\u5728\u8fd9\u91cc\u5b88\u62a4\u767d\u9f99\uff08\u4f46\u662f\u56e0\u4e3a\u4e0d\u662f\u52c7\u8005\uff0c\u6ca1\u6709\u529e\u6cd5\u66ff\u767d\u9f99\u6062\u590d\u4f24\u52bf\uff09
+  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"_condition":{"valueA":{"_name":"isFirstSee","_targetVariableID":"83d1f5d4-081d-45e4-bb66-b7722f84fbf3"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_position":{"x":346.8442,"y":1075.159},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"0"},{"statement":{"_text":"\u4f60\u521a\u521a\u5728\u505a\u4ec0\u4e48\uff01\u6211\u4e00\u76f4\u53eb\u4f60\uff0c\u4e3a\u4f55\u4e0d\u56de\u5e94\u6211\uff01"},"_position":{"x":207.6595,"y":1294.524},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"1"},{"statement":{"_text":"\u4f60\u4e0d\u4e5f\u4f1a\u88ab\u6076\u9b54\u86ca\u60d1\u4e86\u5427\uff1f\u5feb\u9192\u9192\uff01"},"_position":{"x":102.7098,"y":1441.954},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"2"},{"_action":{"boolVariable":{"_name":"isFirstSee","_targetVariableID":"83d1f5d4-081d-45e4-bb66-b7722f84fbf3"},"$type":"NodeCanvas.Tasks.Actions.SetBoolean"},"_position":{"x":402.6612,"y":1576.18},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"3"},{"_action":{"method":{"_baseInfo":"DialogueSpeaker|Play|System.Void","_paramsInfo":""},"parameters":[],"returnValue":{},"overrideAgent":{"_type":"DialogueSpeaker","_value":1},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction_Multiplatform"},"_position":{"x":538.9468,"y":1815.432},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"4"},{"_position":{"x":618.0891,"y":1952.9},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"5"},{"statement":{"_text":"\u60f3\u8d77\u6765\u4e86\u5417\uff0c\u6765\u8fd9\u91cc\u53d1\u751f\u7684\u4e8b\u60c5\uff1f"},"_position":{"x":648.0865,"y":1237.992},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"6"},{"availableChoices":[{"statement":{"_text":"\u8fd9\u91cc\u662f\u4ec0\u4e48\u5730\u65b9\uff1f"}},{"statement":{"_text":"\u544a\u8bc9\u6211\u5173\u4e8e\u4f60\u7684\u4e8b\u3002"}}],"_position":{"x":895.7981,"y":1319.295},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"7"},{"statement":{"_text":"\u5df4\u62c9\u5df4\u62c9\uff0c\u8fd9\u91cc\u8bb2\u52c7\u8005\u5df2\u7ecf\u7a7f\u8fc7\u6076\u9b54\u6d1e\u7a9f\u6765\u5230\u96ea\u9f99\u8c37\u4e86\uff0c\u4f46\u662f\u88ab\u6076\u9b54\u5728\u6076\u9b54\u6d1e\u7a9f\u4e0b\u4e86\u5e7b\u672f\uff0c\u770b\u8c01\u90fd\u662f\u654c\u4eba\u3002\uff08\u5360\u4f4d\uff0c\u8fd8\u6ca1\u5199\uff09"},"_position":{"x":576.0938,"y":1524.5},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"8"},{"statement":{"_text":"\u9f50\u683c\u98de\u66fe\u7ecf\u4e5f\u88ab\u6076\u9b54\u6b3a\u9a97\uff0c\u4f24\u5bb3\u4e86\u767d\u9f99\u540e\u6700\u7ec8\u9192\u609f\u3002\u4e3a\u4e86\u8d4e\u7f6a\uff0c\u5728\u8fd9\u91cc\u5b88\u62a4\u767d\u9f99\uff08\u4f46\u662f\u56e0\u4e3a\u4e0d\u662f\u52c7\u8005\uff0c\u6ca1\u6709\u529e\u6cd5\u66ff\u767d\u9f99\u6062\u590d\u4f24\u52bf\uff09
     \uff08\u5360\u4f4d\uff09"},"_position":{"x":984.806,"y":1520.24},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"9"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"6"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"7"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"7"},"_targetNode":{"$ref":"9"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"9"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 227699723}
   _boundGraphSource:
     _version: 3.28
     _category: 
     _comments: 
-    _translation: {x: -139, y: -1313}
-    _zoomFactor: 1
+    _translation: {x: 72.759705, y: -818.08374}
+    _zoomFactor: 0.7500836
   _firstActivation: 0
   _enableAction: 1
   _disableAction: 2
@@ -6031,6 +6191,164 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &394798829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 394798832}
+  - component: {fileID: 394798831}
+  - component: {fileID: 394798830}
+  m_Layer: 0
+  m_Name: "SpeakerAudio_\u8FD9\u6076\u9F99\u7684\u5E7B\u672F\u8FD9\u4E48\u79BB\u8C31\uFF1F"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &394798830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394798829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab434477b46b60d499db11a05f19c820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centralAudio: {fileID: 394798831}
+  playOnAwake: 0
+  subtitlesText: {fileID: 517946954}
+  useSubtitles: 1
+  dialogues:
+  - clip: {fileID: 8300000, guid: 1eb382c96b77f6a41964b5bcc5fa3444, type: 3}
+    time: 0
+    subtitles: "\u8FD9\uFF0C\u8FD9\u6076\u9F99\u7684\u5E7B\u672F\u5DF2\u7ECF\u8FD9\u4E48\u79BB\u8C31\u4E86\u5417\uFF1F\u8FDE\u738B\u56FD\u9A91\u58EB\u90FD\u80FD\u6A21\u4EFF\uFF1F"
+    triggerEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  fireFinishEvent: 0
+  finishedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  hideSubtitlesOnDelay: 0
+  hideSubtitlesOnFinish: 1
+--- !u!82 &394798831
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394798829}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &394798832
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394798829}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -59.06, y: -19.64, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 180997983}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &402873157
 GameObject:
   m_ObjectHideFlags: 0
@@ -23397,6 +23715,96 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &623038303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 623038304}
+  - component: {fileID: 623038306}
+  - component: {fileID: 623038305}
+  m_Layer: 0
+  m_Name: ResetRevivePos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &623038304
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623038303}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 60.4, y: 3.23, z: -0.68}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1700081944}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &623038305
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623038303}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.37593842, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 7.390991, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &623038306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623038303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f92bd9ae2bcca945846af7002261775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &627154965
 GameObject:
   m_ObjectHideFlags: 0
@@ -64063,6 +64471,7 @@ Transform:
   m_Children:
   - {fileID: 85243246}
   - {fileID: 774202509}
+  - {fileID: 623038304}
   - {fileID: 2101275345}
   - {fileID: 1962151209}
   - {fileID: 830895096}
@@ -66010,7 +66419,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2959085554556856718, guid: 3028b580a4170ce439de5499a2c12539, type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
-      value: 8200
+      value: 10248
       objectReference: {fileID: 0}
     - target: {fileID: 4599772650927228673, guid: 3028b580a4170ce439de5499a2c12539, type: 3}
       propertyPath: m_LocalScale.x
@@ -80441,7 +80850,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3136113143202515878}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: r_ashi_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80457,7 +80866,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 583007762064155281}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: R_l_ashi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80503,7 +80912,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1797806757249011989}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: r_bane_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80649,7 +81058,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6785673145085925413}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: o_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80680,7 +81089,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5003053020668790069}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: o_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80759,7 +81168,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2883131486855672885}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: l_tsubasabane_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81018,7 +81427,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1703486882448461180}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: l_ude_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81133,7 +81542,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8401313744918070081}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ago_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81213,7 +81622,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3262224197188043838}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: r_tsubasabane_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81261,7 +81670,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3852266815072393340}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: R_kubi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81336,7 +81745,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1139720709531549215}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: R_r_tsubasa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81352,7 +81761,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7867352815197974287}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: r_ude_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81627,7 +82036,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4637701839478164347}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: base_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81659,7 +82068,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8992048746005502718}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: r_tsubasabane_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81725,7 +82134,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3670557688066261692}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: r_ashi_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81808,7 +82217,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2214507069321027999}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: l_bane_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81824,7 +82233,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7328805845590293671}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: r_ude_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82098,7 +82507,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2423936800682824117}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: l_ashi_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82238,7 +82647,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6839383533119431509}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: atama_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82293,7 +82702,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4874679675995119316}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: l_ashi_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82436,7 +82845,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3137487394002405584}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: all_scale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82514,6 +82923,18 @@ MonoBehaviour:
       - m_Target: {fileID: 3943494385074058008}
         m_TargetAssemblyTypeName: ZombieLogic, Assembly-CSharp
         m_MethodName: BackToNPCShowCard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 394798830}
+        m_TargetAssemblyTypeName: DialogueSpeaker, Assembly-CSharp
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -82624,7 +83045,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7301572917342435125}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: l_tsubasa_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82645,7 +83066,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   jumpForce: 6
-  jumpDeadSpeed: -15
+  jumpDeadSpeed: -50
   attackFireBall: {fileID: 292846501996241652, guid: 0f3355cd4da447644bbb3ee4f629de7d, type: 3}
   healFireBall: {fileID: 3340886047861285697, guid: 0c64fc8bd0fffeb47b75c8fe45b7b12e, type: 3}
   fromPos: {fileID: 168394203676067423}
@@ -83609,7 +84030,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922336}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: r_bane_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83625,7 +84046,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922338}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: R_r_tsubasa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83641,7 +84062,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922340}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: r_tsubasabane_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83657,7 +84078,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922342}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: base_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83673,7 +84094,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922344}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: R_o
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83689,7 +84110,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922346}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: l_tsubasa_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83705,7 +84126,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922348}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: R_koshi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83721,7 +84142,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922350}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: base_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83737,7 +84158,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922352}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: r_tsubasa_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83754,7 +84175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3676477110716922354}
   - component: {fileID: 3676477110730869422}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: p_doragon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83770,7 +84191,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922356}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: l_tsubasa_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83786,7 +84207,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922358}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: o_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83802,7 +84223,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922360}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: r_tsubasabane_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83818,7 +84239,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922362}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: atama_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83834,7 +84255,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922364}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ago_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83850,7 +84271,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922366}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: R_atama
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83866,7 +84287,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922240}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: l_ude_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83882,7 +84303,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922242}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: l_tsubasabane_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83898,7 +84319,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922244}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: l_bane_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83914,7 +84335,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922246}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: all_scale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83930,7 +84351,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922252}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: kubi_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83946,7 +84367,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922254}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: R_l_tsubasa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83962,7 +84383,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922256}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: r_ude_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83978,7 +84399,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922258}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: o_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83994,7 +84415,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922260}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: R_l_kata
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84010,7 +84431,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922262}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: l_ashi_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84026,7 +84447,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922264}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: l_tsubasa_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84045,7 +84466,7 @@ GameObject:
   - component: {fileID: 3676477110726679790}
   - component: {fileID: 3676477110726679792}
   - component: {fileID: 3676477110726679791}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: "\u767D\u9F99"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84061,7 +84482,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922268}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: l_tsubasa_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84077,7 +84498,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922270}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: r_ashi_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84093,7 +84514,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716921888}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: R_r_kata
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84109,7 +84530,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716921890}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: l_ude_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84125,7 +84546,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716921892}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: R_kubi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84141,7 +84562,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716921894}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: R_l_ashi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84157,7 +84578,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716921896}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: l_tsubasabane_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84173,7 +84594,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716921898}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ago_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84189,7 +84610,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716921900}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: kubi_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84205,7 +84626,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716921902}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: o_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84221,7 +84642,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716921912}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: o_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84237,7 +84658,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716921914}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: atama_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84253,7 +84674,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716921916}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: r_tsubasabane_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84269,7 +84690,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716921918}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: l_ude_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84285,7 +84706,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922304}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: r_ude_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84301,7 +84722,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922306}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: o_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84317,7 +84738,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922308}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: o_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84333,7 +84754,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922310}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: r_tsubasa_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84349,7 +84770,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922312}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: r_tsubasa_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84365,7 +84786,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922314}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: R_r_ashi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84381,7 +84802,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922316}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: l_ashi_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84397,7 +84818,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922318}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: base_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84413,7 +84834,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922320}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: r_ude_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84429,7 +84850,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922322}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: l_ashi_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84445,7 +84866,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922324}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: l_bane_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84461,7 +84882,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922326}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: r_ashi_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84477,7 +84898,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922328}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: r_bane_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84493,7 +84914,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922330}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: r_ashi_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84509,7 +84930,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922332}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: r_tsubasa_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84525,7 +84946,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3676477110716922334}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: l_tsubasabane_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84733,7 +85154,7 @@ GameObject:
   - component: {fileID: 4452543316072548394}
   - component: {fileID: 8753735455519488751}
   - component: {fileID: 8753735455519488752}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: "\u6076\u9F99\u654C\u4EBA"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84781,7 +85202,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3063038209431558699}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: kubi_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84954,7 +85375,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3920738101226200409}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: kubi_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85018,7 +85439,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4529208849018838794}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: R_r_ashi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85098,7 +85519,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4119038721461070575}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: r_ude_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85433,7 +85854,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1680489145623837142}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: o_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85481,7 +85902,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4494334267507212275}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: R_r_kata
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85764,7 +86185,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 760055358347635636}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: o_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85844,7 +86265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8228593914959400353}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: R_atama
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85909,7 +86330,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4922764752435896290}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: base_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87271,7 +87692,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6390198691059053803}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: R_o
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87287,7 +87708,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 299500955754347738}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: r_tsubasa_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87303,7 +87724,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 334170026267230168}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: base_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87398,7 +87819,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2190948434386403521}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: r_tsubasa_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87494,7 +87915,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4412988150870031139}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: l_tsubasabane_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87510,7 +87931,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1448729828055827107}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: l_ude_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87622,7 +88043,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8611807758177628711}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: l_tsubasa_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87735,7 +88156,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1156022158988401448}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: r_tsubasabane_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87834,7 +88255,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3904191176221240901}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: r_bane_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87927,7 +88348,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6335098151075474283}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: R_l_tsubasa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87972,7 +88393,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7299939925046703547}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: o_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88024,7 +88445,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3894117860206544025}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: R_l_kata
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88040,7 +88461,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 666993878853684140}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: l_tsubasa_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88199,7 +88620,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4310402868071541124}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: o_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88215,7 +88636,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 729745364975755424}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: l_ude_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88231,7 +88652,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8510569524935354715}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: l_tsubasa_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88263,7 +88684,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5444735852351375257}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: l_ashi_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88338,7 +88759,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4318977881391747719}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: r_tsubasa_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88370,7 +88791,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2510717573889033836}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: R_koshi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88418,7 +88839,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7009898063347204415}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ago_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88434,7 +88855,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5099866940716477645}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: r_tsubasa_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88450,7 +88871,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 366513200207884962}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: l_bane_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88481,7 +88902,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5012261027245790028}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: atama_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88497,7 +88918,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2881266052229822553}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: l_tsubasabane_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88578,7 +88999,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 577060744928023183}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: r_ashi_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

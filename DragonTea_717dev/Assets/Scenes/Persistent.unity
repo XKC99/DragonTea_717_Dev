@@ -549,6 +549,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
+  - name: m0001
+    clip: {fileID: 8300000, guid: c6019d171794f154b9acafd6cdc3c0f0, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
   - name: m1001
     clip: {fileID: 8300000, guid: 6ef060ec0dbf4a14bb851a377aed9c4d, type: 3}
     volume: 1
@@ -748,8 +754,8 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: sjizhong
-    clip: {fileID: 8300000, guid: 69d3419064b3b3648bfb1f10c75e7e47, type: 3}
-    volume: 0.61
+    clip: {fileID: 8300000, guid: fca4adb5eb3df704f810eeb16d3252cf, type: 3}
+    volume: 0.663
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -767,6 +773,30 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: szhuanhuan
     clip: {fileID: 8300000, guid: 58c8f42c7d0b8394c9261c0b4632145d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: sdimianyonglongzhiyi
+    clip: {fileID: 8300000, guid: 6314d2fdd74324e40a02510c74d8c19b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: sjiangluo
+    clip: {fileID: 8300000, guid: 9ce886690d2cc8949ad391767aa5e92d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: UIclick
+    clip: {fileID: 8300000, guid: 454598f032cd34943920676f639a8bc3, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: UIyiru
+    clip: {fileID: 8300000, guid: 5903eb38ecf59ae4d8eca66ae981e08b, type: 3}
     volume: 1
     pitch: 1
     loop: 0

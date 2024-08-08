@@ -84489,7 +84489,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5691282331362431863, guid: e1e5948b6586b624d961bc6a480a77bb, type: 3}
       propertyPath: m_Mass
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5955007151657991155, guid: e1e5948b6586b624d961bc6a480a77bb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -84545,7 +84545,7 @@ PrefabInstance:
       objectReference: {fileID: 1070272931}
     - target: {fileID: 8196096178610390479, guid: e1e5948b6586b624d961bc6a480a77bb, type: 3}
       propertyPath: jumpForce
-      value: 30
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 8196096178610390479, guid: e1e5948b6586b624d961bc6a480a77bb, type: 3}
       propertyPath: tipCanvas
@@ -86527,6 +86527,7 @@ MonoBehaviour:
   - a4001
   stopAudioNames:
   - m0001
+  - a2001
   sfxOrVoiceNames: []
 --- !u!114 &7669642794567781262
 MonoBehaviour:

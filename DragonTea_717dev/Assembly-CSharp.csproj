@@ -66,7 +66,6 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Character\Enemy\ZombieChaseState.cs" />
     <Compile Include="Assets\Scripts\Items\Lava\Lava.cs" />
-    <Compile Include="Assets\Scripts\Timeline\SelfTransTrack\CustomBehaviour.cs" />
     <Compile Include="Assets\Scripts\Character\PhysicsCheck.cs" />
     <Compile Include="Assets\Scripts\Timeline\TimeLineQuitGame.cs" />
     <Compile Include="Assets\Scripts\UI\HoverScaleEffect.cs" />
@@ -74,6 +73,7 @@
     <Compile Include="Assets\Scripts\Utilities\Event\SpecialTriggerEvent.cs" />
     <Compile Include="Assets\Scripts\Items\Card\CardSkill\HealBall.cs" />
     <Compile Include="Assets\Scripts\Utilities\CurrentLevelManager.cs" />
+    <Compile Include="Assets\Scripts\Timeline\Self\CustomMixerBehaviour.cs" />
     <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_ShurikenThreadFix.cs" />
     <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_AutodestructWhenNoChildren.cs" />
     <Compile Include="Assets\Scripts\Timeline\TrueEndTimeline.cs" />
@@ -82,6 +82,7 @@
     <Compile Include="Assets\Scripts\Character\Enemy\DragonLogic.cs" />
     <Compile Include="Assets\Scripts\UI\UIFadeInOut.cs" />
     <Compile Include="Assets\Scripts\Player\DragonController.cs" />
+    <Compile Include="Assets\Scripts\Timeline\Self\CustomClipEditor.cs" />
     <Compile Include="Assets\Scripts\Items\Card\ScriptObject\CardLibrarySO.cs" />
     <Compile Include="Assets\Scripts\Items\Card\CardSkill\SkillBallPool.cs" />
     <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RandomDir.cs" />
@@ -95,8 +96,8 @@
     <Compile Include="Assets\Scripts\Items\ICardAffected.cs" />
     <Compile Include="Assets\Scripts\Inventory\Logic\Item.cs" />
     <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
-    <Compile Include="Assets\Scripts\Timeline\SelfTransTrack\CustomTrack.cs" />
     <Compile Include="Assets\Scripts\Items\CloudsLogic.cs" />
+    <Compile Include="Assets\Scripts\Transition\PersistentTrans.cs" />
     <Compile Include="Assets\Scripts\Items\Lava\LavaAutoTrigger.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerItemLogic.cs" />
     <Compile Include="Assets\Scripts\Items\Lava\LavaTrigger.cs" />
@@ -148,20 +149,22 @@
     <Compile Include="Assets\Scripts\Inventory\Data_SO\ItemDataList_SO.cs" />
     <Compile Include="Assets\Arts\PixelWeatherFX\Scripts\RotateObject.cs" />
     <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RotateCamera.cs" />
+    <Compile Include="Assets\Scripts\Timeline\Self\CustomBehaviour.cs" />
     <Compile Include="Assets\Scripts\Timeline\ChangePos.cs" />
     <Compile Include="Assets\Scripts\Items\Card\CardSkill\FireShooterPos.cs" />
-    <Compile Include="Assets\Scripts\Timeline\SelfTransTrack\CustomClip.cs" />
     <Compile Include="Assets\Scripts\Utilities\Event\ColliderEvent.cs" />
+    <Compile Include="Assets\M Studio\Plugins\Singleton.cs" />
     <Compile Include="Assets\Scripts\Others\GameTimer.cs" />
     <Compile Include="Assets\Scripts\Items\SpecialBox\SpeacialBox.cs" />
+    <Compile Include="Assets\M Studio\Plugins\SceneNameAttribute.cs" />
     <Compile Include="Assets\Plugs\Dialogue Speaker\Demo\Scripts\QuitApp.cs" />
     <Compile Include="Assets\Scripts\Character\Enemy\BaseEnemy.cs" />
     <Compile Include="Assets\Scripts\Timeline\TimelineTrigger.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerStatus.cs" />
+    <Compile Include="Assets\Scripts\Timeline\Self\CustomTrack.cs" />
     <Compile Include="Assets\Arts\CharacterPack\Sample\Sample.cs" />
     <Compile Include="Assets\Scripts\Character\Enemy\BaseState.cs" />
     <Compile Include="Assets\Scripts\Utilities\Enums.cs" />
-    <Compile Include="Assets\Scripts\Timeline\SelfTransTrack\CustomClipEditor.cs" />
     <Compile Include="Assets\Scripts\Character\Status\ZombieStatus.cs" />
     <Compile Include="Assets\Scripts\Items\Card\ScriptObject\CardDataSO.cs" />
     <Compile Include="Assets\Scripts\Others\FlowPush.cs" />
@@ -173,10 +176,11 @@
     <Compile Include="Assets\Scripts\Character\NPC\NPCLogic.cs" />
     <Compile Include="Assets\Scripts\UI\IShowF.cs" />
     <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_Translate.cs" />
-    <Compile Include="Assets\Scripts\Timeline\SelfTransTrack\CustomMixerBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Timeline\Self\CreateCustomClipAsset.cs" />
     <Compile Include="Assets\Scripts\Items\Card\CardDeck.cs" />
     <Compile Include="Assets\Scripts\Transition\Teleport.cs" />
     <Compile Include="Assets\Arts\PixelWeatherFX\Scripts\ParticleManager.cs" />
+    <Compile Include="Assets\Scripts\Timeline\Self\CustomClip.cs" />
     <Compile Include="Assets\Scripts\Character\Enemy\ZombiePatrolState.cs" />
     <Compile Include="Assets\Arts\PixelWeatherFX\Scripts\FadeLight.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerCollision.cs" />
@@ -209,7 +213,6 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\Arts\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Texts\_Make your own text effect.txt" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-    <None Include="Assets\M Studio\Plugins\MTool.dll" />
     <None Include="Assets\Arts\JMO Assets\Cartoon FX Remaster\Readme Cartoon FX Remaster.txt" />
     <None Include="Assets\Fonts\CommonText.txt" />
     <None Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Shaders\CFXM_MobileParticleAdd_Alpha8.shader" />
@@ -561,10 +564,6 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="MTool">
-      <HintPath>Assets\M Studio\Plugins\MTool.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="netstandard">

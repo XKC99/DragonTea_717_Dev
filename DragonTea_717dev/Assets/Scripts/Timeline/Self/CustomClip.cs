@@ -15,6 +15,7 @@ public class CustomClip : PlayableAsset, ITimelineClipAsset
 
     public override Playable CreatePlayable(PlayableGraph graph, GameObject owner)
     {
+        Debug.Log("Creating CustomPlayable");
         return ScriptPlayable<CustomBehaviour>.Create(graph, template);
     }
 }

@@ -1,7 +1,9 @@
+#if UNITY_EDITOR
 using UnityEngine;
 using UnityEditor;
-using UnityEngine.Timeline;
+//using UnityEngine.Timeline;
 using UnityEditor.Timeline;
+
 
 [CustomEditor(typeof(CustomClip))]
 public class CustomClipEditor : Editor
@@ -32,5 +34,4 @@ public class CustomClipEditor : Editor
         }
     }
 }
-
-
+#endif

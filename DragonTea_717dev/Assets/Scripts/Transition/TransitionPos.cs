@@ -9,6 +9,9 @@ public class TransitionPos : MonoBehaviour
     public GameObject FNote;
     private bool playerIsInside;
     public int playerCollideTimes=0;
+    public DialogueSpeaker evilSpeaker;
+    public DialogueSpeaker goodSpeaker;
+
 
     private void Update() 
     {
@@ -65,17 +68,33 @@ public class TransitionPos : MonoBehaviour
         int evilnumber=DataManager.Instance.evilCount;
         if(evilnumber<=2&&DataManager.Instance.isEneteredMemory)
         {
-            TransToGood();
+            //TransToGood();
+            StartCoroutine("TransToGoodCO");
         }
         else
         {
-            TransToEvil();
+            //TransToEvil();
+            StartCoroutine("TransToEvilCO");
         }
+    }
+
+
+    public IEnumerator TransToEvilCO()
+    {
+        evilSpeaker.Play();
+        yield return new WaitUntil(()=>evilSpeaker.isFinished);
+        TransToEvil();   
+    }
+
+    public IEnumerator TransToGoodCO()
+    {
+        goodSpeaker.Play();
+        yield return new WaitUntil(()=>goodSpeaker.isFinished);
+        TransToGood();
     }
 
     public void TransToFlyWithDragon()
     {
-        
         TransitionManager.Instance.Transition("TestScene_02_dev","TestScene_FlyWthDragon");
     }
 

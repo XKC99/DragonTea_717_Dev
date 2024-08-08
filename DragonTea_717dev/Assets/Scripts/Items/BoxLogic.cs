@@ -17,7 +17,7 @@ public class BoxLogic : ItemLogic,ICardAffected
     // {
     //     player=GameObject.FindGameObjectWithTag("Player");
     // }
-    private void Awake()
+    protected override void Awake()
     {
         base.Awake();
         // 初始化cardColletions列表
@@ -67,6 +67,7 @@ public class BoxLogic : ItemLogic,ICardAffected
     protected virtual void OnBoxDestroyPlayer()
     {
         Debug.Log($"Trigger触发:{gameObject.name}");
+        AudioManager.Instance.PlayOneShot("sjizhong");
         boxDestroyUnityEvent?.Invoke();
     }
 

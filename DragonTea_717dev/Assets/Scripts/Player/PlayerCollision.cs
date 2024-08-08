@@ -124,12 +124,14 @@ public class PlayerCollision : ItemLogic,ICardAffected
         if(rb.velocity.y>=0)
         {
             Debug.Log("没有用");
+            AudioManager.Instance.PlayOneShot("sdimianyonglongzhiyi");
             //加上语音
         }
         else
         {
             rb.gravityScale=gravityChangeScale;
             //加上音效
+            AudioManager.Instance.PlayOneShot("sjiangluo");
             Debug.Log("坠落牌的作用");
         }
     }

@@ -311,8 +311,10 @@ public class PlayerController : MonoBehaviour
     public IEnumerator PlayerDropIntoFireDieAndReviveCo()
     {
         PlayerIsDead();
+        Debug.Log("Waiting for dialogue to finish...");
         playerFallToDeadSpeaker.GetComponent<DialogueSpeaker>().Play();  //玩家坠落死亡后播放语音
         yield return new WaitUntil(()=>playerFallToDeadSpeaker.GetComponent<DialogueSpeaker>().isFinished);
+        Debug.Log("Dialogue finished, reviving player.");
         Revive();
     }
 

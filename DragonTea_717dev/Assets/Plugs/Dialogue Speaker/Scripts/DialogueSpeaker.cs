@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿
+
+
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
@@ -194,6 +197,7 @@ public class DialogueSpeaker : MonoBehaviour
     // all the dialogues have finished playing
     void FinishedDialogues()
     {
+        DialogueManager.Instance.ClearCurrentSpeaker(this);
         Reset();
         tempRemoveSubtitles = true;
         
@@ -213,6 +217,7 @@ public class DialogueSpeaker : MonoBehaviour
     // main public method that triggers the dialogues
     public void Play()
     {
+        DialogueManager.Instance.PlayDialogue(this);
         if (!dialogueStarted) {
             if (subtitlesText) subtitlesText.text = "";
             isFinished = false;
@@ -291,6 +296,23 @@ public class DialogueSpeaker : MonoBehaviour
 
         StartCoroutine("PlayDialogue");
     }
+
+    public void Interrupt()
+    {
+        StopAllCoroutines();
+        if (centralAudio.isPlaying)
+        {
+            centralAudio.Stop();
+        }
+        if (subtitlesText)
+        {
+            subtitlesText.text = "";
+            subtitlesText.gameObject.SetActive(false);
+        }
+        isFinished = true;
+        dialogueStarted = false;
+    }
+
     
     #endregion
 }

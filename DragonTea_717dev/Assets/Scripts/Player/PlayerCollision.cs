@@ -12,10 +12,12 @@ public class PlayerCollision : ItemLogic,ICardAffected
     public DialogueTreeController npcDialogueTreeController;  //NPC身上的DialogueTreeController组件
 
     public float recordGravityScale;
+    protected PhysicsCheck physicsCheck;
 
     private void Start() 
     {
         recordGravityScale=this.GetComponent<Rigidbody2D>().gravityScale;
+        physicsCheck=GetComponent<PhysicsCheck>();
     }
 
 
@@ -121,7 +123,7 @@ public class PlayerCollision : ItemLogic,ICardAffected
 
     public override void FallCardEffect()
     {
-        if(rb.velocity.y>=0)
+        if(rb.velocity.y>=0||physicsCheck.isGround)
         {
             Debug.Log("没有用");
             AudioManager.Instance.PlayOneShot("sdimianyonglongzhiyi");

@@ -54,7 +54,7 @@ public class CardDeck : Singleton<CardDeck>
     public void HandCardFull()
     {
         Debug.Log("手牌已满,请弃牌");
-        cardFullSpeaker.GetComponent<DialogueSpeaker>().Play();
+        AudioManager.Instance.PlayOneShot("UIshangxian");
     }
 
 

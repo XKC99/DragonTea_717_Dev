@@ -671,9 +671,9 @@ MonoBehaviour:
       corner: 1
       m_CornerMode: 1
     - position: {x: 5.5619125, y: 7.2617855, z: 0}
-      leftTangent: {x: 0, y: 0, z: 0}
-      rightTangent: {x: 0, y: 0, z: 0}
-      mode: 0
+      leftTangent: {x: -0.9150816, y: -0.5429699, z: -0}
+      rightTangent: {x: 0.54783833, y: 0.3250636, z: 0}
+      mode: 1
       height: 1
       spriteIndex: 0
       corner: 1
@@ -687,6 +687,54 @@ MonoBehaviour:
       corner: 1
       m_CornerMode: 1
     - position: {x: 9.168495, y: 8.388605, z: 0}
+      leftTangent: {x: 0, y: 0, z: 0}
+      rightTangent: {x: 0, y: 0, z: 0}
+      mode: 0
+      height: 1
+      spriteIndex: 0
+      corner: 1
+      m_CornerMode: 1
+    - position: {x: 11.234009, y: 8.87776, z: 0}
+      leftTangent: {x: -1.3912888, y: -0.30021286, z: 0}
+      rightTangent: {x: 1.0066223, y: 0.21720886, z: 0}
+      mode: 1
+      height: 1
+      spriteIndex: 0
+      corner: 1
+      m_CornerMode: 1
+    - position: {x: 12.164726, y: 11.786238, z: 0}
+      leftTangent: {x: -0.092414856, y: -1.5410748, z: 0}
+      rightTangent: {x: 0.14020538, y: 2.3048353, z: 0}
+      mode: 1
+      height: 1
+      spriteIndex: 0
+      corner: 1
+      m_CornerMode: 1
+    - position: {x: 10.613533, y: 19.154385, z: 0}
+      leftTangent: {x: -0.28676605, y: -2.092617, z: 0}
+      rightTangent: {x: 1.6223297, y: -1.3828697, z: 0}
+      mode: 2
+      height: 1
+      spriteIndex: 0
+      corner: 1
+      m_CornerMode: 1
+    - position: {x: 21.215988, y: 19.6982, z: 0}
+      leftTangent: {x: -1.6223297, y: 1.3828735, z: 0}
+      rightTangent: {x: 1.8807755, y: -1.6031685, z: 0}
+      mode: 1
+      height: 1
+      spriteIndex: 0
+      corner: 1
+      m_CornerMode: 1
+    - position: {x: 21.12284, y: 10.19627, z: 0}
+      leftTangent: {x: -1.8807755, y: 1.6031675, z: 0}
+      rightTangent: {x: 0, y: 0, z: 0}
+      mode: 2
+      height: 1
+      spriteIndex: 0
+      corner: 1
+      m_CornerMode: 1
+    - position: {x: 23.488403, y: 8.8002, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -778,8 +826,8 @@ SpriteShapeRenderer:
   - {fileID: 21300000, guid: f9797cb6ebc0ba84a877b1cbf26d79ab, type: 3}
   - {fileID: 21300000, guid: f9797cb6ebc0ba84a877b1cbf26d79ab, type: 3}
   m_LocalAABB:
-    m_Center: {x: 2.730812, y: 3.4545255, z: 0}
-    m_Extent: {x: 7.1906586, y: 5.6108274, z: 0}
+    m_Center: {x: 9.717585, y: 9.341661, z: 0}
+    m_Extent: {x: 14.177431, y: 11.497963, z: 0}
   m_SpriteSortPoint: 0
 --- !u!1 &142565475
 GameObject:
@@ -1382,6 +1430,38 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
+    - position: {x: 14.663353, y: 8.954691, z: 0}
+      leftTangent: {x: 0, y: 0, z: 0}
+      rightTangent: {x: 0, y: 0, z: 0}
+      mode: 0
+      height: 1
+      spriteIndex: 0
+      corner: 1
+      m_CornerMode: 1
+    - position: {x: 15.539543, y: 14.202865, z: 0}
+      leftTangent: {x: 0, y: 0, z: 0}
+      rightTangent: {x: 0, y: 0, z: 0}
+      mode: 0
+      height: 1
+      spriteIndex: 0
+      corner: 1
+      m_CornerMode: 1
+    - position: {x: 17.805885, y: 14.803192, z: 0}
+      leftTangent: {x: 0, y: 0, z: 0}
+      rightTangent: {x: 0, y: 0, z: 0}
+      mode: 0
+      height: 1
+      spriteIndex: 0
+      corner: 1
+      m_CornerMode: 1
+    - position: {x: 15.23761, y: 6.9374094, z: 0}
+      leftTangent: {x: 0, y: 0, z: 0}
+      rightTangent: {x: 0, y: 0, z: 0}
+      mode: 0
+      height: 1
+      spriteIndex: 0
+      corner: 1
+      m_CornerMode: 1
     - position: {x: 10.982582, y: 6.6284328, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
@@ -1455,7 +1535,11 @@ MonoBehaviour:
   - {x: 6.1727057, y: 7.6589866}
   - {x: 9.370602, y: 7.710014}
   - {x: 9.941269, y: 8.709506}
-  - {x: 12.506119, y: 8.927846}
+  - {x: 12.5059805, y: 8.927839}
+  - {x: 14.664813, y: 8.954447}
+  - {x: 15.540024, y: 14.201047}
+  - {x: 17.806366, y: 14.801374}
+  - {x: 15.236202, y: 6.937869}
   - {x: 10.981548, y: 6.6294913}
   - {x: 9.235537, y: 4.9251184}
   - {x: 7.7348766, y: 3.5028458}
@@ -1516,8 +1600,8 @@ SpriteShapeRenderer:
   - {fileID: -8003358384348165872, guid: 15c1bba7d7fe1f1408464567541d6ac2, type: 3}
   - {fileID: 4635384528031941002, guid: 15c1bba7d7fe1f1408464567541d6ac2, type: 3}
   m_LocalAABB:
-    m_Center: {x: 4.7244506, y: 3.5876403, z: 0}
-    m_Extent: {x: 9.088538, y: 6.7928653, z: 0}
+    m_Center: {x: 7.26662, y: 6.5079594, z: 0}
+    m_Extent: {x: 11.630708, y: 9.713184, z: 0}
   m_SpriteSortPoint: 0
 --- !u!4 &250654696
 Transform:
@@ -1585,7 +1669,11 @@ EdgeCollider2D:
   - {x: 6.1727057, y: 7.6589866}
   - {x: 9.370602, y: 7.710014}
   - {x: 9.941269, y: 8.709506}
-  - {x: 12.506119, y: 8.927846}
+  - {x: 12.5059805, y: 8.927839}
+  - {x: 14.664813, y: 8.954447}
+  - {x: 15.540024, y: 14.201047}
+  - {x: 17.806366, y: 14.801374}
+  - {x: 15.236202, y: 6.937869}
   - {x: 10.981548, y: 6.6294913}
   - {x: 9.235537, y: 4.9251184}
   - {x: 7.7348766, y: 3.5028458}

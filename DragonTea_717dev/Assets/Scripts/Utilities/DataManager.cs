@@ -22,6 +22,13 @@ public class DataManager : Singleton<DataManager>
    public int killNumber=0;//杀害数
    public int healNumber=0;//治愈数
    public bool isEneteredMemory;//是否进入过记忆区域
+   public bool isNotFirstDeadByEnemy;//不是第一次被敌人杀死
+
+   public bool isFirstUseFly;  //第一次使用飞行牌
+   public bool isEnteredCheckFlyarea; //是否进入了检查飞行区域
+   public bool isFirstUseFall; //第一次使用坠落牌
+
+   public DialogueSpeaker firstDeadByEnemySpeaker;
 
 
    private readonly Dictionary<int, Dictionary<int, SerializableData>> _saveDataDict = new();
@@ -61,5 +68,15 @@ public class DataManager : Singleton<DataManager>
             serializerComp.Deserialize(data);
          }
       }
+   }
+
+   public void EnterFlyCheckArea()
+   {
+      isEnteredCheckFlyarea = true;
+   }
+
+   public void ExitFlyCheckArea()
+   {
+      isEnteredCheckFlyarea = false;
    }
 }

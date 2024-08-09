@@ -138,6 +138,22 @@ public class PlayerCollision : ItemLogic,ICardAffected
         }
     }
 
+    public override void FlyCardEffect()
+    {
+        AudioManager.Instance.PlayOneShot("sfly"); 
+        Debug.Log("飞行牌的作用");
+        if(DataManager.Instance.isFirstUseFly&&DataManager.Instance.isEnteredCheckFlyarea)
+        {
+            DialogueManager.Instance.firstFlyAndWrongSpeaker.Play();
+            DataManager.Instance.isFirstUseFly=false;
+        }
+        else
+        {
+            DialogueManager.Instance.PlayRandomDialogue(8); //8是玩家飞
+        }
+         rb.AddForce(Vector2.up*jumpForce, ForceMode2D.Impulse);
+    }
+
 
 
 }

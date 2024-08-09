@@ -1,5 +1,6 @@
 using System.Collections;
 using NodeCanvas.DialogueTrees;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Animations;
@@ -184,8 +185,19 @@ public class PlayerController : MonoBehaviour
     public IEnumerator PlayerDeadByEnemyCo()  //玩家被敌人攻击死亡
     {
         PlayerIsDead();
-        playerDeadByEnemySpeaker.GetComponent<DialogueSpeaker>().Play();  //玩家被敌人攻击死亡后播放语音
-        yield return new WaitUntil(()=>playerDeadByEnemySpeaker.GetComponent<DialogueSpeaker>().isFinished);
+        if(DataManager.Instance.isNotFirstDeadByEnemy==false)
+        {
+            DataManager.Instance.firstDeadByEnemySpeaker.Play(); //第一次被攻击死亡播放的语音
+            yield return new WaitUntil(()=>DataManager.Instance.firstDeadByEnemySpeaker.isFinished);
+            DataManager.Instance.isNotFirstDeadByEnemy=true;
+        }
+        else
+        {
+            playerDeadByEnemySpeaker.GetComponent<DialogueSpeaker>().Play();  //玩家被敌人攻击死亡后播放语音
+            yield return new WaitUntil(()=>playerDeadByEnemySpeaker.GetComponent<DialogueSpeaker>().isFinished);
+        }
+        //playerDeadByEnemySpeaker.GetComponent<DialogueSpeaker>().Play();  //玩家被敌人攻击死亡后播放语音
+        //yield return new WaitUntil(()=>playerDeadByEnemySpeaker.GetComponent<DialogueSpeaker>().isFinished);
         Revive();
     }
 

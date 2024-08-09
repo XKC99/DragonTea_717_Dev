@@ -41,6 +41,7 @@ public class BoxLogic : ItemLogic,ICardAffected
             //     HealCardEffect();
             //     return true;  //如果不想让这类牌发挥作用，返回false或者直接注释
              case CardType.Fly:
+                DialogueManager.Instance.PlayRandomDialogue(5);
                 FlyCardEffect();
                 return true;
             case CardType.Fall:

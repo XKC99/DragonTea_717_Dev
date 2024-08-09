@@ -3367,7 +3367,7 @@ Transform:
   m_GameObject: {fileID: 240777903}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7069991, y: 0.012340696, z: -0.012340696, w: 0.7069991}
-  m_LocalPosition: {x: -1066.8, y: -55.9, z: 33.8}
+  m_LocalPosition: {x: -1065.3, y: -38.4, z: 50}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.22}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3381,9 +3381,9 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 240777903}
   m_Enabled: 1
-  m_SortingLayerID: -2118526875
-  m_SortingLayer: 5
-  m_SortingOrder: 0
+  m_SortingLayerID: 2142833739
+  m_SortingLayer: 3
+  m_SortingOrder: 50
   m_SortAtRoot: 0
 --- !u!199 &240777906
 ParticleSystemRenderer:
@@ -48900,7 +48900,7 @@ Transform:
   m_GameObject: {fileID: 1270377211}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.933422, y: 35.402367, z: -4.3315125}
+  m_LocalPosition: {x: 3.9434223, y: 35.63237, z: -4.3315125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -50746,7 +50746,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3646529840743607653, guid: c1e6692c421e24a45a4bd7a0c81efab7, type: 3}
       propertyPath: jumpForce
-      value: 7
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3646529840743607653, guid: c1e6692c421e24a45a4bd7a0c81efab7, type: 3}
+      propertyPath: moveSpeed
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3646529840743607653, guid: c1e6692c421e24a45a4bd7a0c81efab7, type: 3}
       propertyPath: jumpDeadSpeed
@@ -50766,11 +50770,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8131041062272147448, guid: c1e6692c421e24a45a4bd7a0c81efab7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.71
+      value: 3.72
       objectReference: {fileID: 0}
     - target: {fileID: 8131041062272147448, guid: c1e6692c421e24a45a4bd7a0c81efab7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 28.39
+      value: 28.62
       objectReference: {fileID: 0}
     - target: {fileID: 8131041062272147448, guid: c1e6692c421e24a45a4bd7a0c81efab7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -61630,7 +61634,7 @@ Transform:
   m_GameObject: {fileID: 1803748570}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.933422, y: 35.402367, z: -4.3315125}
+  m_LocalPosition: {x: 3.9434223, y: 35.63237, z: -4.3315125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -71462,8 +71466,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 6
-  m_fontSizeBase: 6
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

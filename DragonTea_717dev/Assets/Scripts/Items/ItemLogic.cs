@@ -103,6 +103,7 @@ public class ItemLogic : MonoBehaviour,ICardAffected //接口命名往往以I开
     public virtual void FallCardEffect()
     {
         //加个滑行音效
+        DialogueManager.Instance.PlayRandomDialogue(7);//对其他用降落触发语音
         rb.gravityScale=gravityChangeScale;
         Debug.Log("坠落牌的作用");
     }

@@ -71,15 +71,19 @@ public class Card : MonoBehaviour
         switch (cardType)
         {
             case CardType.Fire:
+            DialogueManager.Instance.PlayRandomDialogue(2);
             ChangeCardType(CardType.Heal);
             break;
             case CardType.Heal:
+            DialogueManager.Instance.PlayRandomDialogue(1);
             ChangeCardType(CardType.Fire);
             break;
             case CardType.Fly:
+            DialogueManager.Instance.PlayRandomDialogue(4);
             ChangeCardType(CardType.Fall);
             break;
             case CardType.Fall:
+            DialogueManager.Instance.PlayRandomDialogue(3);
             ChangeCardType(CardType.Fly);
             break;
         }

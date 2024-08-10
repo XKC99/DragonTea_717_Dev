@@ -90,6 +90,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Utilities\GameBasic\StatusManager.cs" />
     <Compile Include="Assets\Scripts\Items\Card\Card.cs" />
+    <Compile Include="Assets\Scripts\Others\EnteredFLyCheckBool.cs" />
     <Compile Include="Assets\Scripts\Others\CleanBall.cs" />
     <Compile Include="Assets\Scripts\Utilities\TestDataManager.cs" />
     <Compile Include="Assets\Scripts\Items\Card\CardSkill\FireBall.cs" />
@@ -146,9 +147,11 @@
     <Compile Include="Assets\Scripts\Items\Card\CardTransform.cs" />
     <Compile Include="Assets\Scripts\PostProcessing\DeletePost.cs" />
     <Compile Include="Assets\Scripts\Timeline\TimelineAnim.cs" />
+    <Compile Include="Assets\Scripts\Others\久留触发speaker\TargetTrigger.cs" />
     <Compile Include="Assets\Scripts\Transition\TransitionPos.cs" />
     <Compile Include="Assets\Scripts\Inventory\Data_SO\ItemDataList_SO.cs" />
     <Compile Include="Assets\Arts\PixelWeatherFX\Scripts\RotateObject.cs" />
+    <Compile Include="Assets\Scripts\Others\久留触发speaker\TimerTrigger.cs" />
     <Compile Include="Assets\Arts\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RotateCamera.cs" />
     <Compile Include="Assets\Scripts\Timeline\Self\CustomBehaviour.cs" />
     <Compile Include="Assets\Scripts\Timeline\ChangePos.cs" />

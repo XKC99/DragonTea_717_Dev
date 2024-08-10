@@ -41,6 +41,7 @@ public class BoxLogic : ItemLogic,ICardAffected
             //     HealCardEffect();
             //     return true;  //如果不想让这类牌发挥作用，返回false或者直接注释
              case CardType.Fly:
+                DialogueManager.Instance.PlayRandomDialogue(5);
                 FlyCardEffect();
                 return true;
             case CardType.Fall:
@@ -71,5 +72,13 @@ public class BoxLogic : ItemLogic,ICardAffected
         boxDestroyUnityEvent?.Invoke();
     }
 
+    public override void FlyCardEffect()
+    {
+        AudioManager.Instance.PlayOneShot("sfly"); 
+        Debug.Log("飞行牌的作用");
+        DialogueManager.Instance.PlayRandomDialogue(5); //箱子飞起来的对话
+        DataManager.Instance.isBoxFirstFly=false;
+        rb.AddForce(Vector2.up*jumpForce, ForceMode2D.Impulse);
+    }
 
 }

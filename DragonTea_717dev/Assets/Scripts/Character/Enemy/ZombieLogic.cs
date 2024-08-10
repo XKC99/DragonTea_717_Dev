@@ -92,6 +92,10 @@ public class ZombieLogic : ItemLogic,ICardAffected
          SkillBallPool.Instance.PushBallObject(collider2D.gameObject);
           //AudioManager.instance.PlayOneShot(destroyBoxAudioName);
           this.gameObject.GetComponent<ZombieStatus>().TakeDamage(1); //每次被攻击一次掉1血
+          if(this.gameObject.GetComponent<ZombieStatus>().currentHp>=0)
+          {
+            DialogueManager.Instance.PlayRandomDialogue(10);
+          }
     }
 
     public override void HealedByHealBall(Collider2D collider2D)
@@ -100,5 +104,23 @@ public class ZombieLogic : ItemLogic,ICardAffected
         //Destroy(collider2D.gameObject);  //这里需要替换为：将治愈球置入对象池
         SkillBallPool.Instance.PushBallObject(collider2D.gameObject);
         this.gameObject.GetComponent<ZombieStatus>().Heal(1);
+        DialogueManager.Instance.PlayRandomDialogue(11);
+    }
+
+    public override void FlyCardEffect()
+    {
+        AudioManager.Instance.PlayOneShot("sfly"); 
+        Debug.Log("飞行牌的作用");
+        if(DataManager.Instance.isEnemyFirstFly)
+        {
+            DialogueManager.Instance.enemyFirstFly.Play();
+            DataManager.Instance.isEnemyFirstFly=false;
+        }
+        else
+        {
+            DialogueManager.Instance.PlayRandomDialogue(6);
+        }
+        
+        rb.AddForce(Vector2.up*jumpForce, ForceMode2D.Impulse);
     }
 }

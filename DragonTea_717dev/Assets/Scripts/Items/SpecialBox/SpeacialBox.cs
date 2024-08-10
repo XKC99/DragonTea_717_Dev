@@ -24,7 +24,7 @@ public class SpeacialBox : ItemLogic,ICardAffected,IShowF
             case CardType.Heal:
             case CardType.Fly:
             case CardType.Fall:
-                CannotUesCardOnThis();
+                //CannotUesCardOnThis();
                 return false;
         }
         return false;

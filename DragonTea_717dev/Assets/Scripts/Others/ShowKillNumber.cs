@@ -40,36 +40,36 @@ public class ShowKillNumber : MonoBehaviour
     }
     public void ShowKillNumberImage()
     {
-        if(DataManager.Instance.evilCount==0)
+        if(DataManager.Instance.killNumber==0)
         {
             killNumberImage.SetActive(false);
         }
-        else if(DataManager.Instance.evilCount>0)
+        else if(DataManager.Instance.killNumber>0)
         {
             killNumberImage.SetActive(true);
         }
         
-        if(DataManager.Instance.evilCount==1)
+        if(DataManager.Instance.killNumber==1)
         {
             killNumberImage.GetComponent<RawImage>().texture=kill1;
         }
-        if(DataManager.Instance.evilCount==2)
+        if(DataManager.Instance.killNumber==2)
         {
             killNumberImage.GetComponent<RawImage>().texture=kill2;
         }
-        if(DataManager.Instance.evilCount==3)
+        if(DataManager.Instance.killNumber==3)
         {
             killNumberImage.GetComponent<RawImage>().texture=kill3;
         }
-        if(DataManager.Instance.evilCount==4)
+        if(DataManager.Instance.killNumber==4)
         {
             killNumberImage.GetComponent<RawImage>().texture=kill4;
         }
-        if(DataManager.Instance.evilCount==5)
+        if(DataManager.Instance.killNumber==5)
         {
             killNumberImage.GetComponent<RawImage>().texture=kill5;
         }
-        if(DataManager.Instance.evilCount==6)
+        if(DataManager.Instance.killNumber==6)
         {
             killNumberImage.GetComponent<RawImage>().texture=kill6;
         }

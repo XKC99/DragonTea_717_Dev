@@ -125,15 +125,25 @@ public class PlayerCollision : ItemLogic,ICardAffected
     {
         if(rb.velocity.y>=0||physicsCheck.isGround)
         {
-            Debug.Log("没有用");
-            AudioManager.Instance.PlayOneShot("sdimianyonglongzhiyi");
-            //加上语音
+            if(DataManager.Instance.isFirstUseFall&&DataManager.Instance.isEnteredCheckFlyarea)
+            {
+                DialogueManager.Instance.firstFallAndOnGroundSpeaker.Play();
+                DataManager.Instance.isFirstUseFall=false;
+            }
+            else
+            {
+                 Debug.Log("没有用");
+                 //AudioManager.Instance.PlayOneShot("sdimianyonglongzhiyi");
+                 DialogueManager.Instance.normalFallAndOnGroundSpeaker.Play();
+            }
+           
         }
         else
         {
             rb.gravityScale=gravityChangeScale;
             //加上音效
             AudioManager.Instance.PlayOneShot("sjiangluo");
+            DialogueManager.Instance.PlayRandomDialogue(9); //9是玩家下降时用坠落
             Debug.Log("坠落牌的作用");
         }
     }

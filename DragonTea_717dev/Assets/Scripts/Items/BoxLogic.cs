@@ -72,5 +72,13 @@ public class BoxLogic : ItemLogic,ICardAffected
         boxDestroyUnityEvent?.Invoke();
     }
 
+    public override void FlyCardEffect()
+    {
+        AudioManager.Instance.PlayOneShot("sfly"); 
+        Debug.Log("飞行牌的作用");
+        DialogueManager.Instance.PlayRandomDialogue(5); //箱子飞起来的对话
+        DataManager.Instance.isBoxFirstFly=false;
+        rb.AddForce(Vector2.up*jumpForce, ForceMode2D.Impulse);
+    }
 
 }

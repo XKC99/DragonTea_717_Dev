@@ -32,7 +32,7 @@ public class Card : MonoBehaviour
         InitCard(cardData);
     }
 
-    private void OnDestroy() 
+    public void OnDestroy() 
     {
         CardDeck.Instance.RemoveHandCard(this);
     }

@@ -26,6 +26,10 @@ public class DragonController : PlayerController
     {
         base.Awake();
         recordMoveSpeed=moveSpeed;
+        // if(cdTip!=null)
+        // {
+        //     cdTip = CD_Text.text;
+        // }
         cdTip = CD_Text.text;
     }
 

@@ -81,4 +81,12 @@ public class BoxLogic : ItemLogic,ICardAffected
         rb.AddForce(Vector2.up*jumpForce, ForceMode2D.Impulse);
     }
 
+    public override void HealedByHealBall(Collider2D collider2D)
+    {
+        AudioManager.Instance.PlayOneShot("shealboom"); //攻击音效
+        Debug.Log("我被治愈了");
+        SkillBallPool.Instance.PushBallObject(collider2D.gameObject);
+        //Destroy(collider2D.gameObject);  //这里需要替换为存入对象池的方法
+    }
+
 }

@@ -22,6 +22,7 @@ public class NormalItem : MonoBehaviour
         
         if(other.gameObject.CompareTag("Player"))
         {
+            Debug.Log("Player is inside");
             playerIsInside = true;
             FNote.SetActive(true);
         }

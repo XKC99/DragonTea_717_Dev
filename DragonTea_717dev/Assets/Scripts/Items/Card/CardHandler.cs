@@ -104,6 +104,12 @@ public class CardHandler : MonoBehaviour
                 {
                     currentCard.ChangeCard();
                 }
+                //右键弃牌
+                else if(Input.GetMouseButtonDown(1)) //右键弃牌
+                {
+                    CardDeck.Instance.RemoveHandCard(currentCard);
+                    Destroy(gameObject);
+                }
             }
         }
     }
@@ -112,11 +118,13 @@ public class CardHandler : MonoBehaviour
     private void OnMouseEnter() 
     {
         canMove = true;
+        Debug.Log($"卡牌({gameObject.GetInstanceID()})canMove=true");
     }
 
     private void OnMouseExit() 
     {
         canMove = false;
+        Debug.Log($"卡牌({gameObject.GetInstanceID()})canMove=false");
     }
 
     public void SetExcuteTure(ICardAffected ca)
@@ -124,7 +132,9 @@ public class CardHandler : MonoBehaviour
         //canExcute=true;
 
         // 已经有可被卡牌作用的对象就跳过，即只作用于第一个触发触发器的
-        if (cardAffected != null) return;
+        //if (cardAffected != null) return;
+        // 直接覆盖，以最后一个触发器为主，避免在触碰A碰撞器后，再触碰B碰撞器的同时，离开了A碰撞器。会导致影响对象为空
+        Debug.Log($"卡牌({gameObject.GetInstanceID()})设置影响对象({((MonoBehaviour)ca).gameObject.name})");
         cardAffected = ca;
     }
 
@@ -133,6 +143,7 @@ public class CardHandler : MonoBehaviour
         //canExcute=false;
 
         if (cardAffected != ca) return;
+        Debug.Log($"卡牌({gameObject.GetInstanceID()})清空影响对象");
         cardAffected = null;
     }
 
@@ -155,8 +166,10 @@ public class CardHandler : MonoBehaviour
 
     private void UseSelf() 
     {
-        PoolTool.Instance.ReleaseObjectToPool(gameObject);
+        Debug.Log($"卡牌({gameObject.GetInstanceID()})使用完毕");
+        //PoolTool.Instance.ReleaseObjectToPool(gameObject);
         CardDeck.Instance.RemoveHandCard(currentCard);
+        Destroy(gameObject);
     }
 
 

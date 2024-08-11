@@ -11,7 +11,7 @@ public class AudioPlayTest : MonoBehaviour
 
     void Start()
     {
-        AudioManager.Instance.ListAllSounds();
+         AudioManager.Instance.ListAllSounds();
     }
 
     public void PlayNextAudio()

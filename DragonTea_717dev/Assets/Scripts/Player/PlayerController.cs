@@ -11,9 +11,11 @@ public class PlayerController : MonoBehaviour
 {
 
     public float moveSpeed = 5f;
+    private float slowMoveSpeed=1f;
     public float jumpForce = 10f;
-
     public float jumpDeadSpeed=-10f;   //落地时死亡速度
+
+    public bool isInSlowZone;
 
     public GameObject attackFireBall;
     public GameObject healFireBall;
@@ -98,7 +100,31 @@ public class PlayerController : MonoBehaviour
     protected void MovePlayer()
     {
         float moveX = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(moveX * moveSpeed, rb.velocity.y);
+        //rb.velocity = new Vector2(moveX * moveSpeed, rb.velocity.y);
+          // 检查玩家是否在减速区域内
+        if (isInSlowZone)
+        {
+            if (moveX > 0)
+            {
+                // 当玩家按下右键时，减慢速度
+                rb.velocity = new Vector2(moveX * slowMoveSpeed, rb.velocity.y);
+            }
+            else if (moveX < 0)
+            {
+                // 当玩家按下左键时，恢复正常速度
+                rb.velocity = new Vector2(moveX * moveSpeed, rb.velocity.y);
+            }
+            else
+            {
+                // 没有按键时保持当前速度
+                rb.velocity = new Vector2(0, rb.velocity.y);
+            }
+        }
+        else
+        {
+            // 如果不在减速区域内，保持正常速度
+            rb.velocity = new Vector2(moveX * moveSpeed, rb.velocity.y);
+        }
 
         if (moveX > 0 && !facingRight)
         {
@@ -243,7 +269,7 @@ public class PlayerController : MonoBehaviour
 
     public virtual void ShootAttack()  //攻击牌生效后发射攻击火球
     {
-        direction=(mousePos-new Vector2(transform.position.x,transform.position.y)).normalized;
+        direction=(mousePos-new Vector2(fromPos.position.x,fromPos.position.y)).normalized;
         //transform.right=direction;不需要
         //GameObject fire=Instantiate(attackFireBall,fromPos.position,Quaternion.identity); 换成下2行
         GameObject fireBall=SkillBallPool.Instance.GetBallObject(attackFireBall);

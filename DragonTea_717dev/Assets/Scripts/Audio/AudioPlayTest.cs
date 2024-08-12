@@ -81,4 +81,9 @@ public class AudioPlayTest : MonoBehaviour
             AudioManager.Instance.PlayOneShot(audioName);
         }
     }
+
+    public void StopAll()
+    {
+        AudioManager.Instance.StopAll();
+    }
 }

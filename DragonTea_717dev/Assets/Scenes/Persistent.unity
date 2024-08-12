@@ -1085,7 +1085,7 @@ MonoBehaviour:
   subtitlesText: {fileID: 1040787094}
   useSubtitles: 1
   dialogues:
-  - clip: {fileID: 8300000, guid: d06d7c8f1df65074089b702f1c807327, type: 3}
+  - clip: {fileID: 8300000, guid: bc89d11a31a5cff41995edb7b6c17531, type: 3}
     time: 0
     subtitles: "\u4F60\u5728\u5730\u9762\u4E0A\u7528\u3010\u9F99\u4E4B\u7FFC\u3011\u6709\u5565\u7528\u554A\u3002\u8FD9\u5F97\u4E0B\u964D\u65F6\u7528\u624D\u597D\u4F7F\u554A\u3002"
     triggerEvent:
@@ -1130,7 +1130,7 @@ MonoBehaviour:
   maxWidth: 7
   cardSpacing: 0.2
   cardWidth: 1.5
-  cardCenterPoint: {x: 0, y: -4.5, z: 0}
+  cardCenterPoint: {x: 0, y: -9.94, z: 0}
   cardPositions: []
 --- !u!4 &415773610
 Transform:
@@ -1354,6 +1354,7 @@ MonoBehaviour:
   evilCount: 0
   killNumber: 0
   healNumber: 0
+  cleanNumber: 0
   isEneteredMemory: 0
   isNotFirstDeadByEnemy: 0
   isFirstUseFly: 1
@@ -1361,9 +1362,11 @@ MonoBehaviour:
   isFirstUseFall: 1
   isGetEggkey: 0
   isGetOneMoreLife: 0
+  isInSilentArea: 0
   firstDeadByEnemySpeaker: {fileID: 259564635}
   isBoxFirstFly: 1
   isEnemyFirstFly: 1
+  isDestroyeLava: 0
 --- !u!1 &513704823
 GameObject:
   m_ObjectHideFlags: 0
@@ -2489,6 +2492,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: m2003
+    clip: {fileID: 8300000, guid: bb22548fef4b500419782c851f23d012, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
   - name: m3001
     clip: {fileID: 8300000, guid: 938abe712236f5f408cd182a9875d7fd, type: 3}
     volume: 0.375
@@ -2869,7 +2878,7 @@ MonoBehaviour:
   subtitlesText: {fileID: 1040787094}
   useSubtitles: 1
   dialogues:
-  - clip: {fileID: 8300000, guid: 357b25b46b243544596adef8f132e6bc, type: 3}
+  - clip: {fileID: 8300000, guid: c9f8fdd7770ea044db454094973cd011, type: 3}
     time: 0
     subtitles: "\u98DE\u5F97\u8D8A\u9AD8\u6454\u5F97\u8D8A\u75BC\uFF0C\u4E0D\u61C2\u8FD9\u4E2A\u9053\u7406\u5417\uFF1F"
     triggerEvent:
@@ -4778,7 +4787,7 @@ MonoBehaviour:
   dialogues:
   - clip: {fileID: 8300000, guid: f557745a9288f2a4e9b9585a6fe2e6b3, type: 3}
     time: 0
-    subtitles: "\u84DD\u8272\u7684\u3010\u9F99\u4E4B\u5410\u606F\u3011\u7528\u51FA\u6765\u6015\u4E0D\u662F\u4E2A\u9B3C\u706B\uFF0C\u8D76\u7D27\u628A\u5B83\u8C03\u56DE\u53BB\uFF01"
+    subtitles: "\u9F99\u4E4B\u5410\u606F\uFF0C\u6BC1\u706D\u4E00\u5207\uFF01\u542C\u8D77\u6765\uFF0C\u591A\u4E48\u987A\u8033\u3002"
     triggerEvent:
       m_PersistentCalls:
         m_Calls: []

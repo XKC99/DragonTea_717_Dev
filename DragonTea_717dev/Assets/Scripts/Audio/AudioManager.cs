@@ -165,6 +165,20 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    // 停止所有音乐播放
+    public void StopAll()
+    {
+        float fadeDuration = 2f;
+        foreach (var sound in soundDictionary.Values)
+        {
+            if (sound.source.isPlaying)
+            {
+                StartCoroutine(FadeOutCoroutine(sound, fadeDuration));
+            }
+        }
+        Debug.Log("Stopping all sounds.");
+    }
+
 
     //添加淡入淡出
      private IEnumerator FadeInCoroutine(Sound sound, float duration)

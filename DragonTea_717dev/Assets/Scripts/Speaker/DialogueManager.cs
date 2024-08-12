@@ -72,6 +72,10 @@ public class DialogueManager : MonoBehaviour
     public void PlayRandomDialogue(int i)
     {
         speakerPlayChance=0.6f;
+        if(DataManager.Instance.isInSilentArea)
+        {
+            return;
+        }
         switch (i)
         {
             case 1:

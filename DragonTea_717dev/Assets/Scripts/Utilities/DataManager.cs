@@ -22,6 +22,7 @@ public class DataManager : Singleton<DataManager>
    public int evilCount=0;//罪恶值
    public int killNumber=0;//杀害数
    public int healNumber=0;//治愈数
+   public int cleanNumber=0;//消除text数
    public bool isEneteredMemory;//是否进入过记忆区域
    public bool isNotFirstDeadByEnemy;//不是第一次被敌人杀死
    public bool isFirstUseFly;  //第一次使用飞行牌
@@ -30,6 +31,8 @@ public class DataManager : Singleton<DataManager>
 
    public bool isGetEggkey;//是否得得到过蛋之钥匙
    public bool isGetOneMoreLife;//是否得到【第二条命】
+   public bool isInSilentArea;//是否在屏蔽心之声区域
+
 
    
    public DialogueSpeaker firstDeadByEnemySpeaker;
@@ -41,7 +44,8 @@ public class DataManager : Singleton<DataManager>
    [Header("敌人属性")]
    public bool isEnemyFirstFly; //敌人第一次飞
 
-
+   [Header("关卡属性")]
+   public bool isDestroyeLava;
 
    private readonly Dictionary<int, Dictionary<int, SerializableData>> _saveDataDict = new();
 

@@ -28,6 +28,7 @@ public class DataManager : Singleton<DataManager>
    public bool isFirstUseFly;  //第一次使用飞行牌
    public bool isEnteredCheckFlyarea; //是否进入了检查飞行区域
    public bool isFirstUseFall; //第一次使用坠落牌
+   public bool isFirstSpeedUp;//第一次加速
 
    public bool isGetEggkey;//是否得得到过蛋之钥匙
    public bool isGetOneMoreLife;//是否得到【第二条命】

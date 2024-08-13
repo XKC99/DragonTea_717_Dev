@@ -15,12 +15,14 @@ public class TextLogic : ItemLogic
             // AudioManager.Instance.PlayOneShot("shealboom");
             // Debug.Log($"撞上了(自身:{gameObject.name}_{gameObject.GetInstanceID()};对方:{collision.gameObject.name}_{collision.gameObject.GetInstanceID()})");
             // SkillBallPool.Instance.PushBallObject(collision.gameObject);
-            // Destroy(gameObject); // 击中火球后销毁
+            //Destroy(gameObject); // 击中火球后销毁
             HealBallEffect(collision);
         }
-   
         
     }
+
+
+
  
 
 
@@ -37,5 +39,6 @@ public class TextLogic : ItemLogic
     public void HitText()
     {
         OnhitEvent?.Invoke();
+        Debug.Log("应该触发了");
     }
 }

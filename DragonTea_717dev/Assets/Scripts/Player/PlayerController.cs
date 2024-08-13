@@ -128,6 +128,11 @@ public class PlayerController : MonoBehaviour
         }
         if(Input.GetKey(KeyCode.LeftShift) ) //冲刺
         {
+            if(DataManager.Instance.isFirstSpeedUp==false)
+            {
+                DialogueManager.Instance.PlaySpeedUp();
+                DataManager.Instance.isFirstSpeedUp=true;
+            }
            rb.velocity=new Vector2(moveX * moveSpeed*2, rb.velocity.y);
         }
 

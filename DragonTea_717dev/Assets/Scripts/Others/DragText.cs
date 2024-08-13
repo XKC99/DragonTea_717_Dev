@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -12,6 +13,8 @@ public class DragTextWithDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, 
     
     // 定义一个速度因子
     public float speedFactor = 1.0f;
+
+    public UnityEvent OnsuccessEvent;
 
     private void Awake()
     {
@@ -69,5 +72,7 @@ public class DragTextWithDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, 
     {
         Debug.Log("Text成功拖拽到目标区域！");
         // 在这里你可以加入更多的逻辑，如播放动画、更新UI等。
+        OnsuccessEvent?.Invoke();
     }
+    
 }

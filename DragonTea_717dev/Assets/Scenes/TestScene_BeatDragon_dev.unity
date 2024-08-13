@@ -30649,9 +30649,9 @@ MonoBehaviour:
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2039927489}
-          m_TargetAssemblyTypeName: TimeLineQuitGame, Assembly-CSharp
-          m_MethodName: QuitGame
+        - m_Target: {fileID: 1063331438}
+          m_TargetAssemblyTypeName: Teleport, Assembly-CSharp
+          m_MethodName: TeleportToScene
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -37525,7 +37525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneFrom: TestScene_BeatDragon_dev
-  SceneTo: Return
+  SceneTo: Persistent
 --- !u!1 &995788718
 GameObject:
   m_ObjectHideFlags: 0
@@ -38460,7 +38460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneFrom: TestScene_BeatDragon_dev
-  SceneTo: SaveDragon
+  SceneTo: SceneFLy_frombeat
 --- !u!1 &1070272930
 GameObject:
   m_ObjectHideFlags: 0
@@ -64770,7 +64770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneFrom: TestScene_BeatDragon_dev
-  SceneTo: KillDragon
+  SceneTo: Persistent
 --- !u!1001 &1712567101
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72359,9 +72359,9 @@ MonoBehaviour:
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1938940314}
-          m_TargetAssemblyTypeName: TimeLineQuitGame, Assembly-CSharp
-          m_MethodName: QuitGame
+        - m_Target: {fileID: 1063331438}
+          m_TargetAssemblyTypeName: Teleport, Assembly-CSharp
+          m_MethodName: TeleportToScene
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

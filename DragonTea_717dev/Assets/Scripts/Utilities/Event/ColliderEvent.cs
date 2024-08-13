@@ -20,6 +20,7 @@ public class ColliderEvent : BaseEvent
 
     public void OnColliderPlayer()
     {
+        
         Debug.Log($"Collider触发:{gameObject.name}");
         ColliderPlayerEvent?.Invoke();
     }

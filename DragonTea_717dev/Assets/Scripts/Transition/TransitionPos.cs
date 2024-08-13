@@ -52,21 +52,17 @@ public class TransitionPos : MonoBehaviour
 
     public void TransToEvil()
     {
-        
-        TransitionManager.Instance.Transition("TestScene_02_dev","TestScene_BeatDragon_dev");
-
+        TransitionManager.Instance.Transition("Scene_01-02","TestScene_BeatDragon_dev");
     }
 
     public void TransToGood()
     {
-        
-        TransitionManager.Instance.Transition("TestScene_02_dev","TestScene_dragonDream_dev");
-
+        TransitionManager.Instance.Transition("Scene_01-02","CanChooseScene");
     }
     public void CheckEvil()
     {
         int evilnumber=DataManager.Instance.evilCount;
-        if(evilnumber<=2&&DataManager.Instance.isEneteredMemory)
+        if(evilnumber<=2||DataManager.Instance.isEneteredMemory)
         {
             //TransToGood();
             StartCoroutine("TransToGoodCO");

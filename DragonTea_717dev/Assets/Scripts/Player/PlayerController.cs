@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     public float jumpDeadSpeed=-10f;   //落地时死亡速度
 
     public bool isInSlowZone;
+    public bool isSprinting = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
+    
 
     public GameObject attackFireBall;
     public GameObject healFireBall;
@@ -72,7 +74,6 @@ public class PlayerController : MonoBehaviour
         if (cantMove||isDead||isTimelineing) {  //不能移动就动不了
             return;
         }
-
         MovePlayer();  
     }
 
@@ -97,7 +98,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    protected void MovePlayer()
+  protected void MovePlayer()
     {
         float moveX = Input.GetAxis("Horizontal");
         //rb.velocity = new Vector2(moveX * moveSpeed, rb.velocity.y);
@@ -125,6 +126,15 @@ public class PlayerController : MonoBehaviour
             // 如果不在减速区域内，保持正常速度
             rb.velocity = new Vector2(moveX * moveSpeed, rb.velocity.y);
         }
+        if(Input.GetKey(KeyCode.LeftShift) ) //冲刺
+        {
+            if(DataManager.Instance.isFirstSpeedUp==false)
+            {
+                DialogueManager.Instance.PlaySpeedUp();
+                DataManager.Instance.isFirstSpeedUp=true;
+            }
+           rb.velocity=new Vector2(moveX * moveSpeed*2, rb.velocity.y);
+        }
 
         if (moveX > 0 && !facingRight)
         {
@@ -136,7 +146,7 @@ public class PlayerController : MonoBehaviour
         }
         animator.SetFloat("Speed",Mathf.Abs(moveX));
     }
-
+    
     protected virtual void Flip()
     {
         facingRight = !facingRight;

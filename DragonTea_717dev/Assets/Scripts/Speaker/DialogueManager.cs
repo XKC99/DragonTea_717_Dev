@@ -35,6 +35,10 @@ public class DialogueManager : MonoBehaviour
 
     public DialogueSpeaker enemyFirstFly;
     public List<DialogueSpeaker> flyToEnemSpeakers;
+    [Header("玩家第一次加速语音")]
+    public DialogueSpeaker firstSpeedUpSpeaker;
+    [Header("第一次破坏文本语音")]
+    public DialogueSpeaker firstDamageText;
 
 
     
@@ -69,9 +73,18 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    public void PlaySpeedUp()
+    {
+        firstSpeedUpSpeaker.Play();
+    }
+
     public void PlayRandomDialogue(int i)
     {
         speakerPlayChance=0.6f;
+        if(DataManager.Instance.isInSilentArea)
+        {
+            return;
+        }
         switch (i)
         {
             case 1:

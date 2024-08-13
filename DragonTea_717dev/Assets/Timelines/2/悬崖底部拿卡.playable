@@ -103,13 +103,13 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: -2632355364435470660}
-    m_Duration: 10.866666666666667
+    m_Duration: 4.833333333333333
     m_TimeScale: 1
     m_ParentTrack: {fileID: 2450512313974379773}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
-    m_BlendOutDuration: 7.0166666666666675
+    m_BlendOutDuration: 3.4499999999999997
     m_MixInCurve:
       serializedVersion: 2
       m_Curve:
@@ -169,16 +169,16 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Virtual Camera_main
   - m_Version: 1
-    m_Start: 3.85
+    m_Start: 1.3833333333333333
     m_ClipIn: 0
     m_Asset: {fileID: 2619777598934890423}
-    m_Duration: 15.516666666666667
+    m_Duration: 9.8
     m_TimeScale: 1
     m_ParentTrack: {fileID: 2450512313974379773}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: 7.0166666666666675
-    m_BlendOutDuration: 2.1833333333333336
+    m_BlendInDuration: 3.4499999999999997
+    m_BlendOutDuration: 2.866666666666667
     m_MixInCurve:
       serializedVersion: 2
       m_Curve:
@@ -238,15 +238,15 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: "Virtual Camera_02_\u5E95\u90E8box"
   - m_Version: 1
-    m_Start: 17.183333333333334
+    m_Start: 8.316666666666666
     m_ClipIn: 0
     m_Asset: {fileID: -503396493225202147}
-    m_Duration: 5.183333333333333
+    m_Duration: 7.683333333333333
     m_TimeScale: 1
     m_ParentTrack: {fileID: 2450512313974379773}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: 2.1833333333333336
+    m_BlendInDuration: 2.866666666666667
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
@@ -330,8 +330,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips: []
   m_Markers:
-    m_Objects:
-    - {fileID: 9063155802105986392}
+    m_Objects: []
 --- !u!114 &2619777598934890423
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -440,19 +439,3 @@ MonoBehaviour:
     m_DisplayName: SpeakerAudio_2012
   m_Markers:
     m_Objects: []
---- !u!114 &9063155802105986392
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
-  m_Name: Signal Emitter
-  m_EditorClassIdentifier: 
-  m_Time: 22.366666666666667
-  m_Retroactive: 0
-  m_EmitOnce: 0
-  m_Asset: {fileID: 11400000, guid: 0b43f69a88fb1184f95d2f574d3f2c3d, type: 2}

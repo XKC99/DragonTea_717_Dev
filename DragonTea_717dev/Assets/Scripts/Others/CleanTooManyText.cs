@@ -16,7 +16,7 @@ private void Update()
 }
    public void CleanOverText()
     {
-        if(DataManager.Instance.cleanNumber >= 3)
+        if(DataManager.Instance.cleanNumber >= 5)
         {
             AfterCleanText();
         }

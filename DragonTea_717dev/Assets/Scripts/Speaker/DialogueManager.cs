@@ -37,6 +37,8 @@ public class DialogueManager : MonoBehaviour
     public List<DialogueSpeaker> flyToEnemSpeakers;
     [Header("玩家第一次加速语音")]
     public DialogueSpeaker firstSpeedUpSpeaker;
+    [Header("第一次破坏文本语音")]
+    public DialogueSpeaker firstDamageText;
 
 
     

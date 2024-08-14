@@ -6,12 +6,22 @@ public class CheckIfHaveLava : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject lava;
-    public DialogueSpeaker begin;
     public DialogueSpeaker hasLava;
     public DialogueSpeaker noLava;
+
+    public DialogueSpeaker afterBecomeDragon;
+    public DialogueSpeaker fromBeatDragon;
     void Start()
     {
-        begin.Play();
+        if(DataManager.Instance.isFormBeatDragon==false)
+        {
+            afterBecomeDragon.Play();
+        }
+        else if(DataManager.Instance.isFormBeatDragon==true)
+        {
+            fromBeatDragon.Play();
+        }
+        
         if(DataManager.Instance.isDestroyeLava)
         {
             lava.SetActive(false);
@@ -34,5 +44,10 @@ public class CheckIfHaveLava : MonoBehaviour
         {
             hasLava.Play();
         }
+    }
+
+    public void MarkEnterBeat()
+    {
+        DataManager.Instance.isFormBeatDragon = true;
     }
 }

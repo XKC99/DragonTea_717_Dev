@@ -3219,7 +3219,7 @@ Transform:
   m_GameObject: {fileID: 262656023}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.6365776, y: 5.637888, z: -3.6815126}
+  m_LocalPosition: {x: -3.6365776, y: 5.8882084, z: -3.6815126}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3363,7 +3363,7 @@ Camera:
   far clip plane: 1000
   field of view: 56.95
   orthographic: 1
-  orthographic size: 5.1
+  orthographic size: 6.59
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -6200,18 +6200,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9037512565118087699, guid: 9f72a54b979c8924688221a197e57b6f, type: 3}
       propertyPath: triggerPlayerUnityEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9037512565118087699, guid: 9f72a54b979c8924688221a197e57b6f, type: 3}
       propertyPath: triggerPlayerUnityEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9037512565118087699, guid: 9f72a54b979c8924688221a197e57b6f, type: 3}
+      propertyPath: triggerPlayerUnityEvent.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9037512565118087699, guid: 9f72a54b979c8924688221a197e57b6f, type: 3}
       propertyPath: triggerPlayerUnityEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
       objectReference: {fileID: 1584482700930254940}
     - target: {fileID: 9037512565118087699, guid: 9f72a54b979c8924688221a197e57b6f, type: 3}
+      propertyPath: triggerPlayerUnityEvent.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 1007374108}
+    - target: {fileID: 9037512565118087699, guid: 9f72a54b979c8924688221a197e57b6f, type: 3}
       propertyPath: triggerPlayerUnityEvent.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9037512565118087699, guid: 9f72a54b979c8924688221a197e57b6f, type: 3}
+      propertyPath: triggerPlayerUnityEvent.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9037512565118087699, guid: 9f72a54b979c8924688221a197e57b6f, type: 3}
@@ -6219,15 +6231,31 @@ PrefabInstance:
       value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 9037512565118087699, guid: 9f72a54b979c8924688221a197e57b6f, type: 3}
+      propertyPath: triggerPlayerUnityEvent.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: MarkEnterBeat
+      objectReference: {fileID: 0}
+    - target: {fileID: 9037512565118087699, guid: 9f72a54b979c8924688221a197e57b6f, type: 3}
       propertyPath: triggerPlayerUnityEvent.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9037512565118087699, guid: 9f72a54b979c8924688221a197e57b6f, type: 3}
+      propertyPath: triggerPlayerUnityEvent.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
+      value: CheckIfHaveLava, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 9037512565118087699, guid: 9f72a54b979c8924688221a197e57b6f, type: 3}
       propertyPath: triggerPlayerUnityEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9037512565118087699, guid: 9f72a54b979c8924688221a197e57b6f, type: 3}
+      propertyPath: triggerPlayerUnityEvent.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9037512565118087699, guid: 9f72a54b979c8924688221a197e57b6f, type: 3}
       propertyPath: triggerPlayerUnityEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9037512565118087699, guid: 9f72a54b979c8924688221a197e57b6f, type: 3}
+      propertyPath: triggerPlayerUnityEvent.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -30661,6 +30689,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1870979981}
+          m_TargetAssemblyTypeName: AudioPlayTest, Assembly-CSharp
+          m_MethodName: StopAll
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &811719125
 GameObject:
   m_ObjectHideFlags: 0
@@ -37610,6 +37650,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1007374107
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1007374109}
+  - component: {fileID: 1007374108}
+  m_Layer: 0
+  m_Name: "\u6807\u8BB0"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1007374108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007374107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19ebf4b8cb1eecd4a820b793db1a065e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lava: {fileID: 0}
+  hasLava: {fileID: 0}
+  noLava: {fileID: 0}
+  afterBecomeDragon: {fileID: 0}
+  fromBeatDragon: {fileID: 0}
+--- !u!4 &1007374109
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007374107}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1018954273
 GameObject:
   m_ObjectHideFlags: 0
@@ -37880,7 +37969,7 @@ Transform:
   m_GameObject: {fileID: 1032029337}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -5.54, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -38460,7 +38549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneFrom: TestScene_BeatDragon_dev
-  SceneTo: SceneFLy_frombeat
+  SceneTo: SceneFLy
 --- !u!1 &1070272930
 GameObject:
   m_ObjectHideFlags: 0
@@ -51190,7 +51279,7 @@ Transform:
   m_GameObject: {fileID: 1377268693}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.6365776, y: 5.637888, z: -3.6815126}
+  m_LocalPosition: {x: -3.6365776, y: 5.8882084, z: -3.6815126}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -51219,7 +51308,7 @@ MonoBehaviour:
   m_Follow: {fileID: 8131041063435884301}
   m_Lens:
     FieldOfView: 56.95
-    OrthographicSize: 5.1
+    OrthographicSize: 6.59
     NearClipPlane: 0.05
     FarClipPlane: 1000
     Dutch: 0
@@ -71475,6 +71564,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2111944058}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1870979981 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4606216213883350021, guid: 9f72a54b979c8924688221a197e57b6f, type: 3}
+  m_PrefabInstance: {fileID: 405922727}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bb7c9e59b7338a4da8697f95fded85e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1871540865
 GameObject:
   m_ObjectHideFlags: 0
@@ -72362,6 +72462,18 @@ MonoBehaviour:
         - m_Target: {fileID: 1063331438}
           m_TargetAssemblyTypeName: Teleport, Assembly-CSharp
           m_MethodName: TeleportToScene
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1870979981}
+          m_TargetAssemblyTypeName: AudioPlayTest, Assembly-CSharp
+          m_MethodName: StopAll
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -83099,7 +83211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f408c4110558baa4e952101e0f210823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
+  moveSpeed: 5
   jumpForce: 6
   jumpDeadSpeed: -50
   isInSlowZone: 0
@@ -89153,3 +89265,4 @@ SceneRoots:
   - {fileID: 1430585166}
   - {fileID: 1458779171}
   - {fileID: 1092865343}
+  - {fileID: 1007374109}

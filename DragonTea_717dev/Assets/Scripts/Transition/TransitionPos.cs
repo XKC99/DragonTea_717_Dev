@@ -59,6 +59,19 @@ public class TransitionPos : MonoBehaviour
     {
         TransitionManager.Instance.Transition("Scene_01-02","CanChooseScene");
     }
+
+    public bool JustReportEvilBool()
+    {
+        int evilnumber=DataManager.Instance.evilCount;
+        if(evilnumber<=2||DataManager.Instance.isEneteredMemory)
+        {
+            return true;
+        }
+        else
+        {
+          return false;
+        }
+    }
     public void CheckEvil()
     {
         int evilnumber=DataManager.Instance.evilCount;

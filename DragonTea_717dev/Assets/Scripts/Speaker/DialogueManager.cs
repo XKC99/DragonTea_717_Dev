@@ -39,6 +39,10 @@ public class DialogueManager : MonoBehaviour
     public DialogueSpeaker firstSpeedUpSpeaker;
     [Header("第一次破坏文本语音")]
     public DialogueSpeaker firstDamageText;
+    [Header("第一次碰到世界边界")]
+    public DialogueSpeaker firstOnEdge;
+    [Header("第一次删除卡牌")]
+    public DialogueSpeaker firstDelete;
 
 
     

@@ -109,6 +109,12 @@ public class CardHandler : MonoBehaviour
                 {
                     CardDeck.Instance.RemoveHandCard(currentCard);
                     Destroy(gameObject);
+                    AudioManager.Instance.PlayOneShot("sshanchu");
+                    if(DataManager.Instance.isFirstDelete)
+                    {
+                        DialogueManager.Instance.firstDelete.Play();
+                        DataManager.Instance.isFirstDelete = false;
+                    }
                 }
             }
         }

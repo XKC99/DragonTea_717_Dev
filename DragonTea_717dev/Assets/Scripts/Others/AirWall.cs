@@ -8,6 +8,7 @@ public class AirWall : MonoBehaviour
     public UnityEvent OnCollideWall;
     public UnityEvent OnBengHuai;
     public GameObject PostVolme;
+    public bool isFirstCollide;
 
     public int bengHuaiNumber;
 
@@ -30,6 +31,11 @@ public class AirWall : MonoBehaviour
         PostVolme.SetActive(true);
         COllideWall();
         collideNumber++;
+        if(isFirstCollide)
+        {
+            DialogueManager.Instance.firstOnEdge.Play();
+            isFirstCollide = false;
+        }
     }
 
     private void OnCollisionExit2D(Collision2D other)

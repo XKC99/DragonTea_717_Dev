@@ -10082,11 +10082,11 @@ MonoBehaviour:
         m_Calls: []
   - clip: {fileID: 8300000, guid: 98ce0a1b3611ccf41856473cae697d59, type: 3}
     time: 0
-    subtitles: "\u90A3\u4F60\u5C31\u5728\u8FD9\u8D28\u7591\u9F99\u55B7\u4E2A\u591F\u5427\uFF01\u7B49\u5230\u9B54\u529B\u8017\u5C3D\u81EA\u4E2A\u513F\u6D88\u5931\u5427\uFF0C\u54C8\u54C8\u54C8\uFF01"
+    subtitles: "\u90A3\u4F60\u5C31\u5728\u8FD9\u8D28\u7591\u9F99\u55B7\u4E2A\u591F\u5427\uFF01\u7B49\u5230\u9B54\u529B\u8017\u5C3D,\u6216\u8005\u88AB\u5CA9\u6D46\u7838\u4E2D\uFF0C\u4ECE\u6211\u7684\u9B54\u5076\u91CC\u6EDA\u51FA\u53BB\uFF01"
     triggerEvent:
       m_PersistentCalls:
         m_Calls: []
-  fireFinishEvent: 1
+  fireFinishEvent: 0
   finishedEvent:
     m_PersistentCalls:
       m_Calls:
@@ -17267,7 +17267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5691282331362431863, guid: e1e5948b6586b624d961bc6a480a77bb, type: 3}
       propertyPath: m_Mass
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5691282331362431863, guid: e1e5948b6586b624d961bc6a480a77bb, type: 3}
       propertyPath: m_GravityScale

@@ -5469,8 +5469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
-  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"_condition":{"valueA":{"_name":"isFirstSee","_targetVariableID":"83d1f5d4-081d-45e4-bb66-b7722f84fbf3"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_position":{"x":346.8442,"y":1075.159},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"0"},{"statement":{"_text":"\u4f60\u521a\u521a\u5728\u505a\u4ec0\u4e48\uff01\u6211\u4e00\u76f4\u53eb\u4f60\uff0c\u4e3a\u4f55\u4e0d\u56de\u5e94\u6211\uff01"},"_position":{"x":207.6595,"y":1294.524},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"1"},{"statement":{"_text":"\u4f60\u4e0d\u4e5f\u4f1a\u88ab\u6076\u9b54\u86ca\u60d1\u4e86\u5427\uff1f\u5feb\u9192\u9192\uff01"},"_position":{"x":102.7098,"y":1441.954},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"2"},{"_action":{"boolVariable":{"_name":"isFirstSee","_targetVariableID":"83d1f5d4-081d-45e4-bb66-b7722f84fbf3"},"$type":"NodeCanvas.Tasks.Actions.SetBoolean"},"_position":{"x":402.6612,"y":1576.18},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"3"},{"_action":{"method":{"_baseInfo":"DialogueSpeaker|Play|System.Void","_paramsInfo":""},"parameters":[],"returnValue":{},"overrideAgent":{"_type":"DialogueSpeaker","_value":1},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction_Multiplatform"},"_position":{"x":538.9468,"y":1815.432},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"4"},{"_position":{"x":618.0891,"y":1952.9},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"5"},{"statement":{"_text":"\u60f3\u8d77\u6765\u4e86\u5417\uff0c\u6765\u8fd9\u91cc\u53d1\u751f\u7684\u4e8b\u60c5\uff1f"},"_position":{"x":648.0865,"y":1237.992},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"6"},{"availableChoices":[{"statement":{"_text":"\u8fd9\u91cc\u662f\u4ec0\u4e48\u5730\u65b9\uff1f"}},{"statement":{"_text":"\u544a\u8bc9\u6211\u5173\u4e8e\u4f60\u7684\u4e8b\u3002"}}],"_position":{"x":895.7981,"y":1319.295},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"7"},{"statement":{"_text":"\u5df4\u62c9\u5df4\u62c9\uff0c\u8fd9\u91cc\u8bb2\u52c7\u8005\u5df2\u7ecf\u7a7f\u8fc7\u6076\u9b54\u6d1e\u7a9f\u6765\u5230\u96ea\u9f99\u8c37\u4e86\uff0c\u4f46\u662f\u88ab\u6076\u9b54\u5728\u6076\u9b54\u6d1e\u7a9f\u4e0b\u4e86\u5e7b\u672f\uff0c\u770b\u8c01\u90fd\u662f\u654c\u4eba\u3002\uff08\u5360\u4f4d\uff0c\u8fd8\u6ca1\u5199\uff09"},"_position":{"x":576.0938,"y":1524.5},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"8"},{"statement":{"_text":"\u9f50\u683c\u98de\u66fe\u7ecf\u4e5f\u88ab\u6076\u9b54\u6b3a\u9a97\uff0c\u4f24\u5bb3\u4e86\u767d\u9f99\u540e\u6700\u7ec8\u9192\u609f\u3002\u4e3a\u4e86\u8d4e\u7f6a\uff0c\u5728\u8fd9\u91cc\u5b88\u62a4\u767d\u9f99\uff08\u4f46\u662f\u56e0\u4e3a\u4e0d\u662f\u52c7\u8005\uff0c\u6ca1\u6709\u529e\u6cd5\u66ff\u767d\u9f99\u6062\u590d\u4f24\u52bf\uff09
-    \uff08\u5360\u4f4d\uff09"},"_position":{"x":984.806,"y":1520.24},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"9"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"6"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"7"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"7"},"_targetNode":{"$ref":"9"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"9"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
+  _boundGraphSerialization: '{"type":"NodeCanvas.DialogueTrees.DialogueTree","nodes":[{"_condition":{"valueA":{"_name":"isFirstSee","_targetVariableID":"83d1f5d4-081d-45e4-bb66-b7722f84fbf3"},"valueB":{},"$type":"NodeCanvas.Tasks.Conditions.CheckBoolean"},"_position":{"x":346.8442,"y":1075.159},"$type":"NodeCanvas.DialogueTrees.ConditionNode","$id":"0"},{"statement":{"_text":"\u4f60\u521a\u521a\u5728\u505a\u4ec0\u4e48\uff01\u6211\u4e00\u76f4\u53eb\u4f60\uff0c\u4e3a\u4f55\u4e0d\u56de\u5e94\u6211\uff01"},"_position":{"x":207.6595,"y":1294.524},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"1"},{"statement":{"_text":"\u4f60\u4e0d\u4e5f\u4f1a\u88ab\u6076\u9b54\u86ca\u60d1\u4e86\u5427\uff1f\u5feb\u9192\u9192\uff01"},"_position":{"x":102.7098,"y":1441.954},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"2"},{"_action":{"boolVariable":{"_name":"isFirstSee","_targetVariableID":"83d1f5d4-081d-45e4-bb66-b7722f84fbf3"},"$type":"NodeCanvas.Tasks.Actions.SetBoolean"},"_position":{"x":402.6612,"y":1576.18},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"3"},{"_action":{"method":{"_baseInfo":"DialogueSpeaker|Play|System.Void","_paramsInfo":""},"parameters":[],"returnValue":{},"overrideAgent":{"_type":"DialogueSpeaker","_value":1},"$type":"NodeCanvas.Tasks.Actions.ExecuteFunction_Multiplatform"},"_position":{"x":538.9468,"y":1815.432},"$type":"NodeCanvas.DialogueTrees.ActionNode","$id":"4"},{"_position":{"x":618.0891,"y":1952.9},"$type":"NodeCanvas.DialogueTrees.FinishNode","$id":"5"},{"statement":{"_text":"\u60f3\u8d77\u6765\u4e86\u5417\uff0c\u6765\u8fd9\u91cc\u53d1\u751f\u7684\u4e8b\u60c5\uff1f"},"_position":{"x":648.0865,"y":1237.992},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"6"},{"availableChoices":[{"statement":{"_text":"\u8fd9\u91cc\u662f\u4ec0\u4e48\u5730\u65b9\uff1f"}},{"statement":{"_text":"\u544a\u8bc9\u6211\u5173\u4e8e\u4f60\u7684\u4e8b\u3002"}}],"_position":{"x":895.7981,"y":1319.295},"$type":"NodeCanvas.DialogueTrees.MultipleChoiceNode","$id":"7"},{"statement":{"_text":"\u3010\u52c7\u8005\u4e8e\u6b64\u660e\u767d\uff0c\u81ea\u5df1\u5df2\u7ecf\u7a7f\u8fc7\u6076\u9b54\u6d1e\u7a9f\u6765\u5230\u96ea\u9f99\u8c37\u4e86\uff0c\u4f46\u662f\u88ab\u6076\u9b54\u5728\u6076\u9b54\u6d1e\u7a9f\u4e0b\u4e86\u5e7b\u672f\uff0c\u770b\u8c01\u90fd\u662f\u654c\u4eba\u3002\u3011"},"_position":{"x":576.0938,"y":1524.5},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"8"},{"statement":{"_text":"\u3010\u52c7\u8005\u4e86\u89e3\u5230\uff0c\u9f50\u683c\u98de\u66fe\u7ecf\u4e5f\u88ab\u6076\u9b54\u6b3a\u9a97\uff0c\u4f24\u5bb3\u4e86\u767d\u9f99\u540e\u6700\u7ec8\u9192\u609f\u3002\u4e3a\u4e86\u8d4e\u7f6a\uff0c\u5728\u8fd9\u91cc\u5b88\u62a4\u767d\u9f99\uff08\u4f46\u662f\u56e0\u4e3a\u4e0d\u662f\u52c7\u8005\uff0c\u6ca1\u6709\u529e\u6cd5\u66ff\u767d\u9f99\u6062\u590d\u4f24\u52bf\uff09\u3011"},"_position":{"x":984.806,"y":1520.24},"$type":"NodeCanvas.DialogueTrees.StatementNode","$id":"9"}],"connections":[{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"6"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"3"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"6"},"_targetNode":{"$ref":"7"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"7"},"_targetNode":{"$ref":"8"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"7"},"_targetNode":{"$ref":"9"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"8"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"},{"_sourceNode":{"$ref":"9"},"_targetNode":{"$ref":"4"},"$type":"NodeCanvas.DialogueTrees.DTConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}},"derivedData":{"actorParameters":[],"$type":"NodeCanvas.DialogueTrees.DialogueTree+DerivedSerializationData"}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
   - {fileID: 227699723}
@@ -37530,6 +37529,7 @@ GameObject:
   m_Component:
   - component: {fileID: 987412422}
   - component: {fileID: 987412423}
+  - component: {fileID: 987412424}
   m_Layer: 0
   m_Name: "\u6740\u9F99\u5374\u9009\u62E9\u8FD4\u56DE\u7684\u7ED3\u5C40"
   m_TagString: Untagged
@@ -37565,7 +37565,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneFrom: TestScene_BeatDragon_dev
-  SceneTo: Persistent
+  SceneTo: SceneFLy
+--- !u!114 &987412424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987412421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad6a803310d23d644a595e6f64d5fa82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  retrunTimes: 0
+  OnOverTimes:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 987412423}
+        m_TargetAssemblyTypeName: Teleport, Assembly-CSharp
+        m_MethodName: TeleportToScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1870979981}
+        m_TargetAssemblyTypeName: AudioPlayTest, Assembly-CSharp
+        m_MethodName: StopAll
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &995788718
 GameObject:
   m_ObjectHideFlags: 0
@@ -63087,7 +63127,7 @@ PrefabInstance:
     - target: {fileID: 6187094555385784066, guid: 3028b580a4170ce439de5499a2c12539, type: 3}
       propertyPath: cardData
       value: 
-      objectReference: {fileID: 11400000, guid: 698a992b387a545478bf7b007ac37bcd, type: 2}
+      objectReference: {fileID: 11400000, guid: 1e7bb18eadcff464a8f6e00c2d2557f5, type: 2}
     - target: {fileID: 6297130490214292794, guid: 3028b580a4170ce439de5499a2c12539, type: 3}
       propertyPath: subtitlesText
       value: 
@@ -64859,7 +64899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneFrom: TestScene_BeatDragon_dev
-  SceneTo: Persistent
+  SceneTo: SceneFLy
 --- !u!1001 &1712567101
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -87906,18 +87946,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2107716327668290033}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   triggerBoxUnityEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -88432,7 +88460,19 @@ MonoBehaviour:
     subtitles: "\u60A8\u671D\u56DE\u8D70\u5E72\u561B\uFF1F\u4E0D\u7528\u770B\u4E86\uFF0C\u56DE\u53BB\u7684\u8DEF\u5DF2\u7ECF\u6CA1\u4E86\uFF0C\u5475\u5475\u3002"
     triggerEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 987412424}
+          m_TargetAssemblyTypeName: TryToReturn, Assembly-CSharp
+          m_MethodName: MarkReturnTimes
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   fireFinishEvent: 0
   finishedEvent:
     m_PersistentCalls:

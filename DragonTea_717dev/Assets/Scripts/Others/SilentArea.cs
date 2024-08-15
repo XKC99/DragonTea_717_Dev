@@ -6,11 +6,18 @@ public class SilentArea : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-        SilentSpeaker();
+        if(other.CompareTag("Player"))
+        {
+            SilentSpeaker();
+        }
+        
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        ActiveSpeaker();
+        if(other.CompareTag("Player"))
+        {
+            ActiveSpeaker();
+        }
     }
     public void SilentSpeaker()
     {

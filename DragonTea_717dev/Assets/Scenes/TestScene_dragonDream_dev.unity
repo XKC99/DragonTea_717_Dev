@@ -39275,7 +39275,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1253267942
 Transform:
   m_ObjectHideFlags: 0
@@ -84706,6 +84706,10 @@ PrefabInstance:
       propertyPath: RevivePos
       value: 
       objectReference: {fileID: 1070272931}
+    - target: {fileID: 8196096178610390479, guid: e1e5948b6586b624d961bc6a480a77bb, type: 3}
+      propertyPath: jumpForce
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 8196096178610390479, guid: e1e5948b6586b624d961bc6a480a77bb, type: 3}
       propertyPath: tipCanvas
       value: 

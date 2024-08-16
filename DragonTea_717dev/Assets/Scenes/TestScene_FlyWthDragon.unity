@@ -2398,7 +2398,7 @@ Transform:
   m_GameObject: {fileID: 225911710}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -122.97658, y: -4.9333916, z: -4.4015126}
+  m_LocalPosition: {x: -122.16658, y: -5.0533924, z: -4.4015126}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15494,7 +15494,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -122.97658, y: -4.9333916, z: -4.4015126}
+  m_LocalPosition: {x: -122.16658, y: -5.0533924, z: -4.4015126}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20709,7 +20709,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &947238666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20723,7 +20723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneFrom: TestScene_FlyWthDragon
-  SceneTo: TestScene_02_dev
+  SceneTo: TestScene_TrueEnd
 --- !u!4 &947238667
 Transform:
   m_ObjectHideFlags: 0
@@ -40317,6 +40317,8 @@ MonoBehaviour:
   moveSpeed: 3
   jumpForce: 5
   jumpDeadSpeed: -100
+  isInSlowZone: 0
+  isSprinting: 0
   attackFireBall: {fileID: 292846501996241652, guid: 0f3355cd4da447644bbb3ee4f629de7d, type: 3}
   healFireBall: {fileID: 3340886047861285697, guid: 0c64fc8bd0fffeb47b75c8fe45b7b12e, type: 3}
   fromPos: {fileID: 8131041063480202455}
@@ -41092,7 +41094,7 @@ Transform:
   m_GameObject: {fileID: 8765722122738024854}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -123.2, y: -12.6, z: -1.4}
+  m_LocalPosition: {x: -122.39, y: -12.72, z: -1.4}
   m_LocalScale: {x: -2, y: 2, z: -1}
   m_ConstrainProportionsScale: 0
   m_Children:

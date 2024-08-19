@@ -15,7 +15,7 @@ public class TryToReturn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(retrunTimes>=3)
+        if(retrunTimes>=1)
         {
             OnOverTimes?.Invoke();
 

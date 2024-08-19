@@ -286,6 +286,164 @@ MonoBehaviour:
       m_Calls: []
   hideSubtitlesOnDelay: 0
   hideSubtitlesOnFinish: 1
+--- !u!1 &30549561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 30549562}
+  - component: {fileID: 30549563}
+  - component: {fileID: 30549564}
+  m_Layer: 0
+  m_Name: "SpeakerAudio_\u7B2C\u4E00\u6B21\u5207\u6362\u7EFF\u8F6C\u9EC4"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &30549562
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30549561}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -59.06, y: -19.64, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1629081541}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &30549563
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30549561}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &30549564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30549561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab434477b46b60d499db11a05f19c820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centralAudio: {fileID: 30549563}
+  playOnAwake: 0
+  subtitlesText: {fileID: 1040787094}
+  useSubtitles: 1
+  dialogues:
+  - clip: {fileID: 8300000, guid: d442b34ad1c46fd4abfeb0ef148e8db1, type: 3}
+    time: 0
+    subtitles: "\u6B63\u662F\u8FD9\u6837\uFF01\u8BF7\u8BB0\u4F4F\uFF0C\u5F85\u4F1A\u513F\u4ECE\u9AD8\u5904\u5760\u843D\u65F6\uFF0C\u5C06\u3010\u9F99\u4E4B\u7FFC\u3011\u62D6\u62FD\u5230\u81EA\u5DF1\u8EAB\u4E0A\uFF01"
+    triggerEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  fireFinishEvent: 0
+  finishedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  hideSubtitlesOnDelay: 0
+  hideSubtitlesOnFinish: 1
 --- !u!1 &149977052
 GameObject:
   m_ObjectHideFlags: 0
@@ -1364,6 +1522,7 @@ MonoBehaviour:
   isFirstSpeedUp: 0
   isFirstPoHuaiText: 1
   isFirstOnText: 1
+  isFirstChange: 1
   isGetEggkey: 0
   isGetOneMoreLife: 0
   isInSilentArea: 0
@@ -3370,6 +3529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerPlayChance: 0.6
+  firstChangeFallSpeaker: {fileID: 30549564}
   changeToFireSpeakers:
   - {fileID: 573778309}
   - {fileID: 1214025416}
@@ -6158,6 +6318,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 30549562}
   - {fileID: 595471446}
   - {fileID: 695661712}
   - {fileID: 573778307}

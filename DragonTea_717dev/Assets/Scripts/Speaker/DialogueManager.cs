@@ -9,6 +9,7 @@ public class DialogueManager : MonoBehaviour
     private DialogueSpeaker currentSpeaker;
     [Header("转换触发语音")]
     public float speakerPlayChance;  //播放概率
+    public DialogueSpeaker firstChangeFallSpeaker;
     public List<DialogueSpeaker> changeToFireSpeakers;
     public List<DialogueSpeaker> changeToHealSpeakers;
     public List<DialogueSpeaker> changeToFlySpeakers;
@@ -113,10 +114,24 @@ public class DialogueManager : MonoBehaviour
             }
             break;
             case 4:
-             if(changeToFallSpeakers.Count > 0&&Random.value<=speakerPlayChance)
+             if(changeToFallSpeakers.Count > 0)
             {
-                int index=Random.Range(0, changeToFallSpeakers.Count);
-                changeToFallSpeakers[index].Play();
+                if(DataManager.Instance.isFirstChange)
+                {
+                    firstChangeFallSpeaker.Play();
+                    DataManager.Instance.isFirstChange=false;
+                }
+                else 
+                {
+                    if(Random.value<=speakerPlayChance)
+                    {
+                        int index=Random.Range(0, changeToFallSpeakers.Count);
+                        changeToFallSpeakers[index].Play();
+                    }
+                    
+                }
+                // int index=Random.Range(0, changeToFallSpeakers.Count);
+                // changeToFallSpeakers[index].Play();
             }
             break;
             case 5:  //箱子飞起来

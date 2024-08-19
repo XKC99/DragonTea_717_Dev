@@ -88460,23 +88460,23 @@ MonoBehaviour:
     subtitles: "\u60A8\u671D\u56DE\u8D70\u5E72\u561B\uFF1F\u4E0D\u7528\u770B\u4E86\uFF0C\u56DE\u53BB\u7684\u8DEF\u5DF2\u7ECF\u6CA1\u4E86\uFF0C\u5475\u5475\u3002"
     triggerEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 987412424}
-          m_TargetAssemblyTypeName: TryToReturn, Assembly-CSharp
-          m_MethodName: MarkReturnTimes
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  fireFinishEvent: 0
+        m_Calls: []
+  fireFinishEvent: 1
   finishedEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 987412424}
+        m_TargetAssemblyTypeName: TryToReturn, Assembly-CSharp
+        m_MethodName: MarkReturnTimes
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   hideSubtitlesOnDelay: 0
   hideSubtitlesOnFinish: 1
 --- !u!4 &7549267565485134584

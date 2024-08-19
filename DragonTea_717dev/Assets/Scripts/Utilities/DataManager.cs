@@ -32,6 +32,7 @@ public class DataManager : Singleton<DataManager>
    public bool isFirstSpeedUp;//第一次加速
    public bool isFirstPoHuaiText;//第一次破坏Text
    public bool isFirstOnText;//第一次踩在Text上
+   public bool isFirstChange;//第一次转换卡牌
 
    public bool isGetEggkey;//是否得得到过蛋之钥匙
    public bool isGetOneMoreLife;//是否得到【第二条命】
